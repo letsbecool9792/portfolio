@@ -32,7 +32,7 @@ const Landing = () => {
                 <h2 className="text-2xl md:text-2xl font-pixel mt-2 text-gray-700">Software Developer</h2>
                 </div>
 
-                <p className="text-gray-900 mt-6 mb-6 pr-4 text-lg">
+                <p className="text-gray-950 mt-6 mb-6 pr-4 text-lg font-serif">
                 Started my journey in 2019 and haven’t stopped exploring since. From crafting games and diving into hackathons to experimenting with AI and chasing strange side quests—I’ve always followed curiosity. These days, I roam the lands of React and React Native, building whatever the path demands.
                 </p>
             </div>
@@ -57,21 +57,21 @@ const Landing = () => {
             <h2 className="text-lg font-pixel mb-4">See Artifacts</h2>
             
             <div className="flex justify-between items-center mb-3">
-                <a href="#" className="rounded-full bg-rose-200 p-3 hover:bg-rose-300 transition-colors">
+                <a href="https://github.com/letsbecool9792" className="rounded-full bg-rose-200 p-3 hover:bg-rose-300 transition-colors">
                     <Github size={20} />
                 </a>
-                <a href="#" className="rounded-full bg-rose-200 p-3 hover:bg-rose-300 transition-colors">
+                <a href="https://www.linkedin.com/in/letsbecool9792" className="rounded-full bg-rose-200 p-3 hover:bg-rose-300 transition-colors">
                     <Linkedin size={20} />
                 </a>
-                <a href="#" className="rounded-full bg-rose-200 p-3 hover:bg-rose-300 transition-colors">
+                <a href="https://twitter.com/letsbecool9792" className="rounded-full bg-rose-200 p-3 hover:bg-rose-300 transition-colors">
                     <Twitter size={20} />
                 </a>
             </div>
             
-            <button className="w-full py-2 bg-rose-300 rounded-lg hover:bg-rose-400 transition-colors flex justify-center items-center">
-            <span className="mr-2">View More</span>
+            <a href="/artifacts" className="w-full py-2 bg-rose-300 rounded-lg hover:bg-rose-400 transition-colors flex justify-center items-center">
+            <span className="mr-2 font-serif">View More</span>
             <ArrowUpRight size={16} />
-            </button>
+            </a>
         </div>
         
         <div
@@ -88,7 +88,7 @@ const Landing = () => {
             
             <div className="relative z-10 transform group-hover:translate-y-1 transition-transform duration-300">
                 <h2 className="text-2xl font-pixel">Begin the Journey</h2>
-                <p className="text-lg mt-2 text-gray-900">Explore my developer timeline and growth</p>
+                <p className="text-lg mt-2 text-gray-950 font-serif">Explore my developer timeline and growth</p>
             </div>
             
             {/* Arrow that appears on hover */}
@@ -113,7 +113,7 @@ const Landing = () => {
             
             <div className="relative z-10 transform group-hover:translate-y-1 transition-transform duration-300">
                 <h2 className="text-2xl font-pixel">Contact the Adventurer</h2>
-                <p className="text-lg mt-2 text-gray-900">Get in touch for collaborations</p>
+                <p className="text-lg mt-2 text-gray-950 font-serif">Get in touch for collaborations</p>
             </div>
             
             {/* Arrow that appears on hover */}
@@ -138,7 +138,7 @@ const Landing = () => {
             
             <div className="relative z-10 transform group-hover:translate-y-1 transition-transform duration-300">
                 <h2 className="text-2xl font-pixel">Open Side Quests</h2>
-                <p className="text-lg mt-2 text-gray-900">Gaming, CTFs, ML interests and more</p>
+                <p className="text-lg mt-2 text-gray-950 font-serif">Gaming, CTFs, ML interests and more</p>
             </div>
             
             {/* Arrow that appears on hover */}
