@@ -40,7 +40,7 @@ const Landing = () => {
 
         <div className="bg-white rounded-xl overflow-hidden md:col-start-6 md:col-end-9 md:row-start-1 md:row-end-4 row-span-2">
             <img 
-            src="src/assets/pic.png" 
+            src="/assets/other/pic.png"
             alt="Suparno Saha" 
             className="w-full h-full object-cover"
             />

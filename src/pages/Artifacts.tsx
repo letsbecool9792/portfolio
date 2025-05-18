@@ -41,10 +41,10 @@ function Artifacts() {
                     <Youtube className="w-6 h-6 md:w-8 md:h-8" />
                 </a>
                 <a href="https://bsky.app/profile/letsbecool.bsky.social" className="hover:scale-110 transition-transform">
-                    <img src="src/assets/bsky.png" alt="Bsky" className="w-6 h-6 md:w-8 md:h-8" />
+                    <img src="/assets/other/bsky.png" alt="Bsky" className="w-6 h-6 md:w-8 md:h-8" />
                 </a>
                 <a href="https://discordapp.com/users/672367440977592350" className="hover:scale-110 transition-transform">
-                    <img src="src/assets/discord.png" alt="Discord" className="w-7 h-7 md:w-9.5 md:h-9.5" />
+                    <img src="/assets/other/discord.png" alt="Discord" className="w-7 h-7 md:w-9.5 md:h-9.5" />
                 </a>
             </div>
 
