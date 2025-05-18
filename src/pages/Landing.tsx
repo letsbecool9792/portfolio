@@ -12,7 +12,7 @@ const Landing = () => {
             backgroundRepeat: "repeat-x, repeat-x, repeat-x",
             backgroundPosition: "0 0, 0 40%, 0 80%",
             backgroundSize: "auto 33%, auto 33%, auto 100%",
-            backgroundAttachment: "scroll"
+            backgroundAttachment: "fixed, fixed, fixed",
         }}
     >
         <div className="grid grid-cols-1 md:grid-cols-10 md:grid-rows-5 gap-4 md:gap-8">
@@ -74,8 +74,9 @@ const Landing = () => {
             </a>
         </div>
         
-        <div
+        <a
             className="md:col-start-1 md:col-end-5 md:row-start-4 md:row-end-6 row-span-2 p-6 rounded-xl cursor-pointer relative overflow-hidden group"
+            href='/journey'
             style={{
                 backgroundImage: "url('/assets/cards/terrain_grass_block_center.png')",
                 backgroundRepeat: "repeat",
@@ -97,10 +98,11 @@ const Landing = () => {
                     <ArrowUpRight size={24} className="text-white" />
                 </div>
             </div>
-        </div>
+        </a>
         
-        <div 
+        <a 
             className="md:col-start-5 md:col-end-9 md:row-start-4 md:row-end-6 row-span-2 p-6 rounded-xl cursor-pointer relative overflow-hidden group"
+            href="/contact"
             style={{
                 backgroundImage: "url('/assets/cards/terrain_stone_block_center.png')",
                 backgroundRepeat: "repeat",
@@ -122,10 +124,11 @@ const Landing = () => {
                     <ArrowUpRight size={24} className="text-white" />
                 </div>
             </div>
-        </div>
+        </a>
         
-        <div 
+        <a 
             className="md:col-start-9 md:col-end-11 md:row-start-3 md:row-end-6 row-span-2 p-6 rounded-xl cursor-pointer relative overflow-hidden group"
+            href='/sidequests'
             style={{
                 backgroundImage: "url('/assets/cards/lava.png')",
                 backgroundRepeat: "repeat",
@@ -147,7 +150,7 @@ const Landing = () => {
                     <ArrowUpRight size={24} className="text-white" />
                 </div>
             </div>
-        </div>
+        </a>
         </div>   
     </div>
     );

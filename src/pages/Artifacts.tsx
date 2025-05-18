@@ -12,7 +12,7 @@ function Artifacts() {
                 backgroundRepeat: "repeat-x, repeat-x, repeat-x",
                 backgroundPosition: "0 0, 0 40%, 0 100%",
                 backgroundSize: "auto 33%, auto 33%, auto 100%",
-                backgroundAttachment: "scroll"
+                backgroundAttachment: "fixed, fixed, fixed",
             }}
         >
             <div className="flex flex-col items-center mt-8 md:mt-10">
@@ -42,6 +42,9 @@ function Artifacts() {
                 </a>
                 <a href="https://bsky.app/profile/letsbecool.bsky.social" className="hover:scale-110 transition-transform">
                     <img src="src/assets/bsky.png" alt="Bsky" className="w-6 h-6 md:w-8 md:h-8" />
+                </a>
+                <a href="https://discordapp.com/users/672367440977592350" className="hover:scale-110 transition-transform">
+                    <img src="src/assets/discord.png" alt="Discord" className="w-7 h-7 md:w-9.5 md:h-9.5" />
                 </a>
             </div>
 
