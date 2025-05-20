@@ -7,26 +7,13 @@ const Journey = () => {
     const scrollTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
     const animationIntervalRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-    // Track window height for calculations
-    const [windowHeight, setWindowHeight] = useState(0);
-
     useEffect(() => {
-    // Initialize window height
-    setWindowHeight(window.innerHeight);
-
-    // Handle window resize for responsive positioning
-    const handleResize = () => {
-        setWindowHeight(window.innerHeight);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-        window.removeEventListener('scroll', handleScroll);
-        window.removeEventListener('resize', handleResize);
-        clearTimers();
-    };
+        window.addEventListener('scroll', handleScroll);
+        
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+            clearTimers();
+        };
     }, []);
 
     const clearTimers = () => {
@@ -160,7 +147,7 @@ const Journey = () => {
             `}
             style={{ top: `${500 + i * 400}px` }}
             >
-            <div className="bg-white p-6 rounded-lg shadow-md w-80 inline-block">
+            <div className="bg-white p-6 rounded-lg shadow-md w-96 inline-block">
                 <div className="flex flex-col items-center mb-4">
                     <img 
                         src={event.image} 
