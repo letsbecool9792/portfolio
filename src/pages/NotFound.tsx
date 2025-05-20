@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-function NotFound() {
+const NotFound = () => {
     return (
     <div className="min-h-screen flex flex-col items-center justify-center p-4 md:p-8 relative"
         style={{

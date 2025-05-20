@@ -1,6 +1,7 @@
 import { Twitter, Github, Linkedin, Instagram, Twitch, Youtube } from "lucide-react";
+import ReturnHomeButton from "../components/ReturnHomeButton";
 
-function Artifacts() {
+const Artifacts = () => {
     return (
         <div className="min-h-screen flex flex-col items-center p-4 md:p-8 relative"
             style={{
@@ -75,6 +76,7 @@ function Artifacts() {
                     Check out my games!
                 </a>
             </div>
+            <ReturnHomeButton />
         </div>
     );
 }

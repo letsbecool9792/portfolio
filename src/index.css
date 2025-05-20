@@ -11,3 +11,11 @@
     --font-serif: 'Averia Serif Libre', serif;
     --font-mono: 'Roboto Mono', monospace;
 }
+
+body {
+    cursor: url('/assets/cursors/default.png'), auto;
+}
+
+a, button, [role="button"], .cursor-pointer {
+    cursor: url('/assets/cursors/hand.png'), pointer;
+}

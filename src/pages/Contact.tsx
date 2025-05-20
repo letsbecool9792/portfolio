@@ -2,35 +2,40 @@ import { useRef, useState } from 'react';
 import type { FormEvent } from 'react';
 import emailjs from '@emailjs/browser';
 import { Link } from 'react-router-dom';
+import ReturnHomeButton from '../components/ReturnHomeButton';
 
 function Contact() {
     const form = useRef<HTMLFormElement | null>(null);
     const [emailSent, setEmailSent] = useState(false);
     const [userName, setUserName] = useState('');
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const sendEmail = (e: FormEvent) => {
-    e.preventDefault();
+        e.preventDefault();
+        setIsSubmitting(true);
 
-    if (!form.current) return;
-    
-    // Save the user's name for the thank you message
-    const formData = new FormData(form.current);
-    const name = formData.get('from_name') as string;
-    setUserName(name);
+        if (!form.current) return;
+        
+        // Save the user's name for the thank you message
+        const formData = new FormData(form.current);
+        const name = formData.get('from_name') as string;
+        setUserName(name);
 
-    emailjs
-        .sendForm(import.meta.env.VITE_EMAILJS_SERVICE_ID, import.meta.env.VITE_EMAILJS_TEMPLATE_ID, form.current, {
-        publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
-        })
-        .then(
-        () => {
-            console.log('SUCCESS!');
-            setEmailSent(true);
-        },
-        (error) => {
-            console.log('FAILED...', error.text);
-        }
-        );
+        emailjs
+            .sendForm(import.meta.env.VITE_EMAILJS_SERVICE_ID, import.meta.env.VITE_EMAILJS_TEMPLATE_ID, form.current, {
+            publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+            })
+            .then(
+            () => {
+                console.log('SUCCESS!');
+                setIsSubmitting(false);
+                setEmailSent(true);
+            },
+            (error) => {
+                console.log('FAILED...', error.text);
+                setIsSubmitting(false);
+            }
+            );
     };
 
     return (
@@ -38,8 +43,8 @@ function Contact() {
             style={{
                 backgroundImage: `
                     url('/assets/background/background_clouds.svg'),
-                    url('/assets/background/background_color_trees.svg'),
-                    url('/assets/background/background_solid_grass.svg')
+                    url('/assets/background/background_color_desert.svg'),
+                    url('/assets/background/background_solid_sand.svg')
                 `,
                 backgroundRepeat: "repeat-x, repeat-x, repeat-x",
                 backgroundPosition: "0 0, 0 40%, 0 100%",
@@ -48,7 +53,9 @@ function Contact() {
             }}
         >
             <div className="flex flex-col items-center mt-8 md:mt-10">
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-pixel text-center">Contact</h1>
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-pixel text-center">
+                    Contact
+                </h1>
                 <p className="text-sm md:text-base lg:text-lg font-serif mt-2 text-gray-700 text-center">
                     Got a quest for me? Let's talk.
                 </p>
@@ -113,13 +120,26 @@ function Contact() {
                         
                         <button 
                             type="submit" 
-                            className="bg-blue-600 hover:bg-blue-700 text-white font-pixel py-2 px-4 rounded mt-2 transition-colors duration-200"
+                            className="bg-blue-600 hover:bg-blue-700 text-white font-pixel py-2 px-4 rounded mt-2 transition-colors duration-200 flex items-center justify-center"
+                            disabled={isSubmitting}
                         >
-                            Send Message
+                            {isSubmitting ? (
+                                <>
+                                    <img 
+                                        src="/assets/other/icon_repeat_outline.png" 
+                                        alt="Loading" 
+                                        className="w-5 h-5 mr-2 animate-spin"
+                                    />
+                                    Sending...
+                                </>
+                            ) : (
+                                'Send Message'
+                            )}
                         </button>
                     </form>
                 )}
             </div> 
+            <ReturnHomeButton />
         </div>
     );
 }
