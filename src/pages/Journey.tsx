@@ -7,6 +7,17 @@ const Journey = () => {
     const scrollTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
     const animationIntervalRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
+    type TimelineEvent = {
+        title: string;
+        subtext: string;
+        image: string;
+        link: {
+            text: string;
+            url: string;
+        };
+    };
+
+
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
         
@@ -49,53 +60,14 @@ const Journey = () => {
     }, [isScrolling]);
 
     // Enhanced timeline events with title, subtext, image, and link
-    const timelineEvents = [
-        {
-            title: "Started learning in 2019",
-            subtext: "My first steps into coding and web development",
-            image: "/assets/journey/learning_start.png",
-            link: {
-                text: "View my first project",
-                url: "/projects/first-steps"
-            }
-        },
-        {
-            title: "Built my first game",
-            subtext: "A simple but addictive puzzle game using JavaScript",
-            image: "/assets/journey/first_game.png",
-            link: {
-                text: "Play the game",
-                url: "/projects/puzzle-game"
-            }
-        },
-        {
-            title: "Entered my first hackathon",
-            subtext: "48 hours of coding, learning, and hardly any sleep",
-            image: "/assets/journey/hackathon.png",
-            link: {
-                text: "See the hackathon project",
-                url: "/projects/hackathon-2021"
-            }
-        },
-        {
-            title: "Made my first AI tool",
-            subtext: "Experimenting with machine learning models and APIs",
-            image: "/assets/journey/ai_tool.png",
-            link: {
-                text: "Check out the AI experiment",
-                url: "/projects/ai-experiment"
-            }
-        },
-        {
-            title: "Discovered React Native",
-            subtext: "Taking my web skills to mobile development",
-            image: "/assets/journey/react_native.png",
-            link: {
-                text: "Download my first app",
-                url: "/projects/first-mobile-app"
-            }
-        }
-    ];
+    const [timelineEvents, setTimelineEvents] = useState<TimelineEvent[]>([]);
+
+    useEffect(() => {
+        fetch('/timelineEvents.json')
+        .then(res => res.json())
+        .then(data => setTimelineEvents(data as TimelineEvent[]))
+        .catch(err => console.error('Failed to load timeline data:', err));
+    }, []);
 
     return (
     <div className="min-h-screen flex flex-col items-center p-4 md:p-8 relative"
@@ -122,7 +94,7 @@ const Journey = () => {
 
         <div className="mt-40">
             <img src="/assets/other/ladder_top.png" className="w-full" />
-            <div className="h-[1792px] bg-[url('/assets/other/ladder_middle.png')] bg-repeat-y w-full" />
+            <div className="h-[2560px] bg-[url('/assets/other/ladder_middle.png')] bg-repeat-y w-full" />
             <img src="/assets/other/ladder_bottom.png" className="w-full" />
 
             <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-none">
@@ -148,11 +120,11 @@ const Journey = () => {
             style={{ top: `${500 + i * 400}px` }}
             >
             <div className="bg-white p-6 rounded-lg shadow-md w-96 inline-block">
-                <div className="flex flex-col items-center mb-4">
+                <div className="flex flex-col items-center">
                     <img 
                         src={event.image} 
                         alt={event.title}
-                        className="w-32 h-32 object-cover rounded-md mb-4" 
+                        className="w-80 h-40 object-cover rounded-md mb-4" 
                     />
                 </div>
                 <h3 className="font-pixel text-lg md:text-xl text-blue-700 mb-2">

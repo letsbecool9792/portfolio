@@ -38,13 +38,14 @@ const Landing = () => {
             </div>
         </div>
 
-        <div className="bg-white rounded-xl overflow-hidden md:col-start-6 md:col-end-9 md:row-start-1 md:row-end-4 row-span-2">
+        <div className="bg-white rounded-xl overflow-hidden max-h-screen md:col-start-6 md:col-end-9 md:row-start-1 md:row-end-4 row-span-2">
             <img 
-            src="/assets/other/pic.png"
-            alt="Suparno Saha" 
-            className="w-full h-full object-cover"
+                src="/assets/other/pic.png"
+                alt="Suparno Saha" 
+                className="w-full h-full object-scale-down block"
             />
         </div>
+
         
         <div className="md:col-start-9 md:col-end-11 md:row-start-1 md:row-end-3 rounded-xl p-6 justify-between"
             style={{

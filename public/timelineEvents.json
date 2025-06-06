@@ -1,0 +1,56 @@
+[
+	{
+	"title": "First Year Wrap & Major Wins",
+	"subtext": "Wrapped up year one with wins at Techtrix and Hackforge.",
+	"image": "/assets/journey/year1_wins.png",
+	"link": {
+		"text": "See the highlights",
+		"url": ""
+	}
+	},
+	{
+	"title": "Hackathon Era Begins",
+	"subtext": "Built Acadz and kept grinding at Hack<N>Pitch and Diversion2k25.",
+	"image": "/assets/journey/hackathon_era.png",
+	"link": {
+		"text": "Explore the hackathon projects",
+		"url": ""
+	}
+	},
+	{
+	"title": "Team XCeption & HackHeritage Setback",
+	"subtext": "Put everything into HackHeritage 2024 but didn’t qualify — still a huge learning curve.",
+	"image": "/assets/journey/hackheritage.png",
+	"link": {
+		"text": "Read about Team XCeption",
+		"url": ""
+	}
+	},
+	{
+	"title": "JEE Grind to HITK",
+	"subtext": "Took a step back from building, cracked JEE, and joined HITK for CSBS.",
+	"image": "/assets/journey/jee_to_hitk.png",
+	"link": {
+		"text": "How I made it here",
+		"url": ""
+	}
+	},
+	{
+	"title": "The Game Dev Phase",
+	"subtext": "Made two games, joined Brackeys Game Jam 2021.2, then built two more with friends.",
+	"image": "/assets/journey/game_dev_phase.png",
+	"link": {
+		"text": "Play the games",
+		"url": "https://letsbecool.itch.io"
+	}
+	},
+	{
+	"title": "The Origin Story",
+	"subtext": "Started coding in class 8, found joy in school-level dev and DSA.",
+	"image": "/assets/journey/dev_origin.png",
+	"link": {
+		"text": "See how it began",
+		"url": ""
+	}
+	}
+]
