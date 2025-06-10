@@ -4,7 +4,7 @@ import emailjs from '@emailjs/browser';
 import { Link } from 'react-router-dom';
 import ReturnHomeButton from '../components/ReturnHomeButton';
 
-function Contact() {
+const Contact = () => {
     const form = useRef<HTMLFormElement | null>(null);
     const [emailSent, setEmailSent] = useState(false);
     const [userName, setUserName] = useState('');

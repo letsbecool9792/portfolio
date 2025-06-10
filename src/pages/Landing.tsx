@@ -103,7 +103,7 @@ const Landing = () => {
         
         <a 
             className="md:col-start-5 md:col-end-9 md:row-start-4 md:row-end-6 row-span-2 p-6 rounded-xl cursor-pointer relative overflow-hidden group"
-            href="/contact"
+            href="/projects"
             style={{
                 backgroundImage: "url('/assets/cards/terrain_stone_block_center.png')",
                 backgroundRepeat: "repeat",
@@ -115,8 +115,8 @@ const Landing = () => {
             <div className="absolute inset-0 bg-gray-600 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
             
             <div className="relative z-10 transform group-hover:translate-y-1 transition-transform duration-300">
-                <h2 className="text-2xl font-pixel">Contact the Adventurer</h2>
-                <p className="text-lg mt-2 text-gray-950 font-serif">Get in touch for collaborations</p>
+                <h2 className="text-2xl font-pixel">View the Relics</h2>
+                <p className="text-lg mt-2 text-gray-950 font-serif">A collection of projects forged across quests, experiments and late-night bug hunts.</p>
             </div>
             
             {/* Arrow that appears on hover */}
