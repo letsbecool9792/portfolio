@@ -75,14 +75,14 @@ const Projects = () => {
                             </div>
                             
                             {/* Content Section */}
-                            <div className="w-8/13 py-2 pl-6 pr-10 flex flex-col justify-center">
+                            <div className="w-8/13 py-2 pl-6 pr-10 flex flex-col justify-center relative">
                                 <h2 className="text-4xl font-pixel2 mb-3 text-black">{proj.title}</h2>
                                 <p className="text-base font-serif text-gray-800 leading-relaxed mb-4">{proj.desc}</p>
                                 <a
                                     href={proj.link}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="relative inline-block w-30 h-10 transition-all ml-42 mt-3 duration-200 group"
+                                    className="absolute bottom-13 right-13 w-30 h-10 transition-all duration-200 group"
                                 >
                                     <img 
                                         src="assets/other/button_rectangle_depth_flat.png" 

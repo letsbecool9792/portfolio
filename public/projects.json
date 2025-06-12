@@ -1,13 +1,13 @@
 [
     {
         "title": "Synapse",
-        "desc": "A platform to streamline academic resources and collaboration.",
+        "desc": "A focused learning app using flashcards and proven memory techniques for busy students.",
         "img": "/assets/projects/synapse.png",
         "link": "https://github.com/Asterisk-Bytes/synapse/"
     },
     {
         "title": "ResQNet",
-        "desc": "A decentralized network for rapid disaster response resource sharing.",
+        "desc": "A unified platform for rapid, coordinated emergency response.",
         "img": "/assets/projects/resqnet.png",
         "link": "https://github.com/frank06n/sudobang_hackforge2025"
     },

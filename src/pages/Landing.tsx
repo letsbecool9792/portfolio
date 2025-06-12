@@ -1,8 +1,12 @@
 import { ArrowUpRight, Github, Linkedin, Twitter } from "lucide-react";
+import { motion } from "motion/react"
 
 const Landing = () => {
+    const sharedAnimate = { opacity: 1, x: 0, y: 0 };
+    const sharedTransition = { duration: 0.8, delay: 1.8, ease: "easeInOut" };
+
     return (
-    <div className="min-h-screen bg-fixed p-4 md:p-8"
+    <div className="h-screen bg-fixed p-4 md:p-8 flex items-center"
         style={{
             backgroundImage: `
                 url('/assets/background/background_clouds.svg'),
@@ -17,8 +21,11 @@ const Landing = () => {
     >
         <div className="grid grid-cols-1 md:grid-cols-10 md:grid-rows-5 gap-4 md:gap-8">
         
-        <div
+        <motion.div
             className="md:col-start-1 md:col-end-6 md:row-start-1 md:row-end-4 row-span-2 p-6 rounded-xl"
+            initial={{ opacity: 0, x: "10%", y: "25%" }}
+            animate={sharedAnimate}
+            transition={sharedTransition}
             style={{
                 backgroundImage: "url('/assets/cards/terrain_snow_block_center.png')",
                 backgroundRepeat: "repeat",
@@ -36,18 +43,44 @@ const Landing = () => {
                 Started my journey in 2019 and haven’t stopped exploring since. From crafting games and diving into hackathons to experimenting with AI and chasing strange side quests—I’ve always followed curiosity. These days, I roam the lands of React and React Native, building whatever the path demands.
                 </p>
             </div>
-        </div>
+        </motion.div>
 
-        <div className="bg-white rounded-xl overflow-hidden max-h-screen md:col-start-6 md:col-end-9 md:row-start-1 md:row-end-4 row-span-2">
+        <motion.div 
+            className="bg-white rounded-xl overflow-hidden max-h-screen md:col-start-6 md:col-end-9 md:row-start-1 md:row-end-4 row-span-2"
+            initial={{ 
+                position: "fixed",
+                top: "50%",
+                left: "50%",
+                x: "-50%",
+                y: "-110%",
+                scale: 0.5,
+            }}
+            animate={{ 
+                position: ["fixed", "static", "static", "static"],
+                x: ["-50%", "-50%", "-50%", "0%"],
+                y: ["-110%", "40%", "40%", "0%"],
+                scale: [0.5, 0.5, 0.5, 1],
+            }}
+            transition={{
+                duration: 2,
+                times: [0, 0.3, 0.7, 1],
+                ease: "easeInOut",
+                delay: 0.5,
+            }}
+            >
             <img 
                 src="/assets/other/pic.png"
                 alt="Suparno Saha" 
                 className="w-full h-full object-scale-down block"
             />
-        </div>
+        </motion.div>
 
         
-        <div className="md:col-start-9 md:col-end-11 md:row-start-1 md:row-end-3 rounded-xl p-6 justify-between"
+        <motion.div 
+            className="md:col-start-9 md:col-end-11 md:row-start-1 md:row-end-3 rounded-xl p-6 justify-between"
+            initial={{ opacity: 0, x: "-50%", y: "40%" }}
+            animate={sharedAnimate}
+            transition={sharedTransition}
             style={{
                 backgroundImage: "url('/assets/cards/water.png')",
                 backgroundRepeat: "repeat",
@@ -73,10 +106,13 @@ const Landing = () => {
             <span className="mr-2 font-serif">View More</span>
             <ArrowUpRight size={16} />
             </a>
-        </div>
+        </motion.div>
         
-        <a
+        <motion.a
             className="md:col-start-1 md:col-end-5 md:row-start-4 md:row-end-6 row-span-2 p-6 rounded-xl cursor-pointer relative overflow-hidden group"
+            initial={{ opacity: 0, x: "30%", y: "-30%" }}
+            animate={sharedAnimate}
+            transition={sharedTransition}
             href='/journey'
             style={{
                 backgroundImage: "url('/assets/cards/terrain_grass_block_center.png')",
@@ -99,10 +135,13 @@ const Landing = () => {
                     <ArrowUpRight size={24} className="text-white" />
                 </div>
             </div>
-        </a>
+        </motion.a>
         
-        <a 
+        <motion.a 
             className="md:col-start-5 md:col-end-9 md:row-start-4 md:row-end-6 row-span-2 p-6 rounded-xl cursor-pointer relative overflow-hidden group"
+            initial={{ opacity: 0, x: "0%", y: "-30%" }}
+            animate={sharedAnimate}
+            transition={sharedTransition}
             href="/projects"
             style={{
                 backgroundImage: "url('/assets/cards/terrain_stone_block_center.png')",
@@ -125,10 +164,13 @@ const Landing = () => {
                     <ArrowUpRight size={24} className="text-white" />
                 </div>
             </div>
-        </a>
+        </motion.a>
         
-        <a 
+        <motion.a 
             className="md:col-start-9 md:col-end-11 md:row-start-3 md:row-end-6 row-span-2 p-6 rounded-xl cursor-pointer relative overflow-hidden group"
+            initial={{ opacity: 0, x: "-50%", y: "-10%" }}
+            animate={sharedAnimate}
+            transition={sharedTransition}
             href='/sidequests'
             style={{
                 backgroundImage: "url('/assets/cards/lava.png')",
@@ -151,7 +193,7 @@ const Landing = () => {
                     <ArrowUpRight size={24} className="text-white" />
                 </div>
             </div>
-        </a>
+        </motion.a>
         </div>   
     </div>
     );
