@@ -58,7 +58,7 @@ const Landing = () => {
             animate={{ 
                 position: ["fixed", "static", "static", "static"],
                 x: ["-50%", "-50%", "-50%", "0%"],
-                y: ["-110%", "40%", "40%", "0%"],
+                y: ["-110%", "30%", "30%", "0%"],
                 scale: [0.5, 0.5, 0.5, 1],
             }}
             transition={{
