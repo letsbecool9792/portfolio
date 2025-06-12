@@ -127,7 +127,7 @@ const Journey = () => {
                         className="w-80 h-40 object-cover rounded-md mb-4" 
                     />
                 </div>
-                <h3 className="font-pixel2 text-lg md:text-xl text-blue-700 mb-2">
+                <h3 className="font-pixel2 text-lg md:text-2xl text-blue-700 mb-2">
                     {event.title}
                 </h3>
                 <p className="font-serif text-sm md:text-base text-gray-600 mb-3">

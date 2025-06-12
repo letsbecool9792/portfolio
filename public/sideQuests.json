@@ -1,0 +1,47 @@
+[
+    {
+        "title": "Monkeytype",
+        "desc": "Trained my fingers to go brrr",
+        "img": "/assets/sidequests/typing.png"
+    },
+    {
+        "title": "ML",
+        "desc": "Discovered ML from a college event, somehow got 3rd in a Kaggle challenge",
+        "img": "/assets/sidequests/ml.png"
+    },
+    {
+        "title": "Minecraft",
+        "desc": "Built worlds, made friends, survived creepers — this game shaped my brain",
+        "img": "/assets/sidequests/minecraft.png"
+    },
+    {
+        "title": "OSINT/CTFs",
+        "desc": "Cracked codes, reversed audio, and found secrets hidden in plain sight",
+        "img": "/assets/sidequests/osint.png"
+    },
+    {
+        "title": "Competitive Programming",
+        "desc": "Got into CP at 2 AM in a cold IIT lab — still can't feel my fingers (and a lot of other CP events)",
+        "img": "/assets/sidequests/cp.png"
+    },
+    {
+        "title": "Pseudoscience R&D",
+        "desc": "Made a theory where memes break AI — it almost made sense, kind of",
+        "img": "/assets/sidequests/memes.png"
+    },
+    {
+        "title": "Hackathon Merch Collector",
+        "desc": "Went to 5+ events just for the T-shirts and stickers. No regrets.",
+        "img": "/assets/sidequests/merch.png"
+    },
+    {
+        "title": "Web3 Dabbler",
+        "desc": "Built a crypto-powered edtech prototype — still don’t fully get wallets",
+        "img": "/assets/sidequests/web3.png"
+    },
+    {
+        "title": "r/Place Soldier",
+        "desc": "Helped hold the line with strangers on the internet — peak human coordination",
+        "img": "/assets/sidequests/rplace.png"
+    }
+]

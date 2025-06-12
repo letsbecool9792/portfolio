@@ -1,0 +1,20 @@
+[
+    {
+        "title": "Synapse",
+        "desc": "A platform to streamline academic resources and collaboration.",
+        "img": "/assets/projects/synapse.png",
+        "link": "https://github.com/Asterisk-Bytes/synapse/"
+    },
+    {
+        "title": "ResQNet",
+        "desc": "A decentralized network for rapid disaster response resource sharing.",
+        "img": "/assets/projects/resqnet.png",
+        "link": "https://github.com/frank06n/sudobang_hackforge2025"
+    },
+    {
+        "title": "NextWeeb",
+        "desc": "Your personalized anime discovery and tracking web app.",
+        "img": "/assets/projects/nextweeb.png",
+        "link": "https://github.com/letsbecool9792/next-weeb"
+    }
+]

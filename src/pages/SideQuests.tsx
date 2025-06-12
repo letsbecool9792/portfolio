@@ -1,6 +1,22 @@
+import { useState, useEffect } from "react";
 import ReturnHomeButton from "../components/ReturnHomeButton";
 
 const SideQuests = () => {
+    type SideQuest = {
+        title: string;
+        desc: string;
+        img: string;
+    };
+
+    const [sideQuests, setSideQuests] = useState<SideQuest[]>([]);
+
+    useEffect(() => {
+        fetch('/sideQuests.json')
+            .then(res => res.json())
+            .then(data => setSideQuests(data as SideQuest[]))
+            .catch(err => console.error('Failed to load side quests data:', err));
+    }, []);
+
     return (
         <div className="min-h-screen flex flex-col items-center p-4 md:p-8 relative"
             style={{
@@ -21,28 +37,7 @@ const SideQuests = () => {
             </div>
 
             <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 z-10">
-                {[
-                    {
-                        title: "Monkeytype",
-                        desc: "Can type somewhat fast ig",
-                        img: "/assets/sidequests/typing.png"
-                    },
-                    {
-                        title: "ML",
-                        desc: "Discovered ML from an event in college, somehow got 3rd in a Kaggle Challenge",
-                        img: "/assets/sidequests/ml.png"
-                    },
-                    {
-                        title: "Minecraft",
-                        desc: "This game changed my life, and shaped me as a person",
-                        img: "/assets/sidequests/minecraft.png"
-                    },
-                    {
-                        title: "OSINT/CTFs",
-                        desc: "These are fun idk",
-                        img: "/assets/sidequests/osint.png"
-                    },
-                ].map((quest, i) => (
+                {sideQuests.map((quest, i) => (
                     <div
                         key={i}
                         className="relative bg-no-repeat bg-cover text-black shadow-xl rounded-xl p-12 max-w-xs h-[460px] w-[320px] font-serif flex flex-col justify-center"
@@ -56,7 +51,6 @@ const SideQuests = () => {
                         <h2 className="text-lg font-bold mb-1">{quest.title}</h2>
                         <p className="text-sm">{quest.desc}</p>
                     </div>
-
                 ))}
             </div>
 

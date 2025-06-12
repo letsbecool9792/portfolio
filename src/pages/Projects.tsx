@@ -1,27 +1,22 @@
+import { useState, useEffect } from "react";
 import ReturnHomeButton from "../components/ReturnHomeButton";
 
 const Projects = () => {
-    // Suggested card dimensions: 512x384px (4:3 aspect ratio). Use Tailwind w-64 (256px) x h-48 (192px) for smaller cards.
-    const projects = [
-    {
-        title: "Synapse",
-        desc: "A platform to streamline academic resources and collaboration.",
-        img: "/assets/projects/acadz.png",
-        link: "https://example.com/acadz"
-    },
-    {
-        title: "ResQNet",
-        desc: "A decentralized network for rapid disaster response resource sharing.",
-        img: "/assets/projects/resqnet.png",
-        link: "https://example.com/resqnet"
-    },
-    {
-        title: "NextWeeb",
-        desc: "Your personalized anime discovery and tracking web app.",
-        img: "/assets/projects/nextweeb.png",
-        link: "https://example.com/nextweeb"
-    }
-    ];
+    type Project = {
+        title: string;
+        desc: string;
+        img: string;
+        link: string;
+    };
+
+    const [projects, setProjects] = useState<Project[]>([]);
+
+    useEffect(() => {
+        fetch('/projects.json')
+            .then(res => res.json())
+            .then(data => setProjects(data as Project[]))
+            .catch(err => console.error('Failed to load projects data:', err));
+    }, []);
 
     return (
     <div
@@ -52,21 +47,27 @@ const Projects = () => {
                         style={{
                             backgroundImage: `url('/assets/other/projects_card.png')`, 
                             imageRendering: 'pixelated',
-                            width: '512px',
-                            height: '256px'
+                            width: '600px',
+                            height: '300px'
                         }}
                     >
                         <div className="flex h-full min-h-[200px]">
                             {/* Image Section */}
                             <div className="w-5/13 pl-10 flex items-center justify-center">
-                                <div className="w-40 h-40 bg-gradient-to-br from-blue-100 to-purple-100 rounded-lg overflow-hidden shadow-md flex items-center justify-center">
+                                <div className="w-50 h-50 bg-gradient-to-br from-blue-100 to-purple-100 rounded-lg overflow-hidden shadow-md flex items-center justify-center">
                                     <img 
                                         src={proj.img} 
                                         alt={proj.title}
-                                        className="w-full h-full object-cover"
+                                        className="w-full h-full object-contain"
                                         onError={(e) => {
                                             const target = e.target as HTMLImageElement;
                                             target.style.display = 'none';
+                                            const span = target.nextElementSibling as HTMLElement;
+                                            if (span) span.style.display = 'block';
+                                        }}
+                                        onLoad={(e) => {
+                                            const span = e.currentTarget.nextElementSibling as HTMLElement;
+                                            if (span) span.style.display = 'none';
                                         }}
                                     />
                                     <span className="text-gray-600 font-serif text-sm">Preview</span>
@@ -74,14 +75,14 @@ const Projects = () => {
                             </div>
                             
                             {/* Content Section */}
-                            <div className="w-8/13 py-2 px-6 flex flex-col justify-center">
+                            <div className="w-8/13 py-2 pl-6 pr-10 flex flex-col justify-center">
                                 <h2 className="text-4xl font-pixel2 mb-3 text-black">{proj.title}</h2>
-                                <p className="text-sm font-serif text-gray-800 leading-relaxed mb-4">{proj.desc}</p>
+                                <p className="text-base font-serif text-gray-800 leading-relaxed mb-4">{proj.desc}</p>
                                 <a
                                     href={proj.link}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="relative inline-block w-30 h-10 transition-all ml-30 duration-200 group"
+                                    className="relative inline-block w-30 h-10 transition-all ml-42 mt-3 duration-200 group"
                                 >
                                     <img 
                                         src="assets/other/button_rectangle_depth_flat.png" 
@@ -94,7 +95,7 @@ const Projects = () => {
                                         className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-200"
                                     />
                                     <span className="absolute inset-0 flex items-center justify-center text-xs font-mono font-semibold text-black pointer-events-none">
-                                        View Project→
+                                        View Project →
                                     </span>
                                 </a>
                             </div>
