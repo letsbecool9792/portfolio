@@ -1,10 +1,12 @@
 import { ArrowUpRight, Github, Linkedin, Twitter } from "lucide-react";
 import { motion } from "motion/react"
+import { useState } from "react";
 import ExternalLink from "../components/ExternalLink";
 
 const Landing = () => {
     const sharedAnimate = { opacity: 1, x: 0, y: 0 };
     const sharedTransition = { duration: 0.8, delay: 1.8, ease: "easeInOut" };
+    const [isHovering, setIsHovering] = useState(false);
 
     return (
     <div className="h-screen bg-fixed p-4 md:p-8 flex items-center"
@@ -73,44 +75,22 @@ const Landing = () => {
             style={{
                 perspective: "1000px",
             }}
+            onMouseEnter={() => setIsHovering(true)}
+            onMouseLeave={() => setIsHovering(false)}
             >
-            <motion.div
-                whileHover={{ rotateY: 180 }}
-                transition={{ duration: 0.6, ease: "easeInOut" }}
-                className="relative w-full h-full rounded-lg"
-                style={{
-                    transformStyle: "preserve-3d",
-                }}
-            >
-                {/* Front Side - Original Image */}
-                <div
-                    className="absolute w-full h-full"
-                    style={{
-                        backfaceVisibility: "hidden",
-                    }}
-                >
-                    <img 
-                        src="/assets/other/pic.png"
-                        alt="Suparno Saha" 
-                        className="w-full h-full object-cover block"
-                    />
-                </div>
-                
-                {/* Back Side - Flipped Image */}
-                <div
-                    className="absolute w-full h-full"
-                    style={{
-                        backfaceVisibility: "hidden",
-                        transform: "rotateY(180deg)",
-                    }}
-                >
-                    <img 
-                        src="/assets/other/pic2.png"
-                        alt="Suparno Saha - Alternative" 
-                        className="w-full h-full object-cover block"
-                    />
-                </div>
-            </motion.div>
+            <motion.img
+            src="/assets/other/pic.png"
+            animate={{ opacity: isHovering ? 0 : 1,  x: isHovering ? "100%" : 0}}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+            className="absolute w-full h-full object-cover"
+            />
+
+            <motion.img
+            src="/assets/other/pic2.png"
+            animate={{ opacity: isHovering ? 1 : "50%", x: isHovering ? 0 : "-100%"}}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+            className="absolute w-full h-full object-cover"
+            />
         </motion.div>
 
         

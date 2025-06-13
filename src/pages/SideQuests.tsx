@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { motion } from "motion/react"
 import ReturnHomeButton from "../components/ReturnHomeButton";
 
 const SideQuests = () => {
@@ -38,19 +39,27 @@ const SideQuests = () => {
 
             <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 z-10">
                 {sideQuests.map((quest, i) => (
-                    <div
+                    <motion.div
                         key={i}
+                        initial={{ opacity: 0, x: 40, rotate: i % 2 === 0 ? 3 : -3 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        whileHover={{ rotate: 0 }}
+                        viewport={{ amount: 0.1 }}
+                        transition={{
+                            opacity: { delay: i % 3 === 0 ? 0.2 : (i % 3 === 1 ? 0.4 : 0.6), duration: 0.7, ease: "easeOut" }, // for whileInView
+                            x: { duration: 0.7, ease: "easeInOut" },       // for whileInView
+                            rotate: { duration: 0.5, ease: "anticipate" },  // for whileHover
+                        }}
                         className="relative bg-no-repeat bg-cover text-black shadow-xl rounded-xl p-12 max-w-xs h-[460px] w-[320px] font-serif flex flex-col justify-center"
                         style={{
                             backgroundImage: `url('/assets/other/cardbg.png')`, 
                             imageRendering: 'crisp-edges',
-                            transform: `rotate(${i % 2 === 0 ? '3deg' : '-3deg'})`,
                         }}
                         >
                         <img src={quest.img} className="w-full h-60 object-cover rounded-md mb-4" />
                         <h2 className="text-lg font-bold mb-1">{quest.title}</h2>
                         <p className="text-sm">{quest.desc}</p>
-                    </div>
+                    </motion.div>
                 ))}
             </div>
 
