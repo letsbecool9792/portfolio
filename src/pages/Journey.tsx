@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import ReturnHomeButton from "../components/ReturnHomeButton";
+import { motion } from "framer-motion";
 
 const Journey = () => {
     const [climbingFrame, setClimbingFrame] = useState('a');
@@ -70,7 +71,7 @@ const Journey = () => {
     }, []);
 
     return (
-    <div className="min-h-screen flex flex-col items-center p-4 md:p-8 relative"
+    <div className="min-h-screen flex flex-col items-center p-4 md:p-8 relative overflow-x-hidden"
         style={{
         backgroundImage: `
             url('/assets/background/background_clouds.svg'),
@@ -111,36 +112,41 @@ const Journey = () => {
 
         <div className="w-full max-w-4xl pt-32 mb-10 z-20">
         {timelineEvents.map((event, i) => (
-            <div
+            <motion.div
             key={i}
+            initial={{ opacity: 0, x: i % 2 === 0 ? 40 : -40}} 
+            whileInView={{ opacity: 1, x: 0 }} 
+            exit={{ opacity: 0, x: i % 2 === 0 ? 40 : -40 }}
+            viewport={{ amount: 0.5 }} 
+            transition={{ duration: 0.7, ease: "easeOut" }}
             className={`
                 w-5/12 absolute
                 ${i % 2 === 0 ? 'left-0 text-right pr-8' : 'right-0 text-left pl-8'}
             `}
             style={{ top: `${500 + i * 400}px` }}
             >
-            <div className="bg-white p-6 rounded-lg shadow-md w-96 inline-block">
-                <div className="flex flex-col items-center">
-                    <img 
-                        src={event.image} 
-                        alt={event.title}
-                        className="w-80 h-40 object-cover rounded-md mb-4" 
-                    />
+                <div className="bg-white p-6 rounded-lg shadow-md w-96 inline-block">
+                    <div className="flex flex-col items-center">
+                        <img 
+                            src={event.image} 
+                            alt={event.title}
+                            className="w-80 h-40 object-cover rounded-md mb-4" 
+                        />
+                    </div>
+                    <h3 className="font-pixel2 text-lg md:text-2xl text-blue-700 mb-2">
+                        {event.title}
+                    </h3>
+                    <p className="font-serif text-sm md:text-base text-gray-600 mb-3">
+                        {event.subtext}
+                    </p>
+                    <a 
+                        href={event.link.url} 
+                        className="font-mono text-sm text-green-600 hover:text-green-800 hover:underline transition-colors"
+                    >
+                        {event.link.text} →
+                    </a>
                 </div>
-                <h3 className="font-pixel2 text-lg md:text-2xl text-blue-700 mb-2">
-                    {event.title}
-                </h3>
-                <p className="font-serif text-sm md:text-base text-gray-600 mb-3">
-                    {event.subtext}
-                </p>
-                <a 
-                    href={event.link.url} 
-                    className="font-mono text-sm text-green-600 hover:text-green-800 hover:underline transition-colors"
-                >
-                    {event.link.text} →
-                </a>
-            </div>
-            </div>
+            </motion.div>
         ))}
         </div>
         <ReturnHomeButton />

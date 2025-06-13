@@ -1,5 +1,6 @@
 import { ArrowUpRight, Github, Linkedin, Twitter } from "lucide-react";
 import { motion } from "motion/react"
+import ExternalLink from "../components/ExternalLink";
 
 const Landing = () => {
     const sharedAnimate = { opacity: 1, x: 0, y: 0 };
@@ -36,17 +37,19 @@ const Landing = () => {
             <div className="p-4">
                 <div className="mb-4">
                 <h1 className="text-5xl md:text-4xl font-pixel">Suparno Saha</h1>
-                <h2 className="text-2xl md:text-2xl font-pixel mt-2 text-gray-700">Software Developer</h2>
+                <h2 className="text-2xl md:text-3xl font-pixel2 mt-2 text-gray-700">Software Developer</h2>
                 </div>
 
                 <p className="text-gray-950 mt-6 mb-6 pr-4 text-lg font-serif">
-                Started my journey in 2019 and haven’t stopped exploring since. From crafting games and diving into hackathons to experimenting with AI and chasing strange side quests—I’ve always followed curiosity. These days, I roam the lands of React and React Native, building whatever the path demands.
+                    <p>Started my journey in 2019 and never looked back.</p>
+                    <p>Built games, joined hackathons, dabbled in AI, and wandered off-trail.</p>
+                    <p>Now crafting in React and React Native—whatever the path demands.</p>
                 </p>
             </div>
         </motion.div>
 
         <motion.div 
-            className="bg-white rounded-xl overflow-hidden max-h-screen md:col-start-6 md:col-end-9 md:row-start-1 md:row-end-4 row-span-2"
+            className="bg-transparent rounded-xl overflow-hidden max-h-screen md:col-start-6 md:col-end-9 md:row-start-1 md:row-end-4 row-span-2"
             initial={{ 
                 position: "fixed",
                 top: "50%",
@@ -67,12 +70,47 @@ const Landing = () => {
                 ease: "easeInOut",
                 delay: 0.5,
             }}
+            style={{
+                perspective: "1000px",
+            }}
             >
-            <img 
-                src="/assets/other/pic.png"
-                alt="Suparno Saha" 
-                className="w-full h-full object-scale-down block"
-            />
+            <motion.div
+                whileHover={{ rotateY: 180 }}
+                transition={{ duration: 0.6, ease: "easeInOut" }}
+                className="relative w-full h-full rounded-lg"
+                style={{
+                    transformStyle: "preserve-3d",
+                }}
+            >
+                {/* Front Side - Original Image */}
+                <div
+                    className="absolute w-full h-full"
+                    style={{
+                        backfaceVisibility: "hidden",
+                    }}
+                >
+                    <img 
+                        src="/assets/other/pic.png"
+                        alt="Suparno Saha" 
+                        className="w-full h-full object-cover block"
+                    />
+                </div>
+                
+                {/* Back Side - Flipped Image */}
+                <div
+                    className="absolute w-full h-full"
+                    style={{
+                        backfaceVisibility: "hidden",
+                        transform: "rotateY(180deg)",
+                    }}
+                >
+                    <img 
+                        src="/assets/other/pic2.png"
+                        alt="Suparno Saha - Alternative" 
+                        className="w-full h-full object-cover block"
+                    />
+                </div>
+            </motion.div>
         </motion.div>
 
         
@@ -91,15 +129,15 @@ const Landing = () => {
             <h2 className="text-lg font-pixel mb-4">See Artifacts</h2>
             
             <div className="flex justify-between items-center mb-3">
-                <a href="https://github.com/letsbecool9792" className="rounded-full bg-rose-200 p-3 hover:bg-rose-300 transition-colors">
+                <ExternalLink href="https://github.com/letsbecool9792" className="rounded-full bg-rose-200 p-3 hover:bg-rose-300 transition-colors">
                     <Github size={20} />
-                </a>
-                <a href="https://www.linkedin.com/in/letsbecool9792" className="rounded-full bg-rose-200 p-3 hover:bg-rose-300 transition-colors">
+                </ExternalLink>
+                <ExternalLink href="https://www.linkedin.com/in/letsbecool9792" className="rounded-full bg-rose-200 p-3 hover:bg-rose-300 transition-colors">
                     <Linkedin size={20} />
-                </a>
-                <a href="https://twitter.com/letsbecool9792" className="rounded-full bg-rose-200 p-3 hover:bg-rose-300 transition-colors">
+                </ExternalLink>
+                <ExternalLink href="https://twitter.com/letsbecool9792" className="rounded-full bg-rose-200 p-3 hover:bg-rose-300 transition-colors">
                     <Twitter size={20} />
-                </a>
+                </ExternalLink>
             </div>
             
             <a href="/artifacts" className="w-full py-2 bg-rose-300 rounded-lg hover:bg-rose-400 transition-colors flex justify-center items-center">
