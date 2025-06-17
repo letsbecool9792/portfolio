@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import ReturnHomeButton from "../components/ReturnHomeButton";
+import { motion } from "framer-motion";
 
 const Projects = () => {
     type Project = {
@@ -41,8 +42,13 @@ const Projects = () => {
         <div className="max-w-4xl mx-auto mt-12 z-10 w-full px-4">
             <div className="space-y-8">
                 {projects.map((proj, i) => (
-                    <div
+                    <motion.div
                         key={i}
+                        initial={{ opacity: 0, y: 40}} 
+                        whileInView={{ opacity: 1, y: 0 }} 
+                        exit={{ opacity: 0, y: 40 }}
+                        viewport={{ amount: 0.3 }} 
+                        transition={{ delay: 0.5, duration: 0.7, ease: "easeOut" }}
                         className="bg-no-repeat bg-cover text-black shadow-lg rounded-xl overflow-hidden w-full mx-auto"
                         style={{
                             backgroundImage: `url('/assets/other/projects_card.png')`, 
@@ -100,7 +106,7 @@ const Projects = () => {
                                 </a>
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
                 ))}
             </div>
         </div>
