@@ -13,6 +13,7 @@ An interactive portfolio site that:
 Built with:
 - **React** + **TypeScript**
 - **Tailwind CSS v4**
+- **Framer Motion**
 - No backend. Just vibes.
 
 ## ✨ Inspiration
