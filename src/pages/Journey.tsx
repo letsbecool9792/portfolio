@@ -89,7 +89,7 @@ const Journey = () => {
             My Developer Journey
         </h1>
         <p className="text-sm md:text-base lg:text-lg font-serif mt-2 text-gray-700 text-center">
-            Climb down the ladder. Trace the path.
+            Climb down the ladder. We’re starting from the latest and going back to where it all began.
         </p>
         </div>
 

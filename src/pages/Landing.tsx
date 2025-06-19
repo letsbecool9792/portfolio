@@ -9,7 +9,7 @@ const Landing = () => {
     const [isHovering, setIsHovering] = useState(false);
 
     return (
-    <div className="h-screen bg-fixed p-4 md:p-8 flex items-center"
+    <div className="h-screen bg-fixed bg-blue-200 p-4 md:p-8 flex items-center"
         style={{
             backgroundImage: `
                 url('/assets/background/background_clouds.svg'),
@@ -22,10 +22,10 @@ const Landing = () => {
             backgroundAttachment: "fixed, fixed, fixed",
         }}
     >
-        <div className="grid grid-cols-1 md:grid-cols-10 md:grid-rows-5 gap-4 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-10 md:grid-rows-5 gap-4 md:gap-8 w-full overflow-y-auto md:overflow-visible max-h-screen md:max-h-none">
         
         <motion.div
-            className="md:col-start-1 md:col-end-6 md:row-start-1 md:row-end-4 row-span-2 p-6 rounded-xl"
+            className="md:col-start-1 md:col-end-6 md:row-start-1 md:row-end-4 row-span-2 p-6 rounded-xl order-1"
             initial={{ opacity: 0, x: "10%", y: "25%" }}
             animate={sharedAnimate}
             transition={sharedTransition}
@@ -38,8 +38,8 @@ const Landing = () => {
             >
             <div className="p-4">
                 <div className="mb-4">
-                <h1 className="text-5xl md:text-4xl font-pixel">Suparno Saha</h1>
-                <h2 className="text-2xl md:text-3xl font-pixel2 mt-2 text-gray-700">Software Developer</h2>
+                <h1 className="text-3xl md:text-4xl font-pixel">Suparno Saha</h1>
+                <h2 className="text-xl md:text-3xl font-pixel2 mt-2 text-gray-700">Software Developer</h2>
                 </div>
 
                 <p className="text-gray-950 mt-6 mb-6 pr-4 text-lg font-serif">
@@ -51,7 +51,7 @@ const Landing = () => {
         </motion.div>
 
         <motion.div 
-            className="bg-transparent rounded-xl overflow-hidden max-h-screen md:col-start-6 md:col-end-9 md:row-start-1 md:row-end-4 row-span-2"
+            className="bg-transparent aspect-square rounded-xl overflow-hidden max-h-screen md:col-start-6 md:col-end-9 md:row-start-1 md:row-end-4 row-span-2 order-2 mx-auto w-64 h-64 md:w-auto md:h-auto md:max-w-none"
             initial={{ 
                 position: "fixed",
                 top: "50%",
@@ -95,7 +95,7 @@ const Landing = () => {
 
         
         <motion.div 
-            className="md:col-start-9 md:col-end-11 md:row-start-1 md:row-end-3 rounded-xl p-6 justify-between"
+            className="md:col-start-9 md:col-end-11 md:row-start-1 md:row-end-3 rounded-xl p-6 justify-between order-3"
             initial={{ opacity: 0, x: "-50%", y: "40%" }}
             animate={sharedAnimate}
             transition={sharedTransition}
@@ -127,7 +127,7 @@ const Landing = () => {
         </motion.div>
         
         <motion.a
-            className="md:col-start-1 md:col-end-5 md:row-start-4 md:row-end-6 row-span-2 p-6 rounded-xl cursor-pointer relative overflow-hidden group"
+            className="md:col-start-1 md:col-end-5 md:row-start-4 md:row-end-6 row-span-2 p-6 rounded-xl cursor-pointer relative overflow-hidden group order-4"
             initial={{ opacity: 0, x: "30%", y: "-30%" }}
             animate={sharedAnimate}
             transition={sharedTransition}
@@ -156,7 +156,7 @@ const Landing = () => {
         </motion.a>
         
         <motion.a 
-            className="md:col-start-5 md:col-end-9 md:row-start-4 md:row-end-6 row-span-2 p-6 rounded-xl cursor-pointer relative overflow-hidden group"
+            className="md:col-start-5 md:col-end-9 md:row-start-4 md:row-end-6 row-span-2 p-6 rounded-xl cursor-pointer relative overflow-hidden group order-5"
             initial={{ opacity: 0, x: "0%", y: "-30%" }}
             animate={sharedAnimate}
             transition={sharedTransition}
@@ -185,7 +185,7 @@ const Landing = () => {
         </motion.a>
         
         <motion.a 
-            className="md:col-start-9 md:col-end-11 md:row-start-3 md:row-end-6 row-span-2 p-6 rounded-xl cursor-pointer relative overflow-hidden group"
+            className="md:col-start-9 md:col-end-11 md:row-start-3 md:row-end-6 row-span-2 p-6 rounded-xl cursor-pointer relative overflow-hidden group order-6"
             initial={{ opacity: 0, x: "-50%", y: "-10%" }}
             animate={sharedAnimate}
             transition={sharedTransition}
