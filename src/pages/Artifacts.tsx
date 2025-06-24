@@ -1,7 +1,7 @@
 import { Twitter, Github, Linkedin, Instagram, Twitch, Youtube } from "lucide-react";
 import ReturnHomeButton from "../components/ReturnHomeButton";
 import ExternalLink from "../components/ExternalLink";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 const socialLinks = [
   { href: "https://github.com/letsbecool9792", icon: <Github className="w-6 h-6 md:w-8 md:h-8" /> },

@@ -16,5 +16,17 @@
         "desc": "Your personalized anime discovery and tracking web app.",
         "img": "/assets/projects/nextweeb.png",
         "link": "https://github.com/letsbecool9792/next-weeb"
+    },
+    {
+        "title": "Supernote",
+        "desc": "Turns raw startup ideas into structured and validated projects using AI and interactive graphs.",
+        "img": "/assets/projects/supernote.png",
+        "link": "https://github.com/arkoroy05/supernote"
+    },
+    {
+        "title": "EchoWall",
+        "desc": "Aggregates content from all your social media platforms into one unified, interactive feed.",
+        "img": "/assets/projects/echowall.png",
+        "link": "https://github.com/sudo-bang/echo-wall"
     }
 ]
