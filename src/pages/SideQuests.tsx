@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { motion } from "motion/react"
+import { motion } from "framer-motion"
 import ReturnHomeButton from "../components/ReturnHomeButton";
 
 const SideQuests = () => {
@@ -33,8 +33,22 @@ const SideQuests = () => {
             }}
         >
             <div className="flex flex-col items-center mt-8 md:mt-10">
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-pixel text-center">SideQuests</h1>
-                <p className="text-sm md:text-base lg:text-lg font-serif mt-2 text-gray-700 text-center">Because sticking to the main path is for NPCs</p>
+                <motion.h1
+                  className="text-3xl md:text-4xl lg:text-5xl font-pixel text-center drop-shadow-lg"
+                  initial={{ scale: 0.7, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ duration: 0.7, type: "spring", stiffness: 200 }}
+                >
+                  SideQuests
+                </motion.h1>
+                <motion.p
+                  className="text-sm md:text-base lg:text-lg font-serif mt-2 text-gray-700 text-center"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2, duration: 0.7 }}
+                >
+                  Because sticking to the main path is for NPCs
+                </motion.p>
             </div>
 
             <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 z-10">
