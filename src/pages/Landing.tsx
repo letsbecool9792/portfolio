@@ -174,6 +174,7 @@ const Landing = () => {
             <div className="relative z-10 transform group-hover:translate-y-1 transition-transform duration-300">
                 <h2 className="text-2xl font-pixel">View the Relics</h2>
                 <p className="text-lg mt-2 text-gray-950 font-serif">A collection of projects forged across quests, experiments and late-night bug hunts.</p>
+                <p className="text-sm mt-2 text-gray-700 font-serif">→ Recruiters start here</p>
             </div>
             
             {/* Arrow that appears on hover */}
