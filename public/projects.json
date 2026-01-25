@@ -1,32 +1,68 @@
 [
     {
-        "title": "Synapse",
-        "desc": "A focused learning app using flashcards and proven memory techniques for busy students.",
-        "img": "/assets/projects/synapse.png",
-        "link": "https://github.com/Asterisk-Bytes/synapse/"
-    },
-    {
-        "title": "ResQNet",
-        "desc": "A unified platform for rapid, coordinated emergency response.",
-        "img": "/assets/projects/resqnet.png",
-        "link": "https://github.com/frank06n/sudobang_hackforge2025"
-    },
-    {
         "title": "NextWeeb",
         "desc": "Your personalized anime discovery and tracking web app.",
         "img": "/assets/projects/nextweeb.png",
-        "link": "https://github.com/letsbecool9792/next-weeb"
+        "modalImg": "/assets/projects/nextweeb_ss.png",
+        "github": "https://github.com/letsbecool9792/next-weeb",
+        "liveLink": "https://next-weeb.vercel.app/",
+        "techStack": ["React", "Vite", "Tailwind CSS", "Django", "Django REST Framework", "MyAnimeList API"],
+        "highlighted": true,
+        "longDesc": "NextWeeb is your ultimate companion for discovering and tracking anime. With intelligent recommendations based on your watch history, season tracking, and a beautiful interface, you'll never miss your next favorite series."
     },
     {
         "title": "Supernote",
         "desc": "Turns raw startup ideas into structured and validated projects using AI and interactive graphs.",
         "img": "/assets/projects/supernote.png",
-        "link": "https://github.com/arkoroy05/supernote"
+        "modalImg": "/assets/projects/supernote_ss.png",
+        "github": "https://github.com/arkoroy05/supernote",
+        "liveLink": "https://supernote-dusky.vercel.app",
+        "techStack": ["React", "Vite", "Tailwind", "Express", "MongoDB Atlas", "Langchain", "Gemini API"],
+        "highlighted": true,
+        "longDesc": "Supernote leverages AI to transform rough startup concepts into comprehensive business plans. Interactive mind maps and validation frameworks help entrepreneurs visualize and refine their ideas before investing time and resources."
+    },
+    {
+        "title": "Synapse",
+        "desc": "A focused learning app using flashcards and proven memory techniques for busy students.",
+        "img": "/assets/projects/synapse.png",
+        "modalImg": "/assets/projects/synapse_ss.png",
+        "github": "https://github.com/Asterisk-Bytes/synapse/",
+        "liveLink": "",
+        "techStack": ["Expo", "React Native", "Gemini API"],
+        "highlighted": true,
+        "longDesc": "Synapse is a comprehensive learning platform designed to help busy students master complex subjects through spaced repetition and active recall. The app features customizable flashcard decks, progress tracking, and adaptive learning algorithms."
+    },
+    {
+        "title": "ResQNet",
+        "desc": "A unified platform for rapid, coordinated emergency response.",
+        "img": "/assets/projects/resqnet.png",
+        "modalImg": "/assets/projects/resqnet_ss.svg",
+        "github": "https://github.com/frank06n/sudobang_hackforge2025",
+        "liveLink": "",
+        "techStack": ["React Native", "Expo", "Node.js", "Express", "Socket.io", "MongoDB Atlas", "Google Maps"],
+        "highlighted": false,
+        "longDesc": "ResQNet revolutionizes emergency response coordination by providing a centralized platform for first responders, emergency services, and civilians. Real-time updates, location tracking, and instant communication help save lives when every second counts."
+    },
+    {
+        "title": "AURA",
+        "desc": "An AI-powered healthcare assistant with medical image analysis, smart health records, and nearby hospital/doctor discovery.",
+        "img": "/assets/projects/aura.png",
+        "modalImg": "/assets/projects/aura_ss.png",
+        "github": "https://github.com/letsbecool9792/aura",
+        "liveLink": "",
+        "techStack": ["React Native", "Expo", "Django", "Gemini API", "Python ML", "Google Maps API"],
+        "highlighted": false,
+        "longDesc": "AURA is a patient-centric healthcare assistant that combines AI diagnostics, a digital health record vault, and real-time hospital/doctor discovery. Users can upload medical data, analyze scans for fractures or brain tumors using ML models, identify medications through image input, and interact with an AI chatbot that explains medical information in simple language."
     },
     {
         "title": "EchoWall",
         "desc": "Aggregates content from all your social media platforms into one unified, interactive feed.",
         "img": "/assets/projects/echowall.png",
-        "link": "https://github.com/sudo-bang/echo-wall"
+        "modalImg": "/assets/projects/echowall.png",
+        "github": "https://github.com/sudo-bang/echo-wall",
+        "liveLink": "",
+        "techStack": ["React", "Vite", "Express", "MongoDB", "Social Media APIs"],
+        "highlighted": false,
+        "longDesc": "EchoWall creates a unified social media experience by aggregating posts, photos, and updates from all your platforms into a single, customizable feed. Save time and stay connected without the constant app-switching."
     }
 ]
