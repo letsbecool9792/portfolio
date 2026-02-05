@@ -15,7 +15,7 @@
         "desc": "Turns raw startup ideas into structured and validated projects using AI and interactive graphs.",
         "img": "/assets/projects/supernote.png",
         "modalImg": "/assets/projects/supernote_ss.png",
-        "github": "https://github.com/arkoroy05/supernote",
+        "github": "https://github.com/letsbecool9792/supernote",
         "liveLink": "https://supernote-dusky.vercel.app",
         "techStack": ["React", "Vite", "Tailwind", "Express", "MongoDB Atlas", "Langchain", "Gemini API"],
         "highlighted": true,
