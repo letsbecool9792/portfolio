@@ -20,4 +20,4 @@ Built with:
 Adventure games. Pixel art. RPGs. Old-school loading screens. The itch to build weird stuff.
 
 ## 🚀 Check it out here!
-[Deployment link](https://suparnosaha.vercel.app/)
+[Deployment link](https://suparno.me/)
