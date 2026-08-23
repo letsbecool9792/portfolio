@@ -169,7 +169,7 @@ const Projects = () => {
 
         {/* View Resume Button */}
         <a
-            href="/resume.pdf"
+            href="/resume"
             target="_blank"
             rel="noopener noreferrer"
             className="fixed bottom-6 right-6 z-50 w-40 h-12 transition-all duration-200 group"
