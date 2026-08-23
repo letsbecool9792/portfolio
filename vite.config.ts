@@ -1,3 +1,4 @@
+import type { IncomingMessage, ServerResponse } from 'node:http'
 import { defineConfig, type Plugin } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
@@ -7,7 +8,7 @@ import tailwindcss from '@tailwindcss/vite'
 const resumeRewrite = (): Plugin => ({
 	name: 'resume-rewrite',
 	configureServer(server) {
-		server.middlewares.use((req, res, next) => {
+		server.middlewares.use((req: IncomingMessage, _res: ServerResponse, next: () => void) => {
 			if (req.url === '/resume') {
 				req.url = '/resume.pdf'
 			}
