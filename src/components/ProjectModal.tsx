@@ -44,7 +44,7 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                     exit={{ scale: 0.9, opacity: 0, y: 20 }}
                     transition={{ type: "spring", stiffness: 300, damping: 30 }}
                     onClick={(e) => e.stopPropagation()}
-                    className="bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden relative flex flex-col"
+                    className="bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90dvh] overflow-hidden relative flex flex-col"
                     style={{
                         backgroundImage: `url('/assets/other/modal_background.png')`,
                         backgroundSize: 'cover',
@@ -61,7 +61,7 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                     </button>
 
                     <div 
-                        className="p-8 md:p-10 overflow-y-auto max-h-[90vh]"
+                        className="p-5 pt-16 md:p-10 md:pt-10 overflow-y-auto max-h-[90dvh]"
                         style={{
                             scrollbarWidth: 'none',
                             msOverflowStyle: 'none'
@@ -77,7 +77,7 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                         </div>
 
                         {/* Title */}
-                        <h2 className="text-4xl md:text-5xl font-pixel2 mb-4 text-black">
+                        <h2 className="text-3xl md:text-5xl font-pixel2 mb-4 text-black">
                             {project.title}
                         </h2>
 
@@ -88,7 +88,7 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
 
                         {/* Long Description */}
                         <div className="mb-6">
-                            <h3 className="text-2xl font-pixel mb-3 text-black">About</h3>
+                            <h3 className="text-lg md:text-2xl font-pixel mb-3 text-black">About</h3>
                             <p className="text-base font-serif text-gray-800 leading-relaxed">
                                 {project.longDesc}
                             </p>
@@ -97,7 +97,7 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                         {/* Tech Stack */}
                         {project.techStack && project.techStack.length > 0 && (
                             <div className="mb-6">
-                                <h3 className="text-2xl font-pixel mb-3 text-black">Tech Stack</h3>
+                                <h3 className="text-lg md:text-2xl font-pixel mb-3 text-black">Tech Stack</h3>
                                 <div className="flex flex-wrap gap-2">
                                     {project.techStack.map((tech, idx) => (
                                         <span 

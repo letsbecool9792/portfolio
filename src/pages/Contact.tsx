@@ -3,6 +3,7 @@ import type { FormEvent } from 'react';
 import emailjs from '@emailjs/browser';
 import { Link } from 'react-router-dom';
 import ReturnHomeButton from '../components/ReturnHomeButton';
+import PageBackground from '../components/PageBackground';
 
 const Contact = () => {
     const form = useRef<HTMLFormElement | null>(null);
@@ -39,21 +40,10 @@ const Contact = () => {
     };
 
     return (
-        <div className="min-h-screen flex flex-col items-center p-4 md:p-8 relative"
-            style={{
-                backgroundImage: `
-                    url('/assets/background/background_clouds.svg'),
-                    url('/assets/background/background_color_desert.svg'),
-                    url('/assets/background/background_solid_sand.svg')
-                `,
-                backgroundRepeat: "repeat-x, repeat-x, repeat-x",
-                backgroundPosition: "0 0, 0 40%, 0 100%",
-                backgroundSize: "auto 33%, auto 33%, auto 100%",
-                backgroundAttachment: "fixed, fixed, fixed",
-            }}
-        >
+        <div className="min-h-screen flex flex-col items-center p-4 pb-28 md:p-8 relative">
+            <PageBackground variant="desert" />
             <div className="flex flex-col items-center mt-8 md:mt-10">
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-pixel text-center">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-pixel text-center">
                     Contact
                 </h1>
                 <p className="text-sm md:text-base lg:text-lg font-serif mt-2 text-gray-700 text-center">
@@ -71,7 +61,7 @@ const Contact = () => {
                 </Link>
             </div>
 
-            <div className="w-full max-w-md mt-20 bg-white bg-opacity-90 rounded-lg shadow-lg p-6 md:p-8">
+            <div className="w-full max-w-md mt-10 md:mt-20 bg-white/90 rounded-lg shadow-lg p-6 md:p-8">
                 {emailSent ? (
                     <div className="flex flex-col items-center text-center">
                         <div className="text-5xl mb-4">✉️</div>

@@ -11,7 +11,7 @@ const ReturnHomeButton = () => {
         <img
             src="/assets/other/sign_exit.png"
             alt="Return Home"
-            className="w-30 h-30 hover:scale-110 transition-transform duration-200"
+            className="w-20 h-20 md:w-30 md:h-30 hover:scale-110 transition-transform duration-200"
             style={{imageRendering: "crisp-edges"}}
         />
         </button>
