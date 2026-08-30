@@ -28,7 +28,10 @@ const Artifacts = () => {
     const enter = isMobile ? false : "hidden";
 
     return (
-    <div className="relative flex min-h-screen flex-col items-center overflow-x-clip p-4 pb-28 md:h-dvh md:min-h-0 md:overflow-hidden md:p-6 md:pb-32">
+    // The bottom padding only exists to clear the fixed EXIT sign. Once the grid
+    // is narrow enough to be centred with wide margins the sign sits beside it,
+    // so xl reclaims that space for card height instead.
+    <div className="relative flex min-h-screen flex-col items-center overflow-x-clip p-4 pb-28 md:h-dvh md:min-h-0 md:overflow-hidden md:p-6 md:pb-24 xl:pb-10">
         <PageBackground />
 
         <motion.div
@@ -46,7 +49,7 @@ const Artifacts = () => {
         </motion.div>
 
         <motion.div
-            className="mt-6 grid w-full max-w-6xl grid-cols-1 gap-3 md:min-h-0 md:flex-1 md:grid-cols-12 md:grid-rows-6 md:gap-4"
+            className="mt-6 grid w-full max-w-5xl grid-cols-1 gap-3 md:mt-4 md:min-h-0 md:flex-1 md:grid-cols-12 md:grid-rows-6 md:gap-4"
             variants={gridVariants}
             initial={enter}
             animate="visible"
@@ -76,14 +79,17 @@ const Artifacts = () => {
                 icon={<Youtube size={16} />}
                 color={ACCENTS.youtube}
                 href={PROFILES.youtube}
-                className="md:col-span-4 md:col-start-1 md:row-span-3 md:row-start-4"
+                // Narrower than before on purpose: a 16:9 thumbnail's height is set
+                // by its width, so trimming a column is what lets the full frame fit
+                // in the row height available.
+                className="md:col-span-3 md:col-start-1 md:row-span-3 md:row-start-4"
             >
                 <LatestVideo />
             </ArtifactPanel>
 
             <motion.div
                 variants={gridVariants}
-                className="grid grid-cols-3 gap-3 md:col-span-8 md:col-start-5 md:row-span-3 md:row-start-4 md:grid-rows-2 md:gap-4"
+                className="grid grid-cols-3 gap-3 md:col-span-9 md:col-start-4 md:row-span-3 md:row-start-4 md:grid-rows-2 md:gap-4"
             >
                 <ArtifactPanel
                     title="TWITTER"

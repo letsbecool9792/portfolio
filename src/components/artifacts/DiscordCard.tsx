@@ -71,7 +71,9 @@ const DiscordCard = () => {
 
     return (
         <div className="flex h-full min-h-0 flex-col items-center justify-center gap-2 text-center text-white">
-            <div className="relative h-20 w-20 shrink-0">
+            {/* Sized as the decoration frame; the avatar sits at 76% inside it, which
+                is roughly the ratio Discord itself uses. */}
+            <div className="relative h-32 w-32 shrink-0">
                 {presence.avatarUrl && (
                     <img
                         src={presence.avatarUrl}
