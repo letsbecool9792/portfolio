@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
 import ExternalLink from "./ExternalLink";
-import InlineText from "./InlineText";
+import RoleModal from "./RoleModal";
 import type { Role, ShippedProduct } from "../content/experience";
 import { useExperience } from "../content/experience";
 import { useIsMobile } from "../hooks/useIsMobile";
@@ -44,7 +45,13 @@ const ProductTile = ({ product }: { product: ShippedProduct }) => (
     </div>
 );
 
-const RoleCard = ({ role, isMobile }: { role: Role; isMobile: boolean }) => (
+type RoleCardProps = {
+    role: Role;
+    isMobile: boolean;
+    onSelect: (role: Role) => void;
+};
+
+const RoleCard = ({ role, isMobile, onSelect }: RoleCardProps) => (
     <motion.article
         initial={isMobile ? false : { opacity: 0, y: 32 }}
         animate={{ opacity: 1, y: 0 }}
@@ -75,14 +82,6 @@ const RoleCard = ({ role, isMobile }: { role: Role; isMobile: boolean }) => (
             </div>
         )}
 
-        <ul className="mt-5 ml-5 list-disc space-y-2.5 font-serif text-sm leading-relaxed text-gray-800 marker:text-blue-600 sm:text-base">
-            {role.highlights.map((highlight, i) => (
-                <li key={i}>
-                    <InlineText text={highlight} />
-                </li>
-            ))}
-        </ul>
-
         <div className="mt-5 flex flex-wrap gap-2">
             {role.stack.map(tech => (
                 <span
@@ -93,6 +92,29 @@ const RoleCard = ({ role, isMobile }: { role: Role; isMobile: boolean }) => (
                 </span>
             ))}
         </div>
+
+        {/* The highlights live behind this rather than on the card, so a list of
+            roles stays scannable — same treatment the relics get. */}
+        {role.highlights.length > 0 && (
+            <button
+                onClick={() => onSelect(role)}
+                className="group relative mt-5 h-12 w-44 transition-all duration-200"
+            >
+                <img
+                    src="/assets/other/button_rectangle_depth_flat.png"
+                    alt=""
+                    className="absolute inset-0 h-full w-full object-fill transition-opacity duration-200 group-hover:opacity-0"
+                />
+                <img
+                    src="/assets/other/button_rectangle_depth_gloss.png"
+                    alt=""
+                    className="absolute inset-0 h-full w-full object-fill opacity-0 transition-opacity duration-200 group-hover:opacity-100"
+                />
+                <span className="pointer-events-none absolute inset-0 flex items-center justify-center font-mono text-sm font-semibold text-black">
+                    What I did →
+                </span>
+            </button>
+        )}
     </motion.article>
 );
 
@@ -104,6 +126,7 @@ const RoleCard = ({ role, isMobile }: { role: Role; isMobile: boolean }) => (
 const ExperienceSection = () => {
     const roles = useExperience();
     const isMobile = useIsMobile();
+    const [selectedRole, setSelectedRole] = useState<Role | null>(null);
 
     if (roles.length === 0) return null;
 
@@ -120,9 +143,16 @@ const ExperienceSection = () => {
             </motion.h2>
             <div className="flex flex-col gap-6">
                 {roles.map(role => (
-                    <RoleCard key={`${role.company}-${role.role}`} role={role} isMobile={isMobile} />
+                    <RoleCard
+                        key={`${role.company}-${role.role}`}
+                        role={role}
+                        isMobile={isMobile}
+                        onSelect={setSelectedRole}
+                    />
                 ))}
             </div>
+
+            <RoleModal role={selectedRole} onClose={() => setSelectedRole(null)} />
         </section>
     );
 };
