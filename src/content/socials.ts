@@ -12,7 +12,10 @@ export const PROFILES = {
     discord: `https://discordapp.com/users/${DISCORD_ID}`,
     instagram: "https://www.instagram.com/letsbecool9792",
     twitch: "https://www.twitch.tv/letsbecool9792",
-    bluesky: "https://bsky.app/profile/letsbecool.bsky.social",
+    // The handle is the domain itself, verified by a _atproto TXT record. The
+    // old letsbecool.bsky.social handle was released when this was set and no
+    // longer resolves.
+    bluesky: "https://bsky.app/profile/suparno.me",
     itch: "https://letsbecool.itch.io",
 };
 
