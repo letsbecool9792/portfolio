@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
-import type { TimelineEvent } from "../../content/journey";
+import { Link } from "react-router-dom";
+import type { JourneyEntry } from "../../content/journey";
 
 const pixelated = { imageRendering: "pixelated" } as const;
 
 type JourneyMobileProps = {
-    events: TimelineEvent[];
+    events: JourneyEntry[];
     spriteSrc: string;
 };
 
@@ -57,12 +58,12 @@ const JourneyMobile = ({ events, spriteSrc }: JourneyMobileProps) => (
                     />
                     <h2 className="font-pixel2 text-xl text-blue-700">{event.title}</h2>
                     <p className="mt-1 font-serif text-sm text-gray-600">{event.subtext}</p>
-                    <a
-                        href={event.link.url}
+                    <Link
+                        to={`/journey/${event.slug}`}
                         className="mt-3 inline-block font-mono text-sm text-green-600 underline-offset-2 transition-colors active:text-green-800 active:underline"
                     >
-                        {event.link.text} →
-                    </a>
+                        {event.linkText} →
+                    </Link>
                 </motion.li>
             ))}
         </ol>

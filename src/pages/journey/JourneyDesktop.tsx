@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import type { TimelineEvent } from "../../content/journey";
+import { Link } from "react-router-dom";
+import type { JourneyEntry } from "../../content/journey";
 
 /**
  * Card placement is hand-tuned absolute positioning against the page container,
@@ -14,7 +15,7 @@ const BASE_LADDER_HEIGHT = 2560;
 const BASE_EVENT_COUNT = 6;
 
 type JourneyDesktopProps = {
-    events: TimelineEvent[];
+    events: JourneyEntry[];
     spriteSrc: string;
 };
 
@@ -82,12 +83,12 @@ const JourneyDesktop = ({ events, spriteSrc }: JourneyDesktopProps) => {
                             <p className="font-serif text-sm md:text-base text-gray-600 mb-3">
                                 {event.subtext}
                             </p>
-                            <a
-                                href={event.link.url}
+                            <Link
+                                to={`/journey/${event.slug}`}
                                 className="font-mono text-sm text-green-600 hover:text-green-800 hover:underline transition-colors"
                             >
-                                {event.link.text} →
-                            </a>
+                                {event.linkText} →
+                            </Link>
                         </div>
                     </motion.div>
                 ))}

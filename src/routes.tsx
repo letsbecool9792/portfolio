@@ -7,6 +7,7 @@ import Landing from './pages/Landing'
 const Artifacts = lazy(() => import('./pages/Artifacts'))
 const Contact = lazy(() => import('./pages/Contact'))
 const Journey = lazy(() => import('./pages/Journey'))
+const JourneyStory = lazy(() => import('./pages/JourneyStory'))
 const SideQuests = lazy(() => import('./pages/SideQuests'))
 const Projects = lazy(() => import('./pages/Projects'))
 const NotFound = lazy(() => import('./pages/NotFound'))
@@ -21,6 +22,7 @@ const AppRoutes = () => {
                 <Route path="/artifacts" element={<Artifacts />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/journey" element={<Journey />} />
+                <Route path="/journey/:slug" element={<JourneyStory />} />
                 <Route path="/sidequests" element={<SideQuests />} />
                 <Route path="/projects" element={<Projects />} />
                 <Route path="*" element={<NotFound />} />

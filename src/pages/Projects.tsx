@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import ReturnHomeButton from "../components/ReturnHomeButton";
 import ProjectModal from "../components/ProjectModal";
 import PageBackground from "../components/PageBackground";
+import ExperienceSection from "../components/ExperienceSection";
 import { backgroundStyle } from "../styles/background";
 import { useProjects, type Project } from "../content/projects";
 import { useIsMobile } from "../hooks/useIsMobile";
@@ -40,6 +41,8 @@ const Projects = () => {
               A journey through my development adventures
             </motion.p>
         </div>
+
+        <ExperienceSection />
 
         {isMobile ? (
             <ProjectsMobile highlighted={highlighted} regular={regular} onSelect={setSelectedProject} />

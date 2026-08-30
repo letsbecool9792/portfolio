@@ -33,6 +33,17 @@
         "longDesc": "Synapse is a comprehensive learning platform designed to help busy students master complex subjects through spaced repetition and active recall. The app features customizable flashcard decks, progress tracking, and adaptive learning algorithms."
     },
     {
+        "title": "Calcutta Collective",
+        "desc": "A location-first PWA that turns city discovery into small, real-world hangouts.",
+        "img": "/assets/projects/calcuttacollective.jpg",
+        "modalImg": "/assets/projects/calcuttacollective_ss.png",
+        "github": "https://github.com/letsbecool9792/CalcuttaCollective",
+        "liveLink": "https://calcutta-collective.vercel.app/",
+        "techStack": ["React 18", "TypeScript", "Vite", "Tailwind CSS v4", "React Router", "Leaflet", "OpenStreetMap", "Node.js", "Express"],
+        "highlighted": false,
+        "longDesc": "Cities are full of people, and yet urban loneliness keeps rising — everyone saves cafés they never visit. The problem isn't a lack of information, it's a lack of activation, so Calcutta Collective is built around closing that gap. Discovery is map-driven rather than list-driven, hangouts cap at 5–8 people so they feel intimate rather than like an event, and hosts approve join requests so a group chat can break the ice before anyone shows up. Afterwards, reflections feed back into the discovery loop. Built solo as a competition product and pitched at BPlan @ Kshitij 2025 (IIT Kharagpur) and the Hult Prize 2025 campus round."
+    },
+    {
         "title": "ResQNet",
         "desc": "A unified platform for rapid, coordinated emergency response.",
         "img": "/assets/projects/resqnet.png",

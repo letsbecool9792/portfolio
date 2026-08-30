@@ -57,6 +57,7 @@ MAX_EDGE_RULES: list[tuple[str, int]] = [
     ("projects/", 1400),                 # modal hero image
     ("journey/", 900),                    # timeline card image
     ("sidequests/", 800),                 # side quest card image
+    ("experience/", 192),                # shipped-app icon, shown ~72px
 ]
 
 # Above this many distinct colours an image is treated as photographic, so an

@@ -1,0 +1,51 @@
+[
+    {
+        "company": "Unencumbered Interactive Pvt Ltd",
+        "role": "Software Engineering Intern",
+        "period": "Mar 2026 – Aug 2026",
+        "location": "Remote",
+        "summary": "One of two engineers on a consumer social app, owning all native Android code, analytics, and most of the React Native frontend — then the sole owner of a second, fully native Android product.",
+        "highlights": [
+            "Shipped **yap** (React Native / Expo) to both the App Store and Play Store — **16.6k users** at **30.3% Day-7 retention**.",
+            "Built the crash-reporting and performance-tracing layer (Sentry v8 native linkage, custom sampler, per-stage upload spans) and root-caused **~20 production crash classes**; user-perceived crash rate fell from a **9.28% peak to 1.45%**.",
+            "Wrote Kotlin native modules via Expo Native Modules, including a from-scratch notification layer that works around Android's immutable notification channels with versioned channel IDs while keeping RNFirebase deep linking intact.",
+            "Owned Amplitude instrumentation across both products, giving zero-instrumentation apps their first behavioural data layer: fixed **12 event-tracking bugs** and moved tracking state from refs to Redux/MMKV, structurally eliminating a stale-closure bug class.",
+            "Sole owner of the Android app for **iykyk** (Kotlin / Compose, CameraX, Media3), building an audio scoring engine that runs a second AudioRecord stream alongside CameraX capture (one RMS float per 50ms frame) to rank moments by room-relative energy without re-decoding video; rewrote its decode fallback non-blocking, **6.3s to 3.7s** per 30s of audio.",
+            "Owned video and graphics work across both apps: a WebGL filter-test harness with a `.cube` 3D-LUT parser and custom fragment shader running at **60fps**, so filters could be iterated on without cutting a mobile build, plus a Compose Stories-style clip viewer on a continuously-buffered ExoPlayer playlist."
+        ],
+        "stack": [
+            "React Native",
+            "Expo",
+            "Kotlin",
+            "Jetpack Compose",
+            "CameraX",
+            "Media3 / ExoPlayer",
+            "TypeScript",
+            "Redux",
+            "Sentry",
+            "Amplitude",
+            "WebGL"
+        ],
+        "products": [
+            {
+                "name": "yap",
+                "tagline": "texting sucks, just yap — 10-second video messages, 1-on-1 or in a group.",
+                "icon": "/assets/experience/yap.png",
+                "links": [
+                    { "label": "Site", "url": "https://justyap.in" },
+                    { "label": "Play Store", "url": "https://play.google.com/store/apps/details?id=com.uipl.videocamerachat" },
+                    { "label": "App Store", "url": "https://apps.apple.com/in/app/yap-group-chat-on-video/id6756683477" }
+                ]
+            },
+            {
+                "name": "iykyk",
+                "tagline": "never be bored with friends — a pass-the-phone party game that films the chaos as you play.",
+                "icon": "/assets/experience/iykyk.jpg",
+                "links": [
+                    { "label": "Site", "url": "https://playiykyk.in" },
+                    { "label": "Play Store", "url": "https://play.google.com/store/apps/details?id=com.iykyk.app" }
+                ]
+            }
+        ]
+    }
+]
