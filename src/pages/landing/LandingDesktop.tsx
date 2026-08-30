@@ -2,6 +2,7 @@ import { ArrowUpRight, Github, Linkedin, Twitter } from "lucide-react";
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 import ExternalLink from "../../components/ExternalLink";
+import { INTRO, NAME, TITLE } from "../../content/about";
 import { backgroundStyle } from "../../styles/background";
 
 // The entrance runs from 0.5s to 2.5s and the cards land at 2.6s. The hover
@@ -47,20 +48,23 @@ const LandingDesktop = () => {
             >
             <div className="p-4">
                 <div className="mb-4">
-                <h1 className="text-3xl md:text-4xl font-pixel">Suparno Saha</h1>
-                <h2 className="text-xl md:text-3xl font-pixel2 mt-2 text-gray-700">Software Developer</h2>
+                <h1 className="text-3xl md:text-4xl font-pixel">{NAME}</h1>
+                <h2 className="text-xl md:text-3xl font-pixel2 mt-2 text-gray-700">{TITLE}</h2>
                 </div>
 
-                <div className="text-gray-950 mt-6 mb-6 pr-4 text-lg font-serif">
-                    <p>Started my journey in 2019 and never looked back.</p>
-                    <p>Built games, joined hackathons, dabbled in AI, and wandered off-trail.</p>
-                    <p>Now crafting in React and React Native—whatever the path demands.</p>
+                <div className="text-gray-950 mt-6 mb-6 pr-4 text-lg font-serif space-y-1">
+                    {INTRO.map(line => (
+                        <p key={line}>{line}</p>
+                    ))}
                 </div>
             </div>
         </motion.div>
 
         <motion.div
-            className="bg-transparent aspect-square rounded-xl overflow-hidden max-h-screen md:col-start-6 md:col-end-9 md:row-start-1 md:row-end-4 row-span-2 order-2 mx-auto w-64 h-64 md:w-auto md:h-auto md:max-w-none"
+            // No `overflow-hidden` here: clipping an ancestor of a `preserve-3d`
+            // subtree can flatten it in Safari and kill the flip. The faces carry
+            // their own rounding instead.
+            className="bg-transparent aspect-square rounded-xl max-h-screen md:col-start-6 md:col-end-9 md:row-start-1 md:row-end-4 row-span-2 order-2 mx-auto w-64 h-64 md:w-auto md:h-auto md:max-w-none"
             initial={{
                 position: "fixed",
                 top: "50%",
@@ -89,32 +93,39 @@ const LandingDesktop = () => {
             onMouseEnter={() => introDone && setIsHovering(true)}
             onMouseLeave={() => setIsHovering(false)}
             >
-            <motion.img
-            src="/assets/other/pic.jpg"
-            alt="Suparno Saha"
-            decoding="async"
-            animate={{ opacity: isHovering ? 0 : 1,  x: isHovering ? "100%" : 0}}
-            transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="absolute w-full h-full object-cover"
-            />
+            {/* Flips like a card rather than sliding. The container already carried
+                `perspective`, so the two photos are just the front and back face of
+                one rotating plane — `backface-visibility` hides whichever is turned
+                away, so no cross-fade is needed. */}
+            <motion.div
+                className="relative h-full w-full"
+                initial={false}
+                animate={{ rotateY: isHovering ? 180 : 0 }}
+                transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                style={{ transformStyle: "preserve-3d" }}
+            >
+                <img
+                    src="/assets/other/pic.jpg"
+                    alt="Suparno Saha"
+                    decoding="async"
+                    className="absolute inset-0 h-full w-full rounded-xl object-cover"
+                    style={{ backfaceVisibility: "hidden" }}
+                />
 
-            {/* Mounted only once the entrance is over (or if hovered sooner), so its
-                fetch and decode can't compete with the animation for the main thread. */}
-            {(introDone || isHovering) && (
-            <motion.img
-            src="/assets/other/pic4.jpg"
-            alt=""
-            decoding="async"
-            fetchPriority="low"
-            // Mounting late means there's no prior state to animate from, so without
-            // this it starts visible at x:0 and slides itself out. `false` renders the
-            // resting state directly; hover still animates normally afterwards.
-            initial={false}
-            animate={{ opacity: isHovering ? 1 : "50%", x: isHovering ? 0 : "-100%"}}
-            transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="absolute w-full h-full object-cover"
-            />
-            )}
+                {/* Mounted only once the entrance is over, so its fetch and decode
+                    can't compete with the animation for the main thread. Hover is
+                    blocked until then anyway, so the back face is never missing. */}
+                {introDone && (
+                    <img
+                        src="/assets/other/pic4.jpg"
+                        alt=""
+                        decoding="async"
+                        fetchPriority="low"
+                        className="absolute inset-0 h-full w-full rounded-xl object-cover"
+                        style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
+                    />
+                )}
+            </motion.div>
         </motion.div>
 
 

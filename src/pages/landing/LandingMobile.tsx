@@ -3,6 +3,7 @@ import { motion } from "motion/react";
 import { useState } from "react";
 import ExternalLink from "../../components/ExternalLink";
 import PageBackground from "../../components/PageBackground";
+import { INTRO, NAME, TITLE } from "../../content/about";
 
 // Touch has no hover, so the portrait swap is bound to a tap instead. Both are
 // rendered stacked and cross-faded so neither flashes while loading.
@@ -55,12 +56,12 @@ const LandingMobile = () => {
         <PageBackground />
 
         <section className="rounded-xl p-6" style={tile("terrain_snow_block_center")}>
-            <h1 className="font-pixel text-2xl">Suparno Saha</h1>
-            <h2 className="mt-2 font-pixel2 text-xl text-gray-700">Software Developer</h2>
+            <h1 className="font-pixel text-2xl">{NAME}</h1>
+            <h2 className="mt-2 font-pixel2 text-xl text-gray-700">{TITLE}</h2>
             <div className="mt-4 space-y-1 font-serif text-base text-gray-950">
-                <p>Started my journey in 2019 and never looked back.</p>
-                <p>Built games, joined hackathons, dabbled in AI, and wandered off-trail.</p>
-                <p>Now crafting in React and React Native—whatever the path demands.</p>
+                {INTRO.map(line => (
+                    <p key={line}>{line}</p>
+                ))}
             </div>
         </section>
 
