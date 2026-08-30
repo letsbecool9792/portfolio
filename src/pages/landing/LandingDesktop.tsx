@@ -1,13 +1,24 @@
 import { ArrowUpRight, Github, Linkedin, Twitter } from "lucide-react";
 import { motion } from "motion/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ExternalLink from "../../components/ExternalLink";
 import { backgroundStyle } from "../../styles/background";
+
+// The entrance runs from 0.5s to 2.5s and the cards land at 2.6s. The hover
+// portrait is held back until after that: it's a 3072x3072 PNG (~36 MB once
+// decoded), and decoding it mid-flight was stalling the animation.
+const INTRO_MS = 2700;
 
 const LandingDesktop = () => {
     const sharedAnimate = { opacity: 1, x: 0, y: 0 };
     const sharedTransition = { duration: 0.8, delay: 1.8, ease: "easeInOut" };
     const [isHovering, setIsHovering] = useState(false);
+    const [introDone, setIntroDone] = useState(false);
+
+    useEffect(() => {
+        const timer = setTimeout(() => setIntroDone(true), INTRO_MS);
+        return () => clearTimeout(timer);
+    }, []);
 
     return (
     <div className="h-screen bg-fixed bg-blue-200 p-4 md:p-8 flex items-center"
@@ -72,18 +83,29 @@ const LandingDesktop = () => {
             <motion.img
             src="/assets/other/pic.png"
             alt="Suparno Saha"
+            decoding="async"
             animate={{ opacity: isHovering ? 0 : 1,  x: isHovering ? "100%" : 0}}
             transition={{ duration: 0.5, ease: "easeInOut" }}
             className="absolute w-full h-full object-cover"
             />
 
+            {/* Mounted only once the entrance is over (or if hovered sooner), so its
+                fetch and decode can't compete with the animation for the main thread. */}
+            {(introDone || isHovering) && (
             <motion.img
             src="/assets/other/pic2.png"
             alt=""
+            decoding="async"
+            fetchPriority="low"
+            // Mounting late means there's no prior state to animate from, so without
+            // this it starts visible at x:0 and slides itself out. `false` renders the
+            // resting state directly; hover still animates normally afterwards.
+            initial={false}
             animate={{ opacity: isHovering ? 1 : "50%", x: isHovering ? 0 : "-100%"}}
             transition={{ duration: 0.5, ease: "easeInOut" }}
             className="absolute w-full h-full object-cover"
             />
+            )}
         </motion.div>
 
 

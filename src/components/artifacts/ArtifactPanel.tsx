@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import type { ReactNode } from "react";
 
@@ -12,12 +13,28 @@ type ArtifactPanelProps = {
 };
 
 /**
+ * Each slot drops into place on arrival. No `initial`/`animate` here on purpose —
+ * the labels are inherited from the grid, so the page decides whether the
+ * entrance runs at all (it's skipped on mobile).
+ */
+const panelVariants = {
+    hidden: { opacity: 0, scale: 0.9, y: 18 },
+    visible: {
+        opacity: 1,
+        scale: 1,
+        y: 0,
+        transition: { type: "spring" as const, stiffness: 280, damping: 22 },
+    },
+};
+
+/**
  * One slot in the artifact inventory. The whole card carries the platform colour
  * rather than a white body with a coloured header, so nine of them read as a set
  * of inventory items instead of a wall of paper.
  */
 const ArtifactPanel = ({ title, icon, color, href, className = "", children }: ArtifactPanelProps) => (
-    <a
+    <motion.a
+        variants={panelVariants}
         href={href}
         target="_blank"
         rel="noopener noreferrer"
@@ -42,7 +59,7 @@ const ArtifactPanel = ({ title, icon, color, href, className = "", children }: A
                 <span className="text-center font-pixel text-[10px] leading-tight">{title}</span>
             </div>
         )}
-    </a>
+    </motion.a>
 );
 
 export default ArtifactPanel;

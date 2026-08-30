@@ -7,19 +7,33 @@ import ContributionGraph from "../components/artifacts/ContributionGraph";
 import DiscordCard from "../components/artifacts/DiscordCard";
 import LatestVideo from "../components/artifacts/LatestVideo";
 import { ACCENTS, PROFILES } from "../content/socials";
+import { useIsMobile } from "../hooks/useIsMobile";
+
+// Slots fill in one after another, like an inventory being populated. The nested
+// tile block carries the same variants so the cascade continues through it
+// instead of stopping at a plain wrapper.
+const gridVariants = {
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.06, delayChildren: 0.2 } },
+};
 
 /**
  * Desktop is a fixed 12x6 bento sized to the viewport so the whole inventory is
  * visible without scrolling; below `md` the same cards stack and the page scrolls
  * normally. Every placement class is `md:`-prefixed so mobile ignores the grid.
  */
-const Artifacts = () => (
+const Artifacts = () => {
+    const isMobile = useIsMobile();
+    // Mobile skips the entrance entirely and renders the cards settled.
+    const enter = isMobile ? false : "hidden";
+
+    return (
     <div className="relative flex min-h-screen flex-col items-center overflow-x-clip p-4 pb-28 md:h-dvh md:min-h-0 md:overflow-hidden md:p-6 md:pb-32">
         <PageBackground />
 
         <motion.div
             className="flex shrink-0 flex-col items-center"
-            initial={{ opacity: 0, y: -20 }}
+            initial={isMobile ? false : { opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
         >
@@ -33,9 +47,9 @@ const Artifacts = () => (
 
         <motion.div
             className="mt-6 grid w-full max-w-6xl grid-cols-1 gap-3 md:min-h-0 md:flex-1 md:grid-cols-12 md:grid-rows-6 md:gap-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.12, duration: 0.5 }}
+            variants={gridVariants}
+            initial={enter}
+            animate="visible"
         >
             <ArtifactPanel
                 title="GITHUB"
@@ -67,7 +81,10 @@ const Artifacts = () => (
                 <LatestVideo />
             </ArtifactPanel>
 
-            <div className="grid grid-cols-3 gap-3 md:col-span-8 md:col-start-5 md:row-span-3 md:row-start-4 md:grid-rows-2 md:gap-4">
+            <motion.div
+                variants={gridVariants}
+                className="grid grid-cols-3 gap-3 md:col-span-8 md:col-start-5 md:row-span-3 md:row-start-4 md:grid-rows-2 md:gap-4"
+            >
                 <ArtifactPanel
                     title="TWITTER"
                     icon={<Twitter size={26} />}
@@ -112,11 +129,12 @@ const Artifacts = () => (
                     color={ACCENTS.itch}
                     href={PROFILES.itch}
                 />
-            </div>
+            </motion.div>
         </motion.div>
 
         <ReturnHomeButton />
     </div>
-);
+    );
+};
 
 export default Artifacts;

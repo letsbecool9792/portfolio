@@ -3,16 +3,31 @@ import type { Project } from "../../content/projects";
 
 type ProjectCardProps = {
     proj: Project;
+    index: number;
     onSelect: (project: Project) => void;
+};
+
+// Relics surfacing: each card is dug up from below with a slight tilt that
+// settles, staggered so they arrive one after another rather than all at once.
+const cardVariants = {
+    hidden: { opacity: 0, y: 48, scale: 0.94, rotate: -1.5 },
+    visible: (index: number) => ({
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        rotate: 0,
+        transition: { delay: index * 0.1, duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+    }),
 };
 
 // Hoisted out of the page component: defining it inline remounted every card on
 // each render, restarting their entrance animations.
-const ProjectCard = ({ proj, onSelect }: ProjectCardProps) => (
+const ProjectCard = ({ proj, index, onSelect }: ProjectCardProps) => (
     <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.4, ease: "easeOut" }}
+        variants={cardVariants}
+        custom={index}
+        initial="hidden"
+        animate="visible"
         className="bg-no-repeat bg-cover text-black shadow-lg rounded-xl overflow-hidden cursor-pointer"
         style={{
             backgroundImage: `url('/assets/other/projects_card.png')`,
@@ -90,8 +105,8 @@ const ProjectsDesktop = ({ highlighted, regular, onSelect }: ProjectsDesktopProp
                     Highlight Projects
                 </motion.h2>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    {highlighted.map(proj => (
-                        <ProjectCard key={proj.title} proj={proj} onSelect={onSelect} />
+                    {highlighted.map((proj, i) => (
+                        <ProjectCard key={proj.title} proj={proj} index={i} onSelect={onSelect} />
                     ))}
                 </div>
             </div>
@@ -108,8 +123,15 @@ const ProjectsDesktop = ({ highlighted, regular, onSelect }: ProjectsDesktopProp
                     Other Projects
                 </motion.h2>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    {regular.map(proj => (
-                        <ProjectCard key={proj.title} proj={proj} onSelect={onSelect} />
+                    {regular.map((proj, i) => (
+                        // Offset so the second section continues the cascade instead of
+                        // restarting it while the first is still arriving.
+                        <ProjectCard
+                            key={proj.title}
+                            proj={proj}
+                            index={highlighted.length + i}
+                            onSelect={onSelect}
+                        />
                     ))}
                 </div>
             </div>

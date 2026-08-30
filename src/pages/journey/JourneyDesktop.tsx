@@ -25,16 +25,32 @@ const JourneyDesktop = ({ events, spriteSrc }: JourneyDesktopProps) => {
     return (
         <>
             <div className="mt-40">
-                <img src="/assets/other/ladder_top.png" alt="" className="w-full" />
-                <div
-                    className="bg-[url('/assets/other/ladder_middle.png')] bg-repeat-y w-full"
-                    style={{ height: `${ladderHeight}px` }}
-                />
-                <img src="/assets/other/ladder_bottom.png" alt="" className="w-full" />
+                {/* The ladder unrolls downwards on arrival, so the page opens with the
+                    descent the copy promises. Kept as its own wrapper because a
+                    transform on an ancestor would turn the fixed sprite below into an
+                    absolutely positioned one and strand it mid-page. */}
+                <motion.div
+                    initial={{ scaleY: 0 }}
+                    animate={{ scaleY: 1 }}
+                    transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1], delay: 0.35 }}
+                    style={{ transformOrigin: "top" }}
+                >
+                    <img src="/assets/other/ladder_top.png" alt="" className="w-full" />
+                    <div
+                        className="bg-[url('/assets/other/ladder_middle.png')] bg-repeat-y w-full"
+                        style={{ height: `${ladderHeight}px` }}
+                    />
+                    <img src="/assets/other/ladder_bottom.png" alt="" className="w-full" />
+                </motion.div>
 
-                <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-none">
+                <motion.div
+                    className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-none"
+                    initial={{ opacity: 0, y: -60 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, ease: "easeOut", delay: 1.2 }}
+                >
                     <img src={spriteSrc} alt="" className="w-32 h-32" />
-                </div>
+                </motion.div>
             </div>
 
             <div className="w-full max-w-4xl pt-32 mb-10 z-20">
