@@ -2,9 +2,118 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Suparno Saha | LetsBeCool</title>
+
+		<title>Suparno Saha (letsbecool9792) — Software Developer</title>
+		<meta name="description" content="Suparno Saha, known online as letsbecool9792 — software and game developer from Kolkata. CSBS student at Heritage Institute of Technology." />
+		<meta name="robots" content="index, follow, max-image-preview:large" />
+
+		<!-- Google won't show a favicon beside a search result unless it's a
+		     multiple of 48px; the old 16x16-only .ico got a generic globe.
+		     All three are exact integer upscales of the same pixel art. -->
+		<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48" />
+		<link rel="icon" type="image/png" href="/favicon-96.png" sizes="96x96" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+		<!-- Social scrapers (X, LinkedIn, Discord, Slack, WhatsApp) never execute
+		     JavaScript, so share-card tags have to live in the shell — anything
+		     React renders is invisible to them.
+
+		     Deliberately no og:url and no rel=canonical: this one file is served
+		     for every route, so either tag would tell crawlers that /journey,
+		     /projects and the rest are all canonically the homepage. Both become
+		     per-route tags once the routes are prerendered. -->
+		<meta property="og:type" content="profile" />
+		<meta property="og:site_name" content="Suparno Saha" />
+		<meta property="og:title" content="Suparno Saha (letsbecool9792) — Software Developer" />
+		<meta property="og:description" content="Software and game developer from Kolkata. Kotlin, Compose and React Native by day; hackathons, game jams and pixel art the rest of the time." />
+		<meta property="og:image" content="https://suparno.me/og.png" />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:image:alt" content="Suparno Saha, letsbecool9792 — software developer" />
+		<meta property="og:locale" content="en_US" />
+		<meta property="profile:first_name" content="Suparno" />
+		<meta property="profile:last_name" content="Saha" />
+		<meta property="profile:username" content="letsbecool9792" />
+
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:site" content="@letsbecool9792" />
+		<meta name="twitter:creator" content="@letsbecool9792" />
+
+		<!-- The entity payload. At least four other people share the name
+		     "Suparno Saha" on higher-authority domains, so the job here isn't
+		     keywords — it's telling Google *which* one this is. `sameAs` is what
+		     does that: every profile listed below links back to suparno.me, and
+		     the pair of links is what turns the claim into a confirmed identity.
+
+		     Profile URLs are duplicated from src/content/socials.ts on purpose —
+		     structured data has to be in the served HTML, and a build step that
+		     rewrote index.html would make it a generated file. Change one, change
+		     the other. -->
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@graph": [
+				{
+					"@type": "Person",
+					"@id": "https://suparno.me/#person",
+					"name": "Suparno Saha",
+					"alternateName": ["letsbecool9792", "letsbecool", "LetsBeCool"],
+					"url": "https://suparno.me/",
+					"image": "https://suparno.me/og.png",
+					"jobTitle": "Software Developer",
+					"description": "Software and game developer from Kolkata, India. Android in Kotlin and Jetpack Compose, cross-platform in React Native, games in Unity and Godot.",
+					"homeLocation": {
+						"@type": "Place",
+						"name": "Kolkata, West Bengal, India"
+					},
+					"affiliation": {
+						"@type": "CollegeOrUniversity",
+						"name": "Heritage Institute of Technology",
+						"url": "https://www.heritageit.edu/",
+						"sameAs": "https://en.wikipedia.org/wiki/Heritage_Institute_of_Technology"
+					},
+					"knowsAbout": [
+						"Android development",
+						"Kotlin",
+						"Jetpack Compose",
+						"React Native",
+						"React",
+						"TypeScript",
+						"Django",
+						"Game development",
+						"Unity",
+						"Pixel art"
+					],
+					"sameAs": [
+						"https://github.com/letsbecool9792",
+						"https://www.linkedin.com/in/letsbecool9792",
+						"https://x.com/letsbecool9792",
+						"https://www.youtube.com/@letsbecool9792",
+						"https://www.instagram.com/letsbecool9792",
+						"https://www.twitch.tv/letsbecool9792",
+						"https://bsky.app/profile/letsbecool.bsky.social",
+						"https://letsbecool.itch.io",
+						"https://leetcode.com/u/letsbecool/",
+						"https://www.kaggle.com/letsbecool",
+						"https://devfolio.co/@letsbecool",
+						"https://discord.com/users/672367440977592350"
+					]
+				},
+				{
+					"@type": "WebSite",
+					"@id": "https://suparno.me/#website",
+					"url": "https://suparno.me/",
+					"name": "Suparno Saha",
+					"alternateName": ["letsbecool9792", "suparno.me"],
+					"description": "The personal site and developer portfolio of Suparno Saha (letsbecool9792).",
+					"inLanguage": "en",
+					"publisher": { "@id": "https://suparno.me/#person" },
+					"copyrightHolder": { "@id": "https://suparno.me/#person" }
+				}
+			]
+		}
+		</script>
 	</head>
 	<body>
 		<div id="root"></div>

@@ -24,3 +24,6 @@ dist-ssr
 *.sw?
 
 .env
+
+# Fonts pulled down by scripts/generate_og.py — refetched on demand.
+scripts/.fonts

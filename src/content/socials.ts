@@ -1,3 +1,6 @@
+// These URLs are also listed in the Person `sameAs` block in index.html, which
+// has to be in the served HTML rather than rendered by React. Changing a handle
+// means changing it in both places.
 export const GITHUB_USERNAME = "letsbecool9792";
 export const DISCORD_ID = "672367440977592350";
 

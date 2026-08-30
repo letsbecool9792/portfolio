@@ -1,0 +1,13 @@
+# https://suparno.me
+#
+# This file has to exist as a real file: vercel.json rewrites everything that
+# isn't on disk to the SPA shell, so a missing robots.txt was being served as
+# HTML with a 200.
+
+User-agent: *
+Allow: /
+
+# The YouTube edge function — JSON with nothing to index.
+Disallow: /api/
+
+Sitemap: https://suparno.me/sitemap.xml
