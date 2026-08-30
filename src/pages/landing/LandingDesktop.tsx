@@ -28,7 +28,10 @@ const LandingDesktop = () => {
     <div className="h-screen overflow-x-clip bg-fixed bg-blue-200 p-4 md:p-8 flex items-center"
         style={{ ...backgroundStyle("grass"), backgroundAttachment: "fixed, fixed, fixed" }}
     >
-        <div className="grid grid-cols-1 md:grid-cols-10 md:grid-rows-5 gap-4 md:gap-8 w-full overflow-y-auto md:overflow-visible max-h-screen md:max-h-none">
+        {/* Nothing is interactive until the entrance settles: cards are still
+            sliding into place, so a click would land on a card that isn't where it
+            appears to be, and the portrait would swap mid-flight. */}
+        <div className={`grid grid-cols-1 md:grid-cols-10 md:grid-rows-5 gap-4 md:gap-8 w-full overflow-y-auto md:overflow-visible max-h-screen md:max-h-none ${introDone ? "" : "pointer-events-none"}`}>
 
         <motion.div
             className="md:col-start-1 md:col-end-6 md:row-start-1 md:row-end-4 row-span-2 p-6 rounded-xl order-1"
@@ -81,7 +84,9 @@ const LandingDesktop = () => {
             style={{
                 perspective: "1000px",
             }}
-            onMouseEnter={() => setIsHovering(true)}
+            // Guarded as well as blocked by pointer-events above, so the swap can
+            // never fire early if that container's classes change.
+            onMouseEnter={() => introDone && setIsHovering(true)}
             onMouseLeave={() => setIsHovering(false)}
             >
             <motion.img
