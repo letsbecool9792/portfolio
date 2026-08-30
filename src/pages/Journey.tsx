@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import ReturnHomeButton from "../components/ReturnHomeButton";
-import { useJourney } from "../content/journey";
+import { JOURNEY } from "../content/journey";
 import { useClimbAnimation } from "../hooks/useClimbAnimation";
 import { useIsMobile } from "../hooks/useIsMobile";
 import PageBackground from "../components/PageBackground";
@@ -14,7 +14,7 @@ import JourneyMobile from "./journey/JourneyMobile";
  * the copy has one home.
  */
 const Journey = () => {
-    const events = useJourney();
+    const events = JOURNEY;
     const isMobile = useIsMobile();
     const spriteSrc = useClimbAnimation();
 

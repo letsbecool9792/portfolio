@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import data from "./journey.json";
 
 /** One bullet, optionally with a nested sub-list. Text supports inline `[label](url)`. */
 export type StoryListItem = string | { text: string; items: string[] };
@@ -30,39 +30,15 @@ export type JourneyEntry = {
     blocks: StoryBlock[];
 };
 
-// The timeline and the story pages read the same file, so navigating between
-// them shouldn't refetch it. The promise is shared rather than the result, so
-// two components mounting in the same tick still make one request.
-let cached: Promise<JourneyEntry[]> | null = null;
-
-const loadJourney = () =>
-    (cached ??= fetch("/journey.json")
-        .then(res => res.json() as Promise<JourneyEntry[]>)
-        .catch(err => {
-            console.error("Failed to load journey data:", err);
-            cached = null; // let a later mount retry
-            return [];
-        }));
-
 /**
  * Single source of truth for journey content — newest entry first. Shared by
  * both Journey layouts and by the individual story pages.
+ *
+ * Resolved at build time rather than fetched, so the prerendered HTML carries
+ * the prose instead of a loading state. The JSON's `blocks` widen to `string`
+ * on import, so the cast is what re-applies the closed block union.
  */
-export const useJourney = () => {
-    const [entries, setEntries] = useState<JourneyEntry[]>([]);
-
-    useEffect(() => {
-        let active = true;
-        loadJourney().then(data => {
-            if (active) setEntries(data);
-        });
-        return () => {
-            active = false;
-        };
-    }, []);
-
-    return entries;
-};
+export const JOURNEY = data as JourneyEntry[];
 
 export type StoryContext = {
     entry: JourneyEntry;
@@ -74,24 +50,17 @@ export type StoryContext = {
     next?: JourneyEntry;
 };
 
-/**
- * Resolves one story plus its neighbours. `undefined` while loading, `null` when
- * the slug matches nothing — the two need different handling (spinner vs 404).
- */
-export const useJourneyStory = (slug?: string): StoryContext | null | undefined => {
-    const entries = useJourney();
-
-    if (entries.length === 0) return undefined;
-
-    const index = entries.findIndex(entry => entry.slug === slug);
+/** Resolves one story plus its neighbours. `null` when the slug matches nothing. */
+export const journeyStory = (slug?: string): StoryContext | null => {
+    const index = JOURNEY.findIndex(entry => entry.slug === slug);
     if (index === -1) return null;
 
     // The file is newest-first; chapter numbers count from the oldest.
     return {
-        entry: entries[index],
-        chapter: entries.length - index,
-        total: entries.length,
-        previous: entries[index + 1],
-        next: entries[index - 1],
+        entry: JOURNEY[index],
+        chapter: JOURNEY.length - index,
+        total: JOURNEY.length,
+        previous: JOURNEY[index + 1],
+        next: JOURNEY[index - 1],
     };
 };

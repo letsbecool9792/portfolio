@@ -7,7 +7,7 @@ Three jobs, in order:
 1. Correct extensions. Several files are JPEGs or WebPs named `.png`. Browsers
    sniff the bytes so nothing visibly breaks, but Vercel sets `Content-Type`
    from the extension, so they are served mislabelled. Renamed files have their
-   references rewritten across src/ and public/*.json.
+   references rewritten across src/ (including the content JSON).
 
 2. Correct resolutions. Most images are stored far larger than they are ever
    displayed (a 3072px portrait shown at ~300px). Each is capped at roughly 2x
@@ -67,7 +67,7 @@ PHOTO_COLOR_THRESHOLD = 10_000
 JPEG_QUALITY = 82
 
 # Files whose contents reference asset paths and may need rewriting after a rename.
-REFERENCE_GLOBS = ("src/**/*.ts", "src/**/*.tsx", "src/**/*.css", "public/*.json")
+REFERENCE_GLOBS = ("src/**/*.ts", "src/**/*.tsx", "src/**/*.css", "src/content/*.json")
 
 EXT_FOR_FORMAT = {"JPEG": ".jpg", "PNG": ".png", "WEBP": ".webp", "GIF": ".gif"}
 

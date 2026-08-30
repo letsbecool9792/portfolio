@@ -3,7 +3,7 @@ import { useState } from "react";
 import ExternalLink from "./ExternalLink";
 import RoleModal from "./RoleModal";
 import type { Role, ShippedProduct } from "../content/experience";
-import { useExperience } from "../content/experience";
+import { EXPERIENCE } from "../content/experience";
 import { useIsMobile } from "../hooks/useIsMobile";
 import { PANEL_BEVEL, PANEL_BORDER, frame, panelSurface } from "../styles/panel";
 
@@ -124,7 +124,7 @@ const RoleCard = ({ role, isMobile, onSelect }: RoleCardProps) => (
  * the entrance animation is gated.
  */
 const ExperienceSection = () => {
-    const roles = useExperience();
+    const roles = EXPERIENCE;
     const isMobile = useIsMobile();
     const [selectedRole, setSelectedRole] = useState<Role | null>(null);
 

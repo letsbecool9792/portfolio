@@ -5,13 +5,14 @@ import ProjectModal from "../components/ProjectModal";
 import PageBackground from "../components/PageBackground";
 import ExperienceSection from "../components/ExperienceSection";
 import { backgroundStyle } from "../styles/background";
-import { useProjects, type Project } from "../content/projects";
+import { HIGHLIGHTED_PROJECTS, OTHER_PROJECTS, type Project } from "../content/projects";
 import { useIsMobile } from "../hooks/useIsMobile";
 import ProjectsDesktop from "./projects/ProjectsDesktop";
 import ProjectsMobile from "./projects/ProjectsMobile";
 
 const Projects = () => {
-    const { highlighted, regular } = useProjects();
+    const highlighted = HIGHLIGHTED_PROJECTS;
+    const regular = OTHER_PROJECTS;
     const [selectedProject, setSelectedProject] = useState<Project | null>(null);
     const isMobile = useIsMobile();
 

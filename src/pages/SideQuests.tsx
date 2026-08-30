@@ -1,24 +1,9 @@
-import { useState, useEffect } from "react";
 import { motion } from "framer-motion"
 import ReturnHomeButton from "../components/ReturnHomeButton";
 import PageBackground from "../components/PageBackground";
+import { SIDE_QUESTS } from "../content/sideQuests";
 
 const SideQuests = () => {
-    type SideQuest = {
-        title: string;
-        desc: string;
-        img: string;
-    };
-
-    const [sideQuests, setSideQuests] = useState<SideQuest[]>([]);
-
-    useEffect(() => {
-        fetch('/sideQuests.json')
-            .then(res => res.json())
-            .then(data => setSideQuests(data as SideQuest[]))
-            .catch(err => console.error('Failed to load side quests data:', err));
-    }, []);
-
     return (
         <div className="min-h-screen flex flex-col items-center p-4 pb-28 md:p-8 relative">
             <PageBackground />
@@ -42,7 +27,7 @@ const SideQuests = () => {
             </div>
 
             <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 z-10">
-                {sideQuests.map((quest, i) => (
+                {SIDE_QUESTS.map((quest, i) => (
                     <motion.div
                         key={i}
                         initial={{ opacity: 0, x: 40, rotate: i % 2 === 0 ? 3 : -3 }}

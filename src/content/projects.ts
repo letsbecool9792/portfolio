@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import data from "./projects.json";
 
 export type Project = {
     title: string;
@@ -13,18 +13,8 @@ export type Project = {
 };
 
 /** Single source of truth for project content, shared by both Projects layouts. */
-export const useProjects = () => {
-    const [projects, setProjects] = useState<Project[]>([]);
+export const PROJECTS = data as Project[];
 
-    useEffect(() => {
-        fetch('/projects.json')
-            .then(res => res.json())
-            .then(data => setProjects(data as Project[]))
-            .catch(err => console.error('Failed to load projects data:', err));
-    }, []);
-
-    return useMemo(() => ({
-        highlighted: projects.filter(p => p.highlighted),
-        regular: projects.filter(p => !p.highlighted),
-    }), [projects]);
-};
+/** The `highlighted` flag splits the page into Highlight and Other sections. */
+export const HIGHLIGHTED_PROJECTS = PROJECTS.filter(project => project.highlighted);
+export const OTHER_PROJECTS = PROJECTS.filter(project => !project.highlighted);

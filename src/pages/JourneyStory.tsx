@@ -1,10 +1,10 @@
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import { motion } from "framer-motion";
 import { Link, useParams } from "react-router-dom";
 import PageBackground from "../components/PageBackground";
 import ReturnHomeButton from "../components/ReturnHomeButton";
 import StoryBody from "../components/StoryBody";
-import { useJourneyStory, type JourneyEntry } from "../content/journey";
+import { journeyStory, type JourneyEntry } from "../content/journey";
 import { useIsMobile } from "../hooks/useIsMobile";
 import { PANEL_BEVEL, PANEL_BORDER, PARCHMENT, frame } from "../styles/panel";
 
@@ -56,7 +56,9 @@ const ChapterLink = ({
  */
 const JourneyStory = () => {
     const { slug } = useParams<{ slug: string }>();
-    const story = useJourneyStory(slug);
+    // Memoised for referential stability — the lookup builds a fresh object each
+    // call, which would otherwise re-fire the title effect on every render.
+    const story = useMemo(() => journeyStory(slug), [slug]);
     const isMobile = useIsMobile();
 
     // Chapter-to-chapter links keep the scroll position otherwise, dropping the
@@ -78,9 +80,7 @@ const JourneyStory = () => {
         <div className="relative flex min-h-screen flex-col items-center overflow-x-clip p-4 pb-32 md:p-8">
             <PageBackground />
 
-            {story === undefined ? (
-                <p className="mt-32 font-pixel text-sm text-gray-700">Loading the chapter…</p>
-            ) : story === null ? (
+            {story === null ? (
                 <div className="mt-32 flex flex-col items-center gap-4 text-center">
                     <img
                         src="/assets/other/character_pink_idle.png"

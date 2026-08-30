@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import data from "./experience.json";
 
 export type ShippedProduct = {
     name: string;
@@ -20,15 +20,4 @@ export type Role = {
 };
 
 /** Single source of truth for professional experience, newest role first. */
-export const useExperience = () => {
-    const [roles, setRoles] = useState<Role[]>([]);
-
-    useEffect(() => {
-        fetch('/experience.json')
-            .then(res => res.json())
-            .then(data => setRoles(data as Role[]))
-            .catch(err => console.error('Failed to load experience data:', err));
-    }, []);
-
-    return roles;
-};
+export const EXPERIENCE = data as Role[];

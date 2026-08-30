@@ -26,7 +26,7 @@ const STATIC_ROUTES = [
     '/contact',
 ]
 
-const journey = JSON.parse(await readFile(join(ROOT, 'public/journey.json'), 'utf8'))
+const journey = JSON.parse(await readFile(join(ROOT, 'src/content/journey.json'), 'utf8'))
 const paths = [...STATIC_ROUTES, ...journey.map(entry => `/journey/${entry.slug}`)]
 
 // No <lastmod>: no content here carries a real modification date yet, and Google
