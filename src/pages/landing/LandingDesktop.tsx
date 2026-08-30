@@ -5,8 +5,8 @@ import ExternalLink from "../../components/ExternalLink";
 import { backgroundStyle } from "../../styles/background";
 
 // The entrance runs from 0.5s to 2.5s and the cards land at 2.6s. The hover
-// portrait is held back until after that: it's a 3072x3072 PNG (~36 MB once
-// decoded), and decoding it mid-flight was stalling the animation.
+// portrait is held back until after that so its fetch and decode can't compete
+// with the animation for the main thread.
 const INTRO_MS = 2700;
 
 const LandingDesktop = () => {
@@ -21,7 +21,11 @@ const LandingDesktop = () => {
     }, []);
 
     return (
-    <div className="h-screen bg-fixed bg-blue-200 p-4 md:p-8 flex items-center"
+    // `overflow-x-clip` because the entrance transforms (x: 10%/30%/-110%) push
+    // cards outside the container mid-flight, and transforms still extend the
+    // scrollable area even though they don't affect layout. `clip` rather than
+    // `hidden` so this never becomes a scroll container.
+    <div className="h-screen overflow-x-clip bg-fixed bg-blue-200 p-4 md:p-8 flex items-center"
         style={{ ...backgroundStyle("grass"), backgroundAttachment: "fixed, fixed, fixed" }}
     >
         <div className="grid grid-cols-1 md:grid-cols-10 md:grid-rows-5 gap-4 md:gap-8 w-full overflow-y-auto md:overflow-visible max-h-screen md:max-h-none">
@@ -81,7 +85,7 @@ const LandingDesktop = () => {
             onMouseLeave={() => setIsHovering(false)}
             >
             <motion.img
-            src="/assets/other/pic.png"
+            src="/assets/other/pic.jpg"
             alt="Suparno Saha"
             decoding="async"
             animate={{ opacity: isHovering ? 0 : 1,  x: isHovering ? "100%" : 0}}
@@ -93,7 +97,7 @@ const LandingDesktop = () => {
                 fetch and decode can't compete with the animation for the main thread. */}
             {(introDone || isHovering) && (
             <motion.img
-            src="/assets/other/pic2.png"
+            src="/assets/other/pic4.jpg"
             alt=""
             decoding="async"
             fetchPriority="low"

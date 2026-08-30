@@ -30,7 +30,7 @@ const ProjectCard = ({ proj, index, onSelect }: ProjectCardProps) => (
         animate="visible"
         className="bg-no-repeat bg-cover text-black shadow-lg rounded-xl overflow-hidden cursor-pointer"
         style={{
-            backgroundImage: `url('/assets/other/projects_card.png')`,
+            backgroundImage: `url('/assets/other/projects_card.jpg')`,
             imageRendering: 'pixelated',
             width: '600px',
             height: '300px'

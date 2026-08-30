@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import type { Project } from "../../content/projects";
 
 /**
- * The desktop card art (`projects_card.png`) is a fixed 2:1 frame, so it can
+ * The desktop card art (`projects_card.jpg`) is a fixed 2:1 frame, so it can
  * neither stretch nor crop onto a tall single-column card. These are the same
  * colours sampled out of that frame, redrawn in CSS so the panel works at any
  * height — and without pulling a 1.5 MB PNG over mobile data.

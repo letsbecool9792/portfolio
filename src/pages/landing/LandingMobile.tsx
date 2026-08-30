@@ -1,6 +1,12 @@
-import { ArrowUpRight, Github, Linkedin, Twitter } from "lucide-react";
+import { ArrowUpRight, Github, Linkedin, Repeat2, Twitter } from "lucide-react";
+import { motion } from "motion/react";
+import { useState } from "react";
 import ExternalLink from "../../components/ExternalLink";
 import PageBackground from "../../components/PageBackground";
+
+// Touch has no hover, so the portrait swap is bound to a tap instead. Both are
+// rendered stacked and cross-faded so neither flashes while loading.
+const PORTRAITS = ["/assets/other/pic.jpg", "/assets/other/pic4.jpg"];
 
 const tile = (texture: string) => ({
     backgroundImage: `url('/assets/cards/${texture}.png')`,
@@ -36,10 +42,12 @@ const navCards = [
  * here on purpose: it animates from `position: fixed` into a grid slot, which
  * has nothing to settle into once the grid is a single column.
  *
- * The hover portrait swap is dropped too — touch can't trigger it, and the
- * alternate image is by far the heaviest asset on the site.
+ * The hover portrait swap becomes a tap instead, since touch has no hover.
  */
-const LandingMobile = () => (
+const LandingMobile = () => {
+    const [portrait, setPortrait] = useState(0);
+
+    return (
     // No background colour here: it would paint over PageBackground's fixed layer.
     // `overflow-x-clip` (not `hidden`) keeps stray width from scrolling the page
     // sideways without turning this into a scroll container.
@@ -56,11 +64,29 @@ const LandingMobile = () => (
             </div>
         </section>
 
-        <img
-            src="/assets/other/pic.png"
-            alt="Suparno Saha"
-            className="aspect-square w-full rounded-xl object-cover"
-        />
+        <button
+            type="button"
+            onClick={() => setPortrait(current => (current + 1) % PORTRAITS.length)}
+            aria-label="Show a different photo"
+            className="relative aspect-square w-full overflow-hidden rounded-xl"
+        >
+            {PORTRAITS.map((src, i) => (
+                <motion.img
+                    key={src}
+                    src={src}
+                    alt={i === 0 ? "Suparno Saha" : ""}
+                    decoding="async"
+                    initial={false}
+                    animate={{ opacity: portrait === i ? 1 : 0 }}
+                    transition={{ duration: 0.35, ease: "easeInOut" }}
+                    className="absolute inset-0 h-full w-full object-cover"
+                />
+            ))}
+            {/* Touch gets no hover cue, so the affordance has to be visible. */}
+            <span className="absolute bottom-2 right-2 rounded-full bg-black/40 p-1.5 text-white">
+                <Repeat2 size={16} />
+            </span>
+        </button>
 
         <section className="rounded-xl p-6" style={tile("water")}>
             <h2 className="mb-4 font-pixel text-lg">See Artifacts</h2>
@@ -98,6 +124,7 @@ const LandingMobile = () => (
             </a>
         ))}
     </div>
-);
+    );
+};
 
 export default LandingMobile;

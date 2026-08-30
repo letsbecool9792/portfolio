@@ -12,7 +12,7 @@
     {
         "title": "Minecraft",
         "desc": "Built worlds, made friends, survived creepers — this game shaped my brain",
-        "img": "/assets/sidequests/minecraft.png"
+        "img": "/assets/sidequests/minecraft.jpg"
     },
     {
         "title": "OSINT/CTFs",
@@ -22,17 +22,17 @@
     {
         "title": "Competitive Programming",
         "desc": "Got into CP at 2 AM in a cold IIT lab — still can't feel my fingers (and a lot of other CP events)",
-        "img": "/assets/sidequests/cp.png"
+        "img": "/assets/sidequests/cp.jpg"
     },
     {
         "title": "Pseudoscience R&D",
         "desc": "Made a theory where memes break AI — it almost made sense, kind of",
-        "img": "/assets/sidequests/memes.png"
+        "img": "/assets/sidequests/memes.jpg"
     },
     {
         "title": "Hackathon Merch Collector",
         "desc": "Went to 5+ events just for the T-shirts and stickers. No regrets.",
-        "img": "/assets/sidequests/merch.png"
+        "img": "/assets/sidequests/merch.jpg"
     },
     {
         "title": "Web3 Dabbler",
@@ -42,6 +42,6 @@
     {
         "title": "r/Place Soldier",
         "desc": "Helped hold the line with strangers on the internet — peak human coordination",
-        "img": "/assets/sidequests/rplace.png"
+        "img": "/assets/sidequests/rplace.jpg"
     }
 ]
