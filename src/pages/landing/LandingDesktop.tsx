@@ -1,8 +1,9 @@
 import { ArrowUpRight, Github, Linkedin, Twitter } from "lucide-react";
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import ExternalLink from "../../components/ExternalLink";
-import { INTRO, NAME, TITLE } from "../../content/about";
+import { ALIAS, INTRO, NAME, TITLE } from "../../content/about";
 import { backgroundStyle } from "../../styles/background";
 
 // The entrance runs from 0.5s to 2.5s and the cards land at 2.6s. The hover
@@ -48,8 +49,18 @@ const LandingDesktop = () => {
             >
             <div className="p-4">
                 <div className="mb-4">
-                <h1 className="text-3xl md:text-4xl font-pixel">{NAME}</h1>
+                {/* The name is the way into /about. Deliberately unstyled until
+                    hover — nothing should advertise that it's a link. */}
+                <h1 className="text-3xl md:text-4xl font-pixel">
+                    <Link to="/about" className="underline-offset-8 hover:underline">
+                        {NAME}
+                    </Link>
+                </h1>
                 <h2 className="text-xl md:text-3xl font-pixel2 mt-2 text-gray-700">{TITLE}</h2>
+                {/* The alias as readable text. It exists in URLs and meta tags all
+                    over the site, but Google can't bind two names it never sees in
+                    the same sentence. */}
+                <p className="mt-1 font-mono text-sm text-gray-600">aka {ALIAS}</p>
                 </div>
 
                 <div className="text-gray-950 mt-6 mb-6 pr-4 text-lg font-serif space-y-1">
@@ -106,7 +117,7 @@ const LandingDesktop = () => {
             >
                 <img
                     src="/assets/other/pic.jpg"
-                    alt="Suparno Saha"
+                    alt="Suparno Saha — portrait"
                     decoding="async"
                     className="absolute inset-0 h-full w-full rounded-xl object-cover"
                     style={{ backfaceVisibility: "hidden" }}

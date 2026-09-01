@@ -47,7 +47,7 @@ const Artifacts = () => {
                 Artifacts
             </h1>
             <p className="mt-2 text-center font-serif text-sm text-gray-700 md:text-base">
-                Other places where I exist
+                Other places where I exist — mostly as letsbecool9792
             </p>
         </motion.div>
 

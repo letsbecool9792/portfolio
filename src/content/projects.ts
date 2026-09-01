@@ -18,3 +18,4 @@ export const PROJECTS = data as Project[];
 /** The `highlighted` flag splits the page into Highlight and Other sections. */
 export const HIGHLIGHTED_PROJECTS = PROJECTS.filter(project => project.highlighted);
 export const OTHER_PROJECTS = PROJECTS.filter(project => !project.highlighted);
+

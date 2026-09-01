@@ -73,7 +73,7 @@ const JourneyDesktop = ({ events, spriteSrc }: JourneyDesktopProps) => {
                             <div className="flex flex-col items-center">
                                 <img
                                     src={event.image}
-                                    alt={event.title}
+                                    alt={`${event.title} — ${event.era}`}
                                     className="w-80 h-40 object-cover rounded-md mb-4"
                                 />
                             </div>

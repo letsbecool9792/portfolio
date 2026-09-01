@@ -37,7 +37,7 @@ const ProjectCard = ({ project, onSelect }: ProjectCardProps) => (
         <div className="border-2 p-4" style={{ borderColor: PANEL_BEVEL, ...panelSurface }}>
             <img
                 src={project.img}
-                alt={project.title}
+                alt={`${project.title} — ${project.desc}`}
                 loading="lazy"
                 className="mb-4 aspect-[4/3] w-full rounded-lg border-2 object-cover shadow-md"
                 style={{ borderColor: PANEL_BEVEL }}

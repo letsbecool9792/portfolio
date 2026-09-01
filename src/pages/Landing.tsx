@@ -1,4 +1,5 @@
 import Seo from "../components/Seo";
+import { profilePage } from "../content/schema";
 import { HOME } from "../content/seo";
 import { useIsMobile } from "../hooks/useIsMobile";
 import LandingDesktop from "./landing/LandingDesktop";
@@ -9,7 +10,7 @@ const Landing = () => {
 
     return (
         <>
-            <Seo {...HOME} />
+            <Seo {...HOME} schema={[profilePage(HOME)]} />
             {isMobile ? <LandingMobile /> : <LandingDesktop />}
         </>
     );

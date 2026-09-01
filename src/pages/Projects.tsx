@@ -5,6 +5,7 @@ import ProjectModal from "../components/ProjectModal";
 import PageBackground from "../components/PageBackground";
 import ExperienceSection from "../components/ExperienceSection";
 import Seo from "../components/Seo";
+import { breadcrumb, itemList } from "../content/schema";
 import { PROJECTS as PROJECTS_SEO } from "../content/seo";
 import { backgroundStyle } from "../styles/background";
 import { HIGHLIGHTED_PROJECTS, OTHER_PROJECTS, type Project } from "../content/projects";
@@ -24,7 +25,16 @@ const Projects = () => {
         className="min-h-screen flex flex-col items-center p-4 md:p-8 relative"
         style={isMobile ? undefined : { ...backgroundStyle("grass"), backgroundAttachment: "fixed, fixed, fixed" }}
     >
-        <Seo {...PROJECTS_SEO} />
+        <Seo
+            {...PROJECTS_SEO}
+            schema={[
+                itemList("Projects", [...HIGHLIGHTED_PROJECTS, ...OTHER_PROJECTS].map(p => p.title)),
+                breadcrumb([
+                    { name: "Home", path: "/" },
+                    { name: "Projects", path: "/projects" },
+                ]),
+            ]}
+        />
         {isMobile && <PageBackground />}
 
         <div className="flex flex-col items-center mt-8 md:mt-10">

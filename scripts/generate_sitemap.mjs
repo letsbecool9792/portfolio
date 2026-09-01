@@ -22,6 +22,7 @@ const STATIC_ROUTES = [
     '/journey',
     '/projects',
     '/sidequests',
+    '/about',
     '/artifacts',
     '/contact',
     '/resume',

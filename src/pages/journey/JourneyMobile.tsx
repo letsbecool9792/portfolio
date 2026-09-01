@@ -52,7 +52,7 @@ const JourneyMobile = ({ events, spriteSrc }: JourneyMobileProps) => (
                 >
                     <img
                         src={event.image}
-                        alt={event.title}
+                        alt={`${event.title} — ${event.era}`}
                         loading="lazy"
                         className="mb-3 aspect-[2/1] w-full rounded-md object-cover"
                     />

@@ -1,22 +1,6 @@
+import type { StoryBlock } from "./blocks";
 import data from "./journey.json";
 import { ORIGIN, type PageSeo } from "./seo";
-
-/** One bullet, optionally with a nested sub-list. Text supports inline `[label](url)`. */
-export type StoryListItem = string | { text: string; items: string[] };
-
-export type StoryLink = { text: string; url: string };
-
-/**
- * A story body is a flat list of blocks rather than a markdown string: the
- * renderer stays tiny and typed, and the JSON keeps the RPG chrome (button rows
- * for outbound links) distinct from ordinary prose.
- */
-export type StoryBlock =
-    | { type: "p"; text: string }
-    | { type: "h"; text: string }
-    | { type: "hr" }
-    | { type: "ul"; items: StoryListItem[] }
-    | { type: "links"; items: StoryLink[] };
 
 export type JourneyEntry = {
     slug: string;

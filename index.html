@@ -4,13 +4,18 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<!-- No <title>, description, robots, canonical, OG or Twitter tags here.
-		     They are rendered per-route by src/components/Seo.tsx and hoisted into
-		     this head by React 19, then baked into each route's HTML file by
-		     scripts/prerender.mjs. A static <title> here would *win* over the
-		     hoisted one — browsers honour the first <title> in document order — and
-		     a static canonical or og:url would point all 13 routes at the homepage.
-		     Add page metadata to src/content/seo.ts, never to this file. -->
+		<!-- No title, description, robots, canonical, OG or Twitter tags in this
+		     file. They are rendered per-route by src/components/Seo.tsx, hoisted
+		     into this head by React 19, then baked into each route's HTML file by
+		     scripts/prerender.mjs.
+
+		     A hardcoded title element here would *win* over the hoisted one —
+		     browsers honour the first one in document order — and a static
+		     canonical or og:url would point all 13 routes at the homepage.
+
+		     Add page metadata to src/content/seo.ts, never to this file.
+		     (Tag names are spelled out rather than written as markup so a grep for
+		     the real elements doesn't keep matching this comment.) -->
 
 		<!-- Google won't show a favicon beside a search result unless it's a
 		     multiple of 48px; the old 16x16-only .ico got a generic globe.
@@ -19,80 +24,11 @@
 		<link rel="icon" type="image/png" href="/favicon-96.png" sizes="96x96" />
 		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-		<!-- The entity payload. At least four other people share the name
-		     "Suparno Saha" on higher-authority domains, so the job here isn't
-		     keywords — it's telling Google *which* one this is. `sameAs` is what
-		     does that: every profile listed below links back to suparno.me, and
-		     the pair of links is what turns the claim into a confirmed identity.
-
-		     Profile URLs are duplicated from src/content/socials.ts on purpose —
-		     structured data has to be in the served HTML, and a build step that
-		     rewrote index.html would make it a generated file. Change one, change
-		     the other. -->
-		<script type="application/ld+json">
-		{
-			"@context": "https://schema.org",
-			"@graph": [
-				{
-					"@type": "Person",
-					"@id": "https://suparno.me/#person",
-					"name": "Suparno Saha",
-					"alternateName": ["letsbecool9792", "letsbecool", "LetsBeCool"],
-					"url": "https://suparno.me/",
-					"image": "https://suparno.me/og.png",
-					"jobTitle": "Software Developer",
-					"description": "Software developer from Kolkata, India. Android in Kotlin and Jetpack Compose, cross-platform in React Native, web in React — and a run of Unity games before that.",
-					"homeLocation": {
-						"@type": "Place",
-						"name": "Kolkata, West Bengal, India"
-					},
-					"affiliation": {
-						"@type": "CollegeOrUniversity",
-						"name": "Heritage Institute of Technology",
-						"url": "https://www.heritageit.edu/",
-						"sameAs": "https://en.wikipedia.org/wiki/Heritage_Institute_of_Technology"
-					},
-					"knowsAbout": [
-						"Android development",
-						"Kotlin",
-						"Jetpack Compose",
-						"React Native",
-						"React",
-						"TypeScript",
-						"Django",
-						"Game development",
-						"Unity",
-						"Pixel art"
-					],
-					"sameAs": [
-						"https://github.com/letsbecool9792",
-						"https://www.linkedin.com/in/letsbecool9792",
-						"https://x.com/letsbecool9792",
-						"https://www.youtube.com/@letsbecool9792",
-						"https://www.instagram.com/letsbecool9792",
-						"https://www.twitch.tv/letsbecool9792",
-						"https://bsky.app/profile/suparno.me",
-						"https://letsbecool.itch.io",
-						"https://leetcode.com/u/letsbecool/",
-						"https://www.kaggle.com/letsbecool",
-						"https://devfolio.co/@letsbecool",
-						"https://discord.com/users/672367440977592350"
-					]
-				},
-				{
-					"@type": "WebSite",
-					"@id": "https://suparno.me/#website",
-					"url": "https://suparno.me/",
-					"name": "Suparno Saha",
-					"alternateName": ["letsbecool9792", "suparno.me"],
-					"description": "The personal site and developer portfolio of Suparno Saha (letsbecool9792).",
-					"inLanguage": "en",
-					"publisher": { "@id": "https://suparno.me/#person" },
-					"copyrightHolder": { "@id": "https://suparno.me/#person" }
-				}
-			]
-		}
-		</script>
+		<!-- The Person + WebSite JSON-LD used to live here. It now renders per-route
+		     from src/content/schema.ts via <Seo>, so `/` can declare itself a
+		     ProfilePage about the Person and each chapter an Article by him — things
+		     one shared shell could never say. scripts/prerender.mjs lifts the script
+		     into this head, so it survives on the forked pages too. -->
 	</head>
 	<body>
 		<div id="root"></div>

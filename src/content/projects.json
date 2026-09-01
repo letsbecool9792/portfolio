@@ -6,7 +6,14 @@
         "modalImg": "/assets/projects/nextweeb_ss.jpg",
         "github": "https://github.com/letsbecool9792/next-weeb",
         "liveLink": "https://next-weeb.vercel.app/",
-        "techStack": ["React", "Vite", "Tailwind CSS", "Django", "Django REST Framework", "MyAnimeList API"],
+        "techStack": [
+            "React",
+            "Vite",
+            "Tailwind CSS",
+            "Django",
+            "Django REST Framework",
+            "MyAnimeList API"
+        ],
         "highlighted": true,
         "longDesc": "NextWeeb is your ultimate companion for discovering and tracking anime. With intelligent recommendations based on your watch history, season tracking, and a beautiful interface, you'll never miss your next favorite series."
     },
@@ -17,7 +24,15 @@
         "modalImg": "/assets/projects/supernote_ss.png",
         "github": "https://github.com/letsbecool9792/supernote",
         "liveLink": "https://supernote-dusky.vercel.app",
-        "techStack": ["React", "Vite", "Tailwind", "Express", "MongoDB Atlas", "Langchain", "Gemini API"],
+        "techStack": [
+            "React",
+            "Vite",
+            "Tailwind",
+            "Express",
+            "MongoDB Atlas",
+            "Langchain",
+            "Gemini API"
+        ],
         "highlighted": true,
         "longDesc": "Supernote leverages AI to transform rough startup concepts into comprehensive business plans. Interactive mind maps and validation frameworks help entrepreneurs visualize and refine their ideas before investing time and resources."
     },
@@ -28,7 +43,11 @@
         "modalImg": "/assets/projects/synapse_ss.jpg",
         "github": "https://github.com/Asterisk-Bytes/synapse/",
         "liveLink": "",
-        "techStack": ["Expo", "React Native", "Gemini API"],
+        "techStack": [
+            "Expo",
+            "React Native",
+            "Gemini API"
+        ],
         "highlighted": true,
         "longDesc": "Synapse is a comprehensive learning platform designed to help busy students master complex subjects through spaced repetition and active recall. The app features customizable flashcard decks, progress tracking, and adaptive learning algorithms."
     },
@@ -39,7 +58,17 @@
         "modalImg": "/assets/projects/calcuttacollective_ss.png",
         "github": "https://github.com/letsbecool9792/CalcuttaCollective",
         "liveLink": "https://calcutta-collective.vercel.app/",
-        "techStack": ["React 18", "TypeScript", "Vite", "Tailwind CSS v4", "React Router", "Leaflet", "OpenStreetMap", "Node.js", "Express"],
+        "techStack": [
+            "React 18",
+            "TypeScript",
+            "Vite",
+            "Tailwind CSS v4",
+            "React Router",
+            "Leaflet",
+            "OpenStreetMap",
+            "Node.js",
+            "Express"
+        ],
         "highlighted": false,
         "longDesc": "Cities are full of people, and yet urban loneliness keeps rising — everyone saves cafés they never visit. The problem isn't a lack of information, it's a lack of activation, so Calcutta Collective is built around closing that gap. Discovery is map-driven rather than list-driven, hangouts cap at 5–8 people so they feel intimate rather than like an event, and hosts approve join requests so a group chat can break the ice before anyone shows up. Afterwards, reflections feed back into the discovery loop. Built solo as a competition product and pitched at BPlan @ Kshitij 2025 (IIT Kharagpur) and the Hult Prize 2025 campus round."
     },
@@ -50,7 +79,15 @@
         "modalImg": "/assets/projects/resqnet_ss.svg",
         "github": "https://github.com/frank06n/sudobang_hackforge2025",
         "liveLink": "",
-        "techStack": ["React Native", "Expo", "Node.js", "Express", "Socket.io", "MongoDB Atlas", "Google Maps"],
+        "techStack": [
+            "React Native",
+            "Expo",
+            "Node.js",
+            "Express",
+            "Socket.io",
+            "MongoDB Atlas",
+            "Google Maps"
+        ],
         "highlighted": false,
         "longDesc": "ResQNet revolutionizes emergency response coordination by providing a centralized platform for first responders, emergency services, and civilians. Real-time updates, location tracking, and instant communication help save lives when every second counts."
     },
@@ -61,7 +98,14 @@
         "modalImg": "/assets/projects/aura_ss.jpg",
         "github": "https://github.com/letsbecool9792/aura",
         "liveLink": "",
-        "techStack": ["React Native", "Expo", "Django", "Gemini API", "Python ML", "Google Maps API"],
+        "techStack": [
+            "React Native",
+            "Expo",
+            "Django",
+            "Gemini API",
+            "Python ML",
+            "Google Maps API"
+        ],
         "highlighted": false,
         "longDesc": "AURA is a patient-centric healthcare assistant that combines AI diagnostics, a digital health record vault, and real-time hospital/doctor discovery. Users can upload medical data, analyze scans for fractures or brain tumors using ML models, identify medications through image input, and interact with an AI chatbot that explains medical information in simple language."
     },
@@ -72,7 +116,13 @@
         "modalImg": "/assets/projects/echowall.png",
         "github": "https://github.com/sudo-bang/echo-wall",
         "liveLink": "",
-        "techStack": ["React", "Vite", "Express", "MongoDB", "Social Media APIs"],
+        "techStack": [
+            "React",
+            "Vite",
+            "Express",
+            "MongoDB",
+            "Social Media APIs"
+        ],
         "highlighted": false,
         "longDesc": "EchoWall creates a unified social media experience by aggregating posts, photos, and updates from all your platforms into a single, customizable feed. Save time and stay connected without the constant app-switching."
     }

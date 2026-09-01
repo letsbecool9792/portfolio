@@ -1,3 +1,4 @@
+import { graphJson } from "../content/schema";
 import {
     DEFAULT_OG_IMAGE,
     OG_IMAGE_ALT,
@@ -22,7 +23,10 @@ import {
  * The prerenderer bakes whatever this renders into each route's HTML file, which
  * is what gets these tags in front of social scrapers — they never run JS.
  */
-const Seo = ({ title, description, path, type = "website", image, noindex }: PageSeo) => {
+/** Extra JSON-LD nodes this route contributes on top of the sitewide Person + WebSite. */
+type SeoProps = PageSeo & { schema?: Record<string, unknown>[] };
+
+const Seo = ({ title, description, path, type = "website", image, noindex, schema }: SeoProps) => {
     const url = `${ORIGIN}${path}`;
     const card = image ?? DEFAULT_OG_IMAGE;
     const isDefaultCard = card === DEFAULT_OG_IMAGE;
@@ -59,6 +63,17 @@ const Seo = ({ title, description, path, type = "website", image, noindex }: Pag
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:site" content={TWITTER_HANDLE} />
             <meta name="twitter:creator" content={TWITTER_HANDLE} />
+
+            {/* React 19 hoists title/meta/link but not this, so it renders in the
+                tree. `<Seo>` is the first child of every page, which makes it the
+                first body node — and `scripts/prerender.mjs` peels it into <head>
+                from there, so it survives even on the forked pages whose body is
+                dropped. `dangerouslySetInnerHTML` because JSX would HTML-escape
+                the JSON; `graphJson` escapes `<` so the tag can't close early. */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: graphJson(schema) }}
+            />
         </>
     );
 };

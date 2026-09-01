@@ -1,6 +1,6 @@
 import ExternalLink from "./ExternalLink";
 import InlineText from "./InlineText";
-import type { StoryBlock, StoryListItem } from "../content/journey";
+import type { StoryBlock, StoryListItem } from "../content/blocks";
 import { PANEL_BEVEL } from "../styles/panel";
 
 /** The terrain tile from the landing cards, run as a ground line between sections. */

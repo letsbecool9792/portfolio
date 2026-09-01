@@ -42,7 +42,7 @@ const ProjectCard = ({ proj, index, onSelect }: ProjectCardProps) => (
                 <div className="w-50 h-50 bg-gradient-to-br from-blue-100 to-purple-100 rounded-lg overflow-hidden shadow-md flex items-center justify-center">
                     <img
                         src={proj.img}
-                        alt={proj.title}
+                        alt={`${proj.title} — ${proj.desc}`}
                         className="w-full h-full object-cover"
                         onError={(e) => {
                             const target = e.target as HTMLImageElement;

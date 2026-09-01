@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import ReturnHomeButton from "../components/ReturnHomeButton";
 import Seo from "../components/Seo";
 import { JOURNEY } from "../content/journey";
+import { breadcrumb, itemList } from "../content/schema";
 import { JOURNEY_INDEX } from "../content/seo";
 import { useClimbAnimation } from "../hooks/useClimbAnimation";
 import { useIsMobile } from "../hooks/useIsMobile";
@@ -28,7 +29,16 @@ const Journey = () => {
             className={`min-h-screen flex flex-col items-center p-4 md:p-8 relative ${isMobile ? "" : "overflow-x-hidden"}`}
             style={isMobile ? undefined : { ...backgroundStyle("grass"), backgroundAttachment: "fixed, fixed, fixed" }}
         >
-            <Seo {...JOURNEY_INDEX} />
+            <Seo
+                {...JOURNEY_INDEX}
+                schema={[
+                    itemList("Chapters", JOURNEY.map(entry => entry.title)),
+                    breadcrumb([
+                        { name: "Home", path: "/" },
+                        { name: "The Journey", path: "/journey" },
+                    ]),
+                ]}
+            />
             {isMobile && <PageBackground />}
 
             <div className="flex flex-col items-center mt-8 md:mt-10">

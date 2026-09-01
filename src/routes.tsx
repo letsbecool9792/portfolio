@@ -4,6 +4,7 @@ import Landing from './pages/Landing'
 
 // Landing stays eager — it's the entry point and shouldn't wait on a chunk.
 // The rest split out so a first visit doesn't download every page's code.
+const About = lazy(() => import('./pages/About'))
 const Artifacts = lazy(() => import('./pages/Artifacts'))
 const Contact = lazy(() => import('./pages/Contact'))
 const Journey = lazy(() => import('./pages/Journey'))
@@ -19,6 +20,7 @@ const AppRoutes = () => {
         <Suspense fallback={<div className="min-h-screen bg-blue-200" />}>
             <Routes>
                 <Route path="/" element={<Landing />} />
+                <Route path="/about" element={<About />} />
                 <Route path="/artifacts" element={<Artifacts />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/journey" element={<Journey />} />

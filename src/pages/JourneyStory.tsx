@@ -6,6 +6,7 @@ import ReturnHomeButton from "../components/ReturnHomeButton";
 import Seo from "../components/Seo";
 import StoryBody from "../components/StoryBody";
 import { chapterSeo, journeyStory, type JourneyEntry } from "../content/journey";
+import { article, breadcrumb } from "../content/schema";
 import { NOT_FOUND } from "../content/seo";
 import { useIsMobile } from "../hooks/useIsMobile";
 import { PANEL_BEVEL, PANEL_BORDER, PARCHMENT, frame } from "../styles/panel";
@@ -75,7 +76,21 @@ const JourneyStory = () => {
 
     return (
         <div className="relative flex min-h-screen flex-col items-center overflow-x-clip p-4 pb-32 md:p-8">
-            <Seo {...seo} />
+            <Seo
+                {...seo}
+                schema={
+                    story
+                        ? [
+                              article(seo, story.entry.title),
+                              breadcrumb([
+                                  { name: "Home", path: "/" },
+                                  { name: "The Journey", path: "/journey" },
+                                  { name: story.entry.title, path: `/journey/${story.entry.slug}` },
+                              ]),
+                          ]
+                        : undefined
+                }
+            />
             <PageBackground />
 
             {story === null ? (
@@ -132,7 +147,7 @@ const JourneyStory = () => {
                     <div className="overflow-hidden rounded-xl shadow-lg" style={frame}>
                         <img
                             src={story.entry.image}
-                            alt={story.entry.title}
+                            alt={`${story.entry.title} — ${story.entry.era}`}
                             className="aspect-[2/1] w-full object-cover"
                         />
                     </div>

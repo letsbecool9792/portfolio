@@ -3,12 +3,13 @@ import ReturnHomeButton from "../components/ReturnHomeButton";
 import PageBackground from "../components/PageBackground";
 import Seo from "../components/Seo";
 import { SIDE_QUESTS as SIDE_QUESTS_SEO } from "../content/seo";
+import { itemList } from "../content/schema";
 import { SIDE_QUESTS } from "../content/sideQuests";
 
 const SideQuests = () => {
     return (
         <div className="min-h-screen flex flex-col items-center p-4 pb-28 md:p-8 relative">
-            <Seo {...SIDE_QUESTS_SEO} />
+            <Seo {...SIDE_QUESTS_SEO} schema={[itemList("Side Quests", SIDE_QUESTS.map(q => q.title))]} />
             <PageBackground />
             <div className="flex flex-col items-center mt-8 md:mt-10">
                 <motion.h1
@@ -48,7 +49,7 @@ const SideQuests = () => {
                             imageRendering: 'crisp-edges',
                         }}
                         >
-                        <img src={quest.img} alt={quest.title} loading="lazy" className="w-full h-60 object-cover rounded-md mb-4" />
+                        <img src={quest.img} alt={`${quest.title} — one of Suparno Saha's side quests`} loading="lazy" className="w-full h-60 object-cover rounded-md mb-4" />
                         <h2 className="text-lg font-bold mb-1">{quest.title}</h2>
                         <p className="text-sm">{quest.desc}</p>
                     </motion.div>

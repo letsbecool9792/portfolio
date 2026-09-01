@@ -46,8 +46,20 @@ const collect = async stream => {
  * React hoists `<title>`, `<meta>` and `<link>` to the front of the stream when the
  * rendered tree has no `<head>` of its own. Peel them off so they can go into the
  * template's head instead of sitting loose in the body.
+ *
+ * The JSON-LD script is *not* hoisted by React — it stays where it renders. But
+ * `<Seo>` is the first child of every page, so it lands immediately after the
+ * hoisted tags and gets peeled with them. That matters: without this, the graph
+ * would sit inside `#root` and vanish on the forked pages, whose body is dropped.
  */
 const LEADING_HEAD_TAG = /^\s*(<title>[\s\S]*?<\/title>|<meta\b[^>]*?\/?>|<link\b[^>]*?\/?>)/i
+
+// React does not hoist a JSON-LD script — it renders wherever `<Seo>` sits, which
+// is inside the page wrapper on every route except Landing. So it's lifted by
+// identity rather than by position; anchoring to "first child" broke the moment a
+// page nested its <Seo>. Without this the graph would live inside `#root` and
+// vanish on the forked pages, whose body is dropped.
+const LD_JSON = /<script type="application\/ld\+json"[^>]*>[\s\S]*?<\/script>/i
 
 const splitHead = html => {
     const head = []
@@ -58,6 +70,12 @@ const splitHead = html => {
         if (!match) break
         head.push(match[1])
         body = body.slice(match[0].length)
+    }
+
+    const schema = body.match(LD_JSON)
+    if (schema) {
+        head.push(schema[0])
+        body = body.slice(0, schema.index) + body.slice(schema.index + schema[0].length)
     }
 
     return { head, body }
@@ -74,6 +92,9 @@ const build = async (route, file) => {
     // loudly here beats shipping a page with the wrong metadata.
     if (!head.some(tag => tag.startsWith('<title'))) {
         throw new Error(`${route.path} rendered no <title> — is <Seo> wired into that page?`)
+    }
+    if (!head.some(tag => tag.startsWith('<script'))) {
+        throw new Error(`${route.path} lost its JSON-LD — is <Seo> still the first child?`)
     }
 
     // Forked pages get head tags and an empty #root. Prerendered markup is always

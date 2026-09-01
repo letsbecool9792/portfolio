@@ -1,9 +1,10 @@
 import { ArrowUpRight, Github, Linkedin, Repeat2, Twitter } from "lucide-react";
 import { motion } from "motion/react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import ExternalLink from "../../components/ExternalLink";
 import PageBackground from "../../components/PageBackground";
-import { INTRO, NAME, TITLE } from "../../content/about";
+import { ALIAS, INTRO, NAME, TITLE } from "../../content/about";
 
 // Touch has no hover, so the portrait swap is bound to a tap instead. Both are
 // rendered stacked and cross-faded so neither flashes while loading.
@@ -56,8 +57,15 @@ const LandingMobile = () => {
         <PageBackground />
 
         <section className="rounded-xl p-6" style={tile("terrain_snow_block_center")}>
-            <h1 className="font-pixel text-2xl">{NAME}</h1>
+            {/* Same hidden entry point to /about as desktop. Touch has no hover, so
+                `active:` carries the affordance on tap instead of showing one up front. */}
+            <h1 className="font-pixel text-2xl">
+                <Link to="/about" className="underline-offset-8 active:underline">
+                    {NAME}
+                </Link>
+            </h1>
             <h2 className="mt-2 font-pixel2 text-xl text-gray-700">{TITLE}</h2>
+            <p className="mt-1 font-mono text-xs text-gray-600">aka {ALIAS}</p>
             <div className="mt-4 space-y-1 font-serif text-base text-gray-950">
                 {INTRO.map(line => (
                     <p key={line}>{line}</p>
@@ -75,7 +83,7 @@ const LandingMobile = () => {
                 <motion.img
                     key={src}
                     src={src}
-                    alt={i === 0 ? "Suparno Saha" : ""}
+                    alt={i === 0 ? "Suparno Saha — portrait" : ""}
                     decoding="async"
                     initial={false}
                     animate={{ opacity: portrait === i ? 1 : 0 }}

@@ -12,6 +12,12 @@
  * for "Suparno Saha" is the whole point.
  *
  * Descriptions stay near 155 characters; Google truncates around there.
+ *
+ * **The college is not an identifying detail.** Don't describe the owner as a
+ * student, or name the institute or department, in any copy here or anywhere else
+ * a visitor can read it. The Person schema's `affiliation` in index.html is the
+ * one deliberate exception — it's machine-only and earns its place by separating
+ * him from the other people who share his name.
  */
 
 export const ORIGIN = "https://suparno.me";
@@ -46,9 +52,9 @@ export type PageSeo = {
 };
 
 export const HOME: PageSeo = {
-    title: "Suparno Saha (letsbecool9792) — Software Developer",
+    title: "Suparno Saha | letsbecool9792 — Software Developer",
     description:
-        "I'm Suparno Saha — letsbecool9792 most places online. I build Android apps for a living, websites because I want to, and games back when I had the time.",
+        "Suparno Saha, aka letsbecool9792. I build Android apps and websites for real people, games for fun, and a steady stream of things nobody asked for.",
     path: "/",
     type: "profile",
     forked: true,
@@ -65,7 +71,7 @@ export const JOURNEY_INDEX: PageSeo = {
 export const PROJECTS: PageSeo = {
     title: "Projects & Experience — Suparno Saha",
     description:
-        "Everything Suparno Saha (letsbecool9792) has actually shipped — two apps real people use, a pile of side projects, and the hackathon builds that survived.",
+        "Everything Suparno Saha — letsbecool9792 — has actually shipped: two apps real people use, a pile of side projects, and the hackathon builds that survived.",
     path: "/projects",
     forked: true,
 };
@@ -77,17 +83,25 @@ export const SIDE_QUESTS: PageSeo = {
     path: "/sidequests",
 };
 
+export const ABOUT: PageSeo = {
+    title: "About Suparno Saha | letsbecool9792",
+    description:
+        "Who Suparno Saha is, in plain language: Android and web developer in Kolkata, letsbecool9792 online, ex-game-dev, and what he's actually shipped.",
+    path: "/about",
+    type: "profile",
+};
+
 export const ARTIFACTS: PageSeo = {
     title: "Artifacts — Where to find Suparno Saha",
     description:
-        "Every corner of the internet Suparno Saha (letsbecool9792) turns up in — GitHub, YouTube, itch.io, Bluesky, LeetCode — most of them showing live activity.",
+        "Every corner of the internet Suparno Saha turns up in as letsbecool9792 — GitHub, YouTube, itch.io, Bluesky, LeetCode — most of them showing live activity.",
     path: "/artifacts",
 };
 
 export const CONTACT: PageSeo = {
     title: "Contact Suparno Saha",
     description:
-        "Got a quest? Send it over. Suparno Saha (letsbecool9792) — Android and web developer, Kolkata, usually up for something interesting.",
+        "Got a quest? Send it over. Suparno Saha, letsbecool9792 online — Android and web developer, Kolkata, usually up for something interesting.",
     path: "/contact",
 };
 
@@ -104,6 +118,7 @@ export const STATIC_ROUTES: PageSeo[] = [
     JOURNEY_INDEX,
     PROJECTS,
     SIDE_QUESTS,
+    ABOUT,
     ARTIFACTS,
     CONTACT,
 ];
