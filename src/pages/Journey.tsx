@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import ReturnHomeButton from "../components/ReturnHomeButton";
+import Seo from "../components/Seo";
 import { JOURNEY } from "../content/journey";
+import { JOURNEY_INDEX } from "../content/seo";
 import { useClimbAnimation } from "../hooks/useClimbAnimation";
 import { useIsMobile } from "../hooks/useIsMobile";
 import PageBackground from "../components/PageBackground";
@@ -26,6 +28,7 @@ const Journey = () => {
             className={`min-h-screen flex flex-col items-center p-4 md:p-8 relative ${isMobile ? "" : "overflow-x-hidden"}`}
             style={isMobile ? undefined : { ...backgroundStyle("grass"), backgroundAttachment: "fixed, fixed, fixed" }}
         >
+            <Seo {...JOURNEY_INDEX} />
             {isMobile && <PageBackground />}
 
             <div className="flex flex-col items-center mt-8 md:mt-10">

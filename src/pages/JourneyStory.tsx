@@ -3,8 +3,10 @@ import { motion } from "framer-motion";
 import { Link, useParams } from "react-router-dom";
 import PageBackground from "../components/PageBackground";
 import ReturnHomeButton from "../components/ReturnHomeButton";
+import Seo from "../components/Seo";
 import StoryBody from "../components/StoryBody";
-import { journeyStory, type JourneyEntry } from "../content/journey";
+import { chapterSeo, journeyStory, type JourneyEntry } from "../content/journey";
+import { NOT_FOUND } from "../content/seo";
 import { useIsMobile } from "../hooks/useIsMobile";
 import { PANEL_BEVEL, PANEL_BORDER, PARCHMENT, frame } from "../styles/panel";
 
@@ -67,17 +69,13 @@ const JourneyStory = () => {
         window.scrollTo(0, 0);
     }, [slug]);
 
-    useEffect(() => {
-        if (!story) return;
-        const previous = document.title;
-        document.title = `${story.entry.title} — Suparno Saha`;
-        return () => {
-            document.title = previous;
-        };
-    }, [story]);
+    // An unknown slug is the closest an SPA gets to a 404 — noindex it rather than
+    // let a mistyped chapter URL into the index under a real-looking title.
+    const seo = (slug && chapterSeo(slug)) || NOT_FOUND;
 
     return (
         <div className="relative flex min-h-screen flex-col items-center overflow-x-clip p-4 pb-32 md:p-8">
+            <Seo {...seo} />
             <PageBackground />
 
             {story === null ? (

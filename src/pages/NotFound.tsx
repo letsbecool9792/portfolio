@@ -1,9 +1,12 @@
 import { Link } from 'react-router-dom';
 import PageBackground from '../components/PageBackground';
+import Seo from '../components/Seo';
+import { NOT_FOUND } from '../content/seo';
 
 const NotFound = () => {
     return (
     <div className="min-h-screen flex flex-col items-center justify-center p-4 md:p-8 relative">
+        <Seo {...NOT_FOUND} />
         <PageBackground />
         <div className="bg-white/90 rounded-lg shadow-lg p-6 md:p-12 max-w-lg text-center">
         <h1 className="text-3xl md:text-5xl font-pixel mb-4 text-gray-800">404</h1>

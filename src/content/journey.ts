@@ -1,4 +1,5 @@
 import data from "./journey.json";
+import { ORIGIN, type PageSeo } from "./seo";
 
 /** One bullet, optionally with a nested sub-list. Text supports inline `[label](url)`. */
 export type StoryListItem = string | { text: string; items: string[] };
@@ -48,6 +49,26 @@ export type StoryContext = {
     /** Chronologically earlier / later entries — the ladder runs newest to oldest. */
     previous?: JourneyEntry;
     next?: JourneyEntry;
+};
+
+/**
+ * A chapter's head metadata, derived from the entry so story copy has one home.
+ * `og:type` is `article` and the share card is the chapter hero, not the site card.
+ *
+ * Lives here rather than in `seo.ts` because it reads `journey.json` — `seo.ts` is
+ * imported by Landing, so a content import there lands in the entry bundle.
+ */
+export const chapterSeo = (slug: string): PageSeo | null => {
+    const entry = JOURNEY.find(item => item.slug === slug);
+    if (!entry) return null;
+
+    return {
+        title: `${entry.title} — Suparno Saha`,
+        description: entry.subtext,
+        path: `/journey/${entry.slug}`,
+        type: "article",
+        image: `${ORIGIN}${entry.image}`,
+    };
 };
 
 /** Resolves one story plus its neighbours. `null` when the slug matches nothing. */

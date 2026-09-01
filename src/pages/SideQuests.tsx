@@ -1,11 +1,14 @@
 import { motion } from "framer-motion"
 import ReturnHomeButton from "../components/ReturnHomeButton";
 import PageBackground from "../components/PageBackground";
+import Seo from "../components/Seo";
+import { SIDE_QUESTS as SIDE_QUESTS_SEO } from "../content/seo";
 import { SIDE_QUESTS } from "../content/sideQuests";
 
 const SideQuests = () => {
     return (
         <div className="min-h-screen flex flex-col items-center p-4 pb-28 md:p-8 relative">
+            <Seo {...SIDE_QUESTS_SEO} />
             <PageBackground />
             <div className="flex flex-col items-center mt-8 md:mt-10">
                 <motion.h1

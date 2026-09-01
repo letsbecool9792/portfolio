@@ -4,6 +4,8 @@ import ReturnHomeButton from "../components/ReturnHomeButton";
 import ProjectModal from "../components/ProjectModal";
 import PageBackground from "../components/PageBackground";
 import ExperienceSection from "../components/ExperienceSection";
+import Seo from "../components/Seo";
+import { PROJECTS as PROJECTS_SEO } from "../content/seo";
 import { backgroundStyle } from "../styles/background";
 import { HIGHLIGHTED_PROJECTS, OTHER_PROJECTS, type Project } from "../content/projects";
 import { useIsMobile } from "../hooks/useIsMobile";
@@ -22,6 +24,7 @@ const Projects = () => {
         className="min-h-screen flex flex-col items-center p-4 md:p-8 relative"
         style={isMobile ? undefined : { ...backgroundStyle("grass"), backgroundAttachment: "fixed, fixed, fixed" }}
     >
+        <Seo {...PROJECTS_SEO} />
         {isMobile && <PageBackground />}
 
         <div className="flex flex-col items-center mt-8 md:mt-10">

@@ -24,6 +24,7 @@ const STATIC_ROUTES = [
     '/sidequests',
     '/artifacts',
     '/contact',
+    '/resume',
 ]
 
 const journey = JSON.parse(await readFile(join(ROOT, 'src/content/journey.json'), 'utf8'))

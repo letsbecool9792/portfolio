@@ -4,6 +4,8 @@ import emailjs from '@emailjs/browser';
 import { Link } from 'react-router-dom';
 import ReturnHomeButton from '../components/ReturnHomeButton';
 import PageBackground from '../components/PageBackground';
+import Seo from '../components/Seo';
+import { CONTACT } from '../content/seo';
 
 const Contact = () => {
     const form = useRef<HTMLFormElement | null>(null);
@@ -41,6 +43,7 @@ const Contact = () => {
 
     return (
         <div className="min-h-screen flex flex-col items-center p-4 pb-28 md:p-8 relative">
+            <Seo {...CONTACT} />
             <PageBackground variant="desert" />
             <div className="flex flex-col items-center mt-8 md:mt-10">
                 <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-pixel text-center">

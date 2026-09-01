@@ -6,6 +6,8 @@ import ArtifactPanel from "../components/artifacts/ArtifactPanel";
 import ContributionGraph from "../components/artifacts/ContributionGraph";
 import DiscordCard from "../components/artifacts/DiscordCard";
 import LatestVideo from "../components/artifacts/LatestVideo";
+import Seo from "../components/Seo";
+import { ARTIFACTS } from "../content/seo";
 import { ACCENTS, PROFILES } from "../content/socials";
 import { useIsMobile } from "../hooks/useIsMobile";
 
@@ -32,6 +34,7 @@ const Artifacts = () => {
     // is narrow enough to be centred with wide margins the sign sits beside it,
     // so xl reclaims that space for card height instead.
     <div className="relative flex min-h-screen flex-col items-center overflow-x-clip p-4 pb-28 md:h-dvh md:min-h-0 md:overflow-hidden md:p-6 md:pb-24 xl:pb-10">
+        <Seo {...ARTIFACTS} />
         <PageBackground />
 
         <motion.div
