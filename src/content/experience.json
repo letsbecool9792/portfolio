@@ -4,13 +4,13 @@
         "role": "Software Engineering Intern",
         "period": "Mar 2026 – Aug 2026",
         "location": "Remote",
-        "summary": "One of two engineers on a consumer social app, owning all native Android code, analytics, and most of the React Native frontend — then the sole owner of a second, fully native Android product.",
+        "summary": "An early engineer on a consumer social app, owning all native Android code, analytics, and most of the React Native frontend — then the sole Android engineer on a second, fully native product.",
         "highlights": [
-            "Shipped **yap** (React Native / Expo) to both the App Store and Play Store — **16.6k users** at **30.3% Day-7 retention**.",
+            "Shipped **yap** (React Native / Expo) to both the App Store and Play Store as an early engineer — **16.6k users** at **30.3% Day-7 retention**.",
             "Built the crash-reporting and performance-tracing layer (Sentry v8 native linkage, custom sampler, per-stage upload spans) and root-caused **~20 production crash classes**; user-perceived crash rate fell from a **9.28% peak to 1.45%**.",
             "Wrote Kotlin native modules via Expo Native Modules, including a from-scratch notification layer that works around Android's immutable notification channels with versioned channel IDs while keeping RNFirebase deep linking intact.",
             "Owned Amplitude instrumentation across both products, giving zero-instrumentation apps their first behavioural data layer: fixed **12 event-tracking bugs** and moved tracking state from refs to Redux/MMKV, structurally eliminating a stale-closure bug class.",
-            "Sole owner of the Android app for **iykyk** (Kotlin / Compose, CameraX, Media3), building an audio scoring engine that runs a second AudioRecord stream alongside CameraX capture (one RMS float per 50ms frame) to rank moments by room-relative energy without re-decoding video; rewrote its decode fallback non-blocking, **6.3s to 3.7s** per 30s of audio.",
+            "Sole Android engineer on **iykyk** (Kotlin / Compose, CameraX, Media3), building an audio scoring engine that picks each round's funniest moment by measuring how hard the room laughed — sampling loudness from a parallel mic stream while recording (**~2.4KB per round**) instead of re-decoding the video afterwards, and normalising against ambient noise so quiet rooms score fairly; cut the older-device fallback path from **6.3s to 3.7s**.",
             "Owned video and graphics work across both apps: a WebGL filter-test harness with a `.cube` 3D-LUT parser and custom fragment shader running at **60fps**, so filters could be iterated on without cutting a mobile build, plus a Compose Stories-style clip viewer on a continuously-buffered ExoPlayer playlist."
         ],
         "stack": [

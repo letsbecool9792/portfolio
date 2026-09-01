@@ -40,7 +40,7 @@ export const ABOUT_BLOCKS: StoryBlock[] = [
     { type: "h", text: "What I actually do" },
     {
         type: "p",
-        text: "I spent 2026 as one of two engineers on a consumer social app, owning all the native Android code and most of the React Native frontend. Two products shipped: **yap**, a 10-second video messaging app that reached 16.6k users, and **iykyk**, a pass-the-phone party game that films the chaos as you play — that one was mine end to end, in Kotlin and Compose with CameraX and Media3.",
+        text: "I spent 2026 as an early engineer on a consumer social app, owning all the native Android code and most of the React Native frontend. Two products shipped: **yap**, a 10-second video messaging app that reached 16.6k users, and **iykyk**, a pass-the-phone party game that films the chaos as you play — I was the sole Android engineer on that one, in Kotlin and Compose with CameraX and Media3.",
     },
     {
         type: "p",
