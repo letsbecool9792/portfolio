@@ -1,190 +1,223 @@
 [
     {
-        "slug": "first-year-wrap",
-        "title": "First Year Wrap & Major Wins",
-        "subtext": "Wrapped up year one with wins at Techtrix and Hackforge.",
-        "era": "2025 — Year One, Closed Out",
-        "image": "/assets/journey/year1_wins.jpg",
-        "linkText": "See the highlights",
+        "slug": "year-two",
+        "title": "year two, and an actual job",
+        "subtext": "ETHGlobal, StatusCode2, two clubs, and six months shipping apps people actually use.",
+        "era": "2026, year two",
+        "image": "/assets/journey/year2_recap.jpg",
+        "linkText": "see what happened",
         "blocks": [
-            { "type": "p", "text": "The title says it all—this is the first-year wrap. But here’s the thing: the story isn’t finished yet." },
-            { "type": "p", "text": "So far, I’ve shared a bit of the madness in this LinkedIn post:" },
+            { "type": "p", "text": "year one was mostly about saying yes to everything. year two was about actually finishing things, which turned out to be a completely different skill." },
+            { "type": "h", "text": "the hackathons" },
+            { "type": "p", "text": "StatusCode2 came first. we built [aura](/projects), a health vault app with medical image analysis and record storage baked in. the app was okay, nothing crazy. the actual main event was the CTF mini game running on the side. we locked in on that instead and won it, which is still funny to me. the side quest went better than the main quest." },
+            { "type": "p", "text": "then ETHGlobal new delhi, which is easily the best thing i've built so far. [deckzero](https://github.com/psycocodes/deckzero-ethglobal), a blockchain based ARG inspired by AIB. and we didn't just build it, we filmed an entire trailer for the thing. a whole trailer. T_T. the venue was ridiculous too, the kind of place where you look up mid commit and remember where you are. peak stuff." },
+            { "type": "p", "text": "somewhere in there was also a PWA for turning city discovery into actual hangouts, pitched at BPlan at Kshitij, IIT Kharagpur and at Hult Prize HITK. that one's in the [projects](/projects) section too." },
+            { "type": "p", "text": "although if i'm being honest the best part of Kshitij was probably us playing valorant and losing terribly. fun af." },
+            { "type": "hr" },
+            { "type": "h", "text": "the club stuff" },
+            { "type": "p", "text": "ran valorant and bgmi at Dakshh as coordinator of Spawn, the gaming club at HITK. first time being on the organising side of an event instead of just turning up for it, which is a lot less glamorous than it looks and a lot more fun than it sounds." },
+            { "type": "p", "text": "was also game dev lead at Google Developer Groups on Campus HITK this tenure. hosted an auditorium session on breaking into game dev. we opened with everyone competitively playing games i'd published myself, went through game jams, shipping on itch.io and actually getting into the indie dev community instead of just watching it, then closed with a hands on unity walkthrough. standing in front of a room talking about the [game dev phase](/journey/game-dev-phase) years after it happened was a strange full circle." },
+            { "type": "hr" },
+            { "type": "h", "text": "the job" },
+            { "type": "p", "text": "and then six months at Unencumbered Interactive as an SWE, building [yap](https://justyap.in) and [iykyk](https://playiykyk.in). a lot of react native, a lot of native android, a lot of kotlin." },
+            { "type": "p", "text": "this is the part that actually changed how i think. everything before it was a hackathon build or a jam entry, things that only had to survive a demo. these were real apps on real stores, and a crash stops being a bug you shrug at when there are thousands of people on the other end of it. you start caring about crash rates and analytics and what happens on the one device you don't own. the full writeup of what i did there is on the [projects page](/projects)." },
+            { "type": "hr" },
+            { "type": "p", "text": "genuinely insane year. easily the most i've ever built in twelve months, and the first one where some of it shipped to people who have no idea who i am." },
+            { "type": "p", "text": "there's a shorter, bulletier version of all this on linkedin if you want it:" },
             {
                 "type": "links",
                 "items": [
-                    { "text": "Read the post", "url": "https://www.linkedin.com/posts/letsbecool9792_two-hackathon-wins-countless-chaos-the-activity-7324055133493870593-s_2l" }
+                    { "text": "read the post", "url": "https://www.linkedin.com/in/letsbecool9792/recent-activity/all/" }
+                ]
+            }
+        ]
+    },
+    {
+        "slug": "first-year-wrap",
+        "title": "first year wrap and major wins",
+        "subtext": "closed out year one with wins at Techtrix and Hackforge.",
+        "era": "2025, year one done",
+        "image": "/assets/journey/year1_wins.jpg",
+        "linkText": "see the highlights",
+        "blocks": [
+            { "type": "p", "text": "the title kind of says it all. this is the first year wrap. except the story wasn't really finished when i wrote it, and honestly it still isn't." },
+            { "type": "p", "text": "i put most of the madness into a linkedin post at the time:" },
+            {
+                "type": "links",
+                "items": [
+                    { "text": "read the post", "url": "https://www.linkedin.com/posts/letsbecool9792_two-hackathon-wins-countless-chaos-the-activity-7324055133493870593-s_2l" }
                 ]
             },
-            { "type": "h", "text": "Here’s a quick TL;DR" },
-            { "type": "p", "text": "Two major hackathon wins, a flurry of events, and a whole lot of chaos in between. From coding on zero sleep to surviving on caffeine, it's been non-stop action. I’ve pulled off some cool stuff, taken part in everything from cryptography challenges to pitching competitions, and somehow managed to keep learning through it all." },
+            { "type": "h", "text": "the short version" },
+            { "type": "p", "text": "two hackathon wins, a pile of events, and a whole lot of chaos in between. coding on zero sleep, surviving mostly on caffeine. i did cryptography challenges, pitching competitions and a bunch of things i had no business signing up for, and somehow kept learning through all of it." },
             { "type": "hr" },
-            { "type": "p", "text": "But this is still in progress. The full story is unfolding in real time—as you're reading this, I’m probably out there, doing another random event or cooking up something new." },
-            { "type": "p", "text": "So yeah, stay tuned." }
+            { "type": "p", "text": "and that was first year, more or less. the post went up right at the end of it and then things just went quiet. after nine months of running at full speed that felt genuinely strange, but there wasn't much left on the calendar to run at." },
+            { "type": "p", "text": "the quiet didn't last." }
         ]
     },
     {
         "slug": "hackathon-era",
-        "title": "Hackathon Era Begins",
-        "subtext": "Built AcadZ at HackSynthesis and kept grinding at Hack<N>Pitch and Diversion2k25.",
-        "era": "Sem 1 — The Comeback Arc",
+        "title": "hackathon era begins",
+        "subtext": "built AcadZ at HackSynthesis, then didn't stop for an entire semester.",
+        "era": "sem 1, the comeback arc",
         "image": "/assets/journey/hackathon_era.jpg",
-        "linkText": "Explore the hackathon projects",
+        "linkText": "see the hackathon run",
         "blocks": [
-            { "type": "p", "text": "This was the comeback arc. Time to step back up and be the 100x dev I was always meant to be." },
-            { "type": "p", "text": "It all kicked off with Hack Synthesis, where we built AcadZ — a student-focused mobile app. My first real hackathon experience. I remember staying up all night trying to figure out how to call the Gemini API. I was completely fried, running on caffeine and vibes. But the energy? Unreal. The food? Biryani. Actual cinema." },
+            { "type": "p", "text": "this was the comeback arc. time to get back up and be the 100x dev i was always meant to be." },
+            { "type": "p", "text": "it kicked off with Hack Synthesis, where we built AcadZ, a student focused mobile app. my first real hackathon. i remember staying up the entire night just trying to figure out how to call the Gemini API. completely fried, running on caffeine and vibes. but the energy was unreal and the food was biryani. actual cinema." },
             {
                 "type": "links",
                 "items": [
-                    { "text": "Check out the post", "url": "https://www.linkedin.com/posts/letsbecool9792_i-recently-had-the-opportunity-to-participate-activity-7246487499567431681-XPoW" }
+                    { "text": "check out the post", "url": "https://www.linkedin.com/posts/letsbecool9792_i-recently-had-the-opportunity-to-participate-activity-7246487499567431681-XPoW" }
                 ]
             },
             { "type": "hr" },
-            { "type": "p", "text": "After that, the next few months were all gas, no brakes." },
-            { "type": "p", "text": "Hackathons. Tech events. Competitions. Free food. Fire merch. At some point, I wasn’t sure if I was going for the code or the coffee mugs. Maybe both. Still, it was one of the most intense, fulfilling, chaotic, and beautiful stretches I’ve had." },
-            { "type": "p", "text": "You can go deep in these posts if you want the details:" },
+            { "type": "p", "text": "after that the next few months were all gas, no brakes." },
+            { "type": "p", "text": "hackathons. tech events. competitions. free food. fire merch. at some point i genuinely wasn't sure if i was going for the code or the coffee mugs. probably both. it was still one of the most intense, chaotic, weirdly beautiful stretches i've had." },
+            { "type": "p", "text": "if you want the full details they're in these:" },
             {
                 "type": "links",
                 "items": [
-                    { "text": "Oct ’24 → Nov ’24", "url": "https://www.linkedin.com/posts/letsbecool9792_gamedev-activity-7265399589946507267-6Ee2" },
-                    { "text": "Dec ’24 → Feb ’25", "url": "https://www.linkedin.com/posts/letsbecool9792_the-past-three-months-have-been-packedthree-activity-7301250986457661441-yUTW" }
+                    { "text": "oct '24 to nov '24", "url": "https://www.linkedin.com/posts/letsbecool9792_gamedev-activity-7265399589946507267-6Ee2" },
+                    { "text": "dec '24 to feb '25", "url": "https://www.linkedin.com/posts/letsbecool9792_the-past-three-months-have-been-packedthree-activity-7301250986457661441-yUTW" }
                 ]
             },
-            { "type": "p", "text": "But here’s the TL;DR if you’re lazy:" },
-            { "type": "h", "text": "First Hackathon Season Highlights" },
+            { "type": "p", "text": "but here's the tl;dr if you're lazy:" },
+            { "type": "h", "text": "the season, condensed" },
             {
                 "type": "ul",
                 "items": [
-                    "Built Naval Vanguard with team WhiteSpace at a naval hackathon. Maritime monitoring with LLMs, NLP, maps, threat analysis — the works.",
-                    "Got introduced to machine learning and participated in a Kaggle challenge, building a URL classifier with XGBoost.",
+                    "built Naval Vanguard with team WhiteSpace at a naval hackathon. maritime monitoring with LLMs, NLP, maps, threat analysis, the whole thing.",
+                    "got introduced to machine learning and did a Kaggle challenge, building a URL classifier with XGBoost.",
                     {
-                        "text": "Attended tech events like:",
+                        "text": "went to a bunch of tech events:",
                         "items": [
-                            "“ML Kickstart 101” (GDG-HITK)",
-                            "GameDev India Campfire (connected with indie devs + shared my journey)",
-                            "Blockchain Day (solved the challenge, got my first event T-shirt)"
+                            "ML Kickstart 101 at GDG HITK",
+                            "GameDev India Campfire, where i met actual indie devs and talked about my own stuff",
+                            "Blockchain Day, solved the challenge and got my first event t-shirt"
                         ]
                     },
-                    "Built Hacktivate, a full-stack hackathon management platform using Next.js, FastAPI & Hugging Face Llama at Hack<N>Pitch.",
-                    "Went to DevFest 2024 (food, venue, people = peak)",
+                    "built Hacktivate at Hack<N>Pitch, a full stack hackathon management platform on Next.js, FastAPI and Hugging Face Llama.",
+                    "went to DevFest 2024. food, venue, people, all peak.",
                     {
-                        "text": "Survived Kshitij IIT KGP, entered:",
+                        "text": "survived Kshitij at IIT KGP:",
                         "items": [
-                            "Overnite: late-night CP grind",
-                            "Zero Trust: made an AI fraud detection system using Graph Neural Networks"
+                            "Overnite, a late night CP grind",
+                            "Zero Trust, where we made an AI fraud detection system with graph neural networks"
                         ]
                     },
-                    "Cooked up a dumb, genius idea called “The Brainrot Defense Mechanism Against AI” with memes and chaos at Abol Tabol (got Ohio-diffed, no regrets)",
-                    "At Diversion, my first MLH hackathon, built Cryptonian — a Web3-powered edtech platform (Gemini API + Aptos + MongoDB + Streamlit). Went sleepless for 36 hours with a killer team."
+                    "cooked up a dumb genius idea called the Brainrot Defense Mechanism Against AI at Abol Tabol, purely memes and chaos. got ohio-diffed. no regrets.",
+                    "at Diversion, my first MLH hackathon, built Cryptonian, a web3 edtech platform on Gemini API, Aptos, MongoDB and Streamlit. 36 hours without sleep with a killer team."
                 ]
             },
             { "type": "hr" },
-            { "type": "p", "text": "All that wrapped up my first semester of college." },
-            { "type": "p", "text": "Before this, I was the reserved school kid. Now I’m out here coding at midnight, pitching AI projects, pulling off unhinged builds, vibing with people I didn’t even know a few months ago. It’s been real." }
+            { "type": "p", "text": "and that was just my first semester." },
+            { "type": "p", "text": "before this i was the quiet school kid. now i'm coding at midnight, pitching AI projects, shipping unhinged builds and hanging out with people i didn't even know existed a few months earlier. it's been real." }
         ]
     },
     {
         "slug": "team-xception",
-        "title": "Team XCeption & HackHeritage Setback",
-        "subtext": "Put everything into HackHeritage 2024 but didn’t qualify — still a huge learning curve.",
-        "era": "2024 — First Semester, First Setback",
+        "title": "team XCeption and the HackHeritage setback",
+        "subtext": "put everything into HackHeritage 2024 and didn't even qualify. still learned a lot.",
+        "era": "2024, first sem, first setback",
         "image": "/assets/journey/hackheritage.jpg",
-        "linkText": "Read about Team XCeption",
+        "linkText": "read about team XCeption",
         "blocks": [
-            { "type": "p", "text": "Just joined college. Feeling good. The best part? The JEE grind was finally over." },
-            { "type": "p", "text": "Met some cool people, and soon enough, we found out about HackHeritage—our college’s internal hackathon to select teams for the Smart India Hackathon (SIH)." },
-            { "type": "p", "text": "This was going to be my first proper hackathon. 6 people. 24 hours. Overnight on campus. Chaos." },
-            { "type": "p", "text": "Forming the team was a mission in itself. We interviewed people. Literally conducted interviews to find first-year students with solid dev experience because we wanted to build a proper all-first-year lineup. After a ton of back-and-forth, we finally formed Team XCeption." },
-            { "type": "p", "text": "But we took so long building the team that we barely had any time to prep." },
-            { "type": "p", "text": "Picking a problem statement from SIH’s massive list was another nightmare—tons of research, zero hackathon experience, and no clue what we were diving into." },
-            { "type": "p", "text": "HackHeritage had a selection round too. You had to submit a presentation pitching your solution first. Only then would you be allowed to build anything. We rushed to finish the deck just minutes before the deadline. Showed up in formals. Pitched early. Then waited." },
-            { "type": "p", "text": "And waited." },
-            { "type": "p", "text": "Finally, they released the list of selected teams." },
-            { "type": "p", "text": "We scrolled. We searched." },
-            { "type": "p", "text": "No XCeption." },
-            { "type": "p", "text": "We didn’t make it." },
+            { "type": "p", "text": "just joined college. feeling good. best part was that the JEE grind was finally over." },
+            { "type": "p", "text": "met some cool people, and pretty soon we heard about HackHeritage, our college's internal hackathon that picks the teams for the Smart India Hackathon." },
+            { "type": "p", "text": "this was going to be my first proper hackathon. 6 people, 24 hours, overnight on campus. chaos." },
+            { "type": "p", "text": "building the team was a whole mission on its own. we interviewed people. genuinely sat down and conducted interviews to find first years with real dev experience, because we wanted a proper all first year lineup. after a ton of back and forth we finally had Team XCeption." },
+            { "type": "p", "text": "and then we realized we'd spent so long assembling the team that we had almost no time left to prep." },
+            { "type": "p", "text": "picking a problem statement off SIH's massive list was its own nightmare. endless research, zero hackathon experience, no clue what we were walking into." },
+            { "type": "p", "text": "HackHeritage had a selection round too. you had to submit a presentation pitching your solution before you were allowed to build anything. we finished the deck minutes before the deadline. showed up in formals. pitched early. then waited." },
+            { "type": "p", "text": "and waited." },
+            { "type": "p", "text": "then they put up the list of selected teams." },
+            { "type": "p", "text": "we scrolled. we searched." },
+            { "type": "p", "text": "no XCeption." },
+            { "type": "p", "text": "we didn't make it." },
             { "type": "hr" },
-            { "type": "p", "text": "After everything—the work, the team-building, the pitch prep—we didn’t even get to do the hackathon." },
-            { "type": "p", "text": "It sucked. Genuinely broke me for a while." },
-            { "type": "p", "text": "At first, we had no clue what went wrong. But looking back, I realized where we slipped. It was a hard pill to swallow, but it was also the wake-up call I needed." },
-            { "type": "p", "text": "In school, I used to think I was good at this coding thing. But college made it clear—I had a long way to go." },
-            { "type": "p", "text": "Still, this was just one setback. And setbacks are what push you forward." }
+            { "type": "p", "text": "after all of it, the work, the team building, the pitch prep, we didn't even get to do the hackathon." },
+            { "type": "p", "text": "it sucked. genuinely broke me for a bit." },
+            { "type": "p", "text": "at first none of us knew what went wrong. looking back i can see exactly where we slipped. hard pill to swallow, but it was the wake up call i needed." },
+            { "type": "p", "text": "in school i used to think i was pretty good at this coding thing. college made it very clear that i had a long way to go." },
+            { "type": "p", "text": "still just one setback though. that's usually the thing that pushes you forward." }
         ]
     },
     {
         "slug": "jee-to-hitk",
-        "title": "JEE Grind to HITK",
-        "subtext": "Took a step back from building, cracked JEE, and joined HITK for CSBS.",
-        "era": "2022–2024 — The Trenches",
+        "title": "jee grind to HITK",
+        "subtext": "stopped building for two years, cracked JEE, landed at HITK for CSBS.",
+        "era": "2022 to 2024, the trenches",
         "image": "/assets/journey/jee_to_hitk.jpg",
-        "linkText": "How I made it here",
+        "linkText": "how i got here",
         "blocks": [
-            { "type": "p", "text": "Honestly, talking about this feels like asking a World War II veteran to recount the trenches. It was brutal." },
-            { "type": "p", "text": "Development pretty much came to a halt during this phase. But deep down, I knew—once I got into college, I was going to go all in on dev. That kept me going." },
-            { "type": "p", "text": "Two whole years, just gone. Can’t really say they were well spent, but hey—I made it. Cracked the damn thing, got into HITK." },
+            { "type": "p", "text": "talking about this feels like asking a world war 2 veteran to walk you through the trenches. it was brutal." },
+            { "type": "p", "text": "development basically stopped dead during this phase. but i knew that the second i got into college i was going all in on dev, and that's mostly what kept me going." },
+            { "type": "p", "text": "two whole years, gone. can't really claim they were well spent, but i made it. cracked the damn thing and got into HITK." },
             { "type": "hr" },
-            { "type": "p", "text": "And this? This is where the real journey kicks off." }
+            { "type": "p", "text": "and this is where the actual journey starts." }
         ]
     },
     {
         "slug": "game-dev-phase",
-        "title": "The Game Dev Phase",
-        "subtext": "Made two games, joined Brackeys Game Jam 2021.2, then built two more with friends.",
-        "era": "2021 — Unity, Blender & Chaos",
+        "title": "the game dev phase",
+        "subtext": "made two games, jumped into Brackeys Game Jam 2021.2, then built two more with friends.",
+        "era": "2021, unity, blender and chaos",
         "image": "/assets/journey/game_dev_phase.jpg",
-        "linkText": "Play the games",
+        "linkText": "play the games",
         "blocks": [
-            { "type": "p", "text": "Unironically one of the biggest phases of my life. Even though I haven’t made a game in over two years, I still proudly call myself a game dev. (Yeah I know, I gotta get back into it. Crying emoji IRL.)" },
-            { "type": "p", "text": "It all started when some of my friends were like, “Let’s learn Unity.” We were already nerds who loved playing games, and now we were nerds who knew how to code. Naturally, the next logical step was to try making our own." },
-            { "type": "p", "text": "So, I did what every beginner did — binged Brackeys' 3D game tutorial. After following along, I ended up building two small games from scratch. Never published them, but they taught me a lot." },
+            { "type": "p", "text": "unironically one of the biggest phases of my life. i haven't made a game in over two years and i still proudly call myself a game dev. (yeah i know. i gotta get back into it. crying emoji irl.)" },
+            { "type": "p", "text": "it started when some of my friends went \"let's learn unity\". we were already nerds who loved playing games, and by then we were nerds who could code, so making our own was the obvious next step." },
+            { "type": "p", "text": "so i did what every beginner does and binged Brackeys' 3D game tutorial. came out of it having built two small games from scratch. never published either of them, but they taught me a lot." },
             { "type": "hr" },
             { "type": "h", "text": "Brackeys Game Jam 2021.2" },
-            { "type": "p", "text": "This was my first real game jam — and holy hell, it was a blast." },
-            { "type": "p", "text": "I put in hours every single day: learning Unity, trying Blender for the first time (which was a disaster), designing levels, and debugging like a madman. I made everything in the game myself — including the janky-ass 3D models. My PC back then was such a potato that adding a few extra vertices in Blender would cause it to combust. So everything had to stay low-poly as hell." },
-            { "type": "p", "text": "Still, I managed to finish and submit the game. It was a basic shooter with a little platformer level at the end. Graphics were trash, but I was proud." },
-            { "type": "p", "text": "Then came the post-jam experience — the community. I’d spend hours rating other people’s games, reading comments, and watching feedback roll in. I even [speedran one of the jam entries](https://www.youtube.com/watch?v=WW5h6-upy4Y) and posted the run on YouTube just for fun." },
-            { "type": "p", "text": "The final stats?" },
+            { "type": "p", "text": "my first real game jam, and holy hell it was a blast." },
+            { "type": "p", "text": "i put in hours every single day. learning unity, opening blender for the first time (a disaster), designing levels, debugging like a madman. i made everything in that game myself, including the janky ass 3d models. my pc back then was such a potato that a few extra vertices in blender would make it combust, so everything had to stay low poly as hell." },
+            { "type": "p", "text": "i finished and submitted it though. a basic shooter with a small platformer level at the end. graphics were trash. i was proud." },
+            { "type": "p", "text": "then came the part i wasn't expecting, which was the community. i spent hours rating other people's games, reading comments and watching feedback roll in. i even [speedran one of the jam entries](https://www.youtube.com/watch?v=WW5h6-upy4Y) and put the run on youtube just for fun." },
+            { "type": "p", "text": "final stats:" },
             {
                 "type": "ul",
                 "items": [
                     "41 ratings",
                     "2.642 stars average",
-                    "A [YouTube video feature](https://youtu.be/1JoAsqqyRhA?t=82)"
+                    "one [youtube video feature](https://youtu.be/1JoAsqqyRhA?t=82)"
                 ]
             },
-            { "type": "p", "text": "Yeah not great, but hey — first game ever. It meant the world to me." },
+            { "type": "p", "text": "not great numbers. but it was my first game ever and it meant the world to me." },
             {
                 "type": "links",
                 "items": [
-                    { "text": "Play the game", "url": "https://letsbecool.itch.io/chaos-here-chaos-there-chaos-everywhere" }
+                    { "text": "play the game", "url": "https://letsbecool.itch.io/chaos-here-chaos-there-chaos-everywhere" }
                 ]
             },
             { "type": "hr" },
-            { "type": "h", "text": "The Games That Followed" },
-            { "type": "p", "text": "After that jam, I worked on two more games with friends:" },
+            { "type": "h", "text": "the games after that" },
+            { "type": "p", "text": "after that jam i made two more with friends:" },
             {
                 "type": "ul",
                 "items": [
-                    "[Project Addax](https://letsbecool.itch.io/project-addax) — my first time working with a team on a Brackeys jam. Absolute chaos trying to coordinate, but I learned a lot about collaboration.",
-                    "[Boka Robi](https://aliensearth.itch.io/boka-robi) — a brainrotted, cursed game made in one day at a friend’s house. No plan, just vibes."
+                    "[Project Addax](https://letsbecool.itch.io/project-addax), my first time working with a team on a Brackeys jam. coordinating was absolute chaos, but i learned a lot about actually building something with other people.",
+                    "[Boka Robi](https://aliensearth.itch.io/boka-robi), a brainrotted cursed game we made in a single day at a friend's house. no plan. pure vibes."
                 ]
             },
             { "type": "hr" },
-            { "type": "p", "text": "And just like that, my game dev arc was in full swing. I miss this shit. Definitely need to get back into it." }
+            { "type": "p", "text": "and that was the game dev arc in full swing. i miss this shit. i really do need to get back into it." }
         ]
     },
     {
         "slug": "origin-story",
-        "title": "The Origin Story",
-        "subtext": "Started coding in class 8, found joy in school-level dev and DSA.",
-        "era": "Class 8 — Where It All Began",
+        "title": "the origin story",
+        "subtext": "started coding in class 8 with a java textbook, BlueJ and a diary.",
+        "era": "class 8, where it started",
         "image": "/assets/journey/dev_origin.jpg",
-        "linkText": "See how it began",
+        "linkText": "see how it began",
         "blocks": [
-            { "type": "p", "text": "Back in class 8, I got into coding the way every legend starts — with a school-assigned Java textbook, BlueJ, and a diary I turned into my own dev journal. Yeah, we literally coded on paper during class. When things got boring, my friends and I would just start scribbling Java code in our copies like absolute nerds — and I fucking loved it." },
-            { "type": "p", "text": "Later at home, I'd run those scribbles on my PC, see them actually work, and mess around making small changes. That shit felt like magic. I was hooked." },
-            { "type": "p", "text": "That’s when I realized: this isn’t just homework. This is fun." },
+            { "type": "p", "text": "back in class 8 i got into coding the way every legend does. a school assigned java textbook, BlueJ, and a diary i turned into my own dev journal. we literally wrote code on paper during class. when things got boring my friends and i would just start scribbling java in our copies like absolute nerds, and i fucking loved it." },
+            { "type": "p", "text": "then i'd go home, run those scribbles on my pc, watch them actually work, and start messing with them to see what changed. that shit felt like magic. i was hooked." },
+            { "type": "p", "text": "that's when it clicked that this wasn't homework. this was fun." },
             { "type": "hr" },
-            { "type": "p", "text": "I started learning basic DSA stuff from YouTube (no ChatGPT back in the day, mind you). Picked up both Java and Python, trying out different problems and figuring out the logic behind them. It was all self-taught, all curiosity-fueled. No pressure. Just pure love for building things with code." }
+            { "type": "p", "text": "i started picking up basic dsa off youtube (no chatgpt back in the day, mind you). learned java and python, worked through random problems and tried to actually understand the logic instead of memorising it. all self taught, all curiosity. no pressure, no plan, just genuinely liking building things with code." }
         ]
     }
 ]

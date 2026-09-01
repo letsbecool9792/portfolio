@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { Link } from "react-router-dom";
 import ExternalLink from "./ExternalLink";
 
 /**
@@ -26,10 +27,18 @@ const renderInline = (text: string): ReactNode[] => {
         if (start > cursor) nodes.push(text.slice(cursor, start));
 
         if (url) {
+            // A root-relative target is another page on this site, so it routes
+            // client-side instead of opening a new tab at a full page load.
             nodes.push(
-                <ExternalLink key={start} href={url} className={LINK_CLASS}>
-                    {label}
-                </ExternalLink>,
+                url.startsWith("/") ? (
+                    <Link key={start} to={url} className={LINK_CLASS}>
+                        {label}
+                    </Link>
+                ) : (
+                    <ExternalLink key={start} href={url} className={LINK_CLASS}>
+                        {label}
+                    </ExternalLink>
+                ),
             );
         } else if (bold) {
             nodes.push(
