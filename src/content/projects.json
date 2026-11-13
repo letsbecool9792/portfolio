@@ -1,5 +1,16 @@
 [
     {
+        "title": "Breadcrumb",
+        "desc": "A search engine for your own memory. Save anything in one tap, find it later by describing it.",
+        "img": "/assets/projects/breadcrumb.jpg",
+        "modalImg": "/assets/projects/breadcrumb_ss.jpg",
+        "github": "https://github.com/letsbecool9792/breadcrumb-hackinverse",
+        "liveLink": "https://breadcrumb.suparno.me",
+        "techStack": ["Kotlin", "Jetpack Compose", "Room", "WorkManager", "EmbeddingGemma 2", "LiteRT-LM", "ML Kit", "React", "Vite", "Tailwind CSS"],
+        "highlighted": true,
+        "longDesc": "1st place at Hackinverse 1.0. We save things everywhere and find them nowhere: screenshots, links, PDFs and recommendations scatter across a dozen apps, and later you remember what you saved but not where you put it. Breadcrumb is two flows and nothing else. Saving is frictionless, one tap from the share sheet, a Quick Settings tile or your voice, with no folders, tags or titles to fill in. Retrieval is the product: a single search bar where you type what you remember, like \"that internship screenshot from April\", and it finds the thing even when those words appear nowhere in it. EmbeddingGemma 2 runs on the phone and scores meaning alongside the phone's own keyword search, so nothing you save or type ever leaves the device. There is no server and no account, and search works in airplane mode."
+    },
+    {
         "title": "NextWeeb",
         "desc": "Your personalized anime discovery and tracking web app.",
         "img": "/assets/projects/nextweeb.png",
