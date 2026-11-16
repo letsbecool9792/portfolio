@@ -1,6 +1,9 @@
+import { useRef } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import type { JourneyEntry } from "../../content/journey";
+import { useScrollCue } from "../../hooks/useScrollCue";
+import ScrollCue from "./ScrollCue";
 
 /**
  * Card placement is hand-tuned absolute positioning against the page container,
@@ -22,6 +25,16 @@ type JourneyDesktopProps = {
 const JourneyDesktop = ({ events, spriteSrc }: JourneyDesktopProps) => {
     const ladderHeight =
         BASE_LADDER_HEIGHT + Math.max(0, events.length - BASE_EVENT_COUNT) * CARD_SPACING;
+
+    // The first card sits ~500px down, below the fold on most screens, so the page
+    // opens on a ladder and a character with no sign that anything is below.
+    const cue = useScrollCue();
+    const firstCardRef = useRef<HTMLDivElement>(null);
+    const climbToFirstChapter = () =>
+        firstCardRef.current?.scrollIntoView({
+            behavior: cue.reduced ? "auto" : "smooth",
+            block: "center",
+        });
 
     return (
         <>
@@ -50,14 +63,24 @@ const JourneyDesktop = ({ events, spriteSrc }: JourneyDesktopProps) => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, ease: "easeOut", delay: 1.2 }}
                 >
-                    <img src={spriteSrc} alt="" className="w-32 h-32" />
+                    {/* While the reader is still at the top, the climber hops: it plays
+                        its climb frames and dips towards the next rung, then settles. */}
+                    <motion.div
+                        animate={{ y: cue.hopSrc ? 10 : 0 }}
+                        transition={{ type: "spring", stiffness: 420, damping: 18 }}
+                    >
+                        <img src={cue.hopSrc ?? spriteSrc} alt="" className="w-32 h-32" />
+                    </motion.div>
                 </motion.div>
+
+                <ScrollCue visible={cue.atTop} reduced={cue.reduced} onClimb={climbToFirstChapter} />
             </div>
 
             <div className="w-full max-w-4xl pt-32 mb-10 z-20">
                 {events.map((event, i) => (
                     <motion.div
                         key={event.title}
+                        ref={i === 0 ? firstCardRef : undefined}
                         initial={{ opacity: 0, x: i % 2 === 0 ? 40 : -40 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, x: i % 2 === 0 ? 40 : -40 }}
