@@ -11,6 +11,28 @@
         "longDesc": "1st place at Hackinverse 1.0. We save things everywhere and find them nowhere: screenshots, links, PDFs and recommendations scatter across a dozen apps, and later you remember what you saved but not where you put it. Breadcrumb is two flows and nothing else. Saving is frictionless, one tap from the share sheet, a Quick Settings tile or your voice, with no folders, tags or titles to fill in. Retrieval is the product: a single search bar where you type what you remember, like \"that internship screenshot from April\", and it finds the thing even when those words appear nowhere in it. EmbeddingGemma 2 runs on the phone and scores meaning alongside the phone's own keyword search, so nothing you save or type ever leaves the device. There is no server and no account, and search works in airplane mode."
     },
     {
+        "title": "Cosmic Game Sanctuary",
+        "desc": "An indie game store where revenue splits pay a whole team at once, trials are billed by the minute, and an agent can buy for you.",
+        "img": "/assets/projects/cgs.jpg",
+        "modalImg": "/assets/projects/cgs_ss.jpg",
+        "github": "https://github.com/cosmic-game-sanctuary/CGS-client",
+        "liveLink": "https://cgs.blackslate.me",
+        "techStack": ["React 19", "TypeScript", "Vite", "Tailwind CSS v4", "Express", "Postgres", "Hedera", "Privy", "x402", "IPFS", "ENS"],
+        "highlighted": true,
+        "longDesc": "Built for ETHOnline 2026, and nothing in it is a mock. Cosmic Game Sanctuary is a storefront for browser games settled on Hedera. Browse without logging in, sign in with just an email, buy, and the game boots in the same tab a few seconds later, its build pinned to IPFS and unpacked live in the browser. You can play by the minute first, metered from your own wallet over x402, and every cent spent trying comes off the price. Developers drop a zip, watch it run before publishing, and split revenue with a team by email: a teammate who has never touched a wallet still gets paid the moment they accept, and the split locks at publish. Give the agent a want and a ceiling and it watches a public Hedera topic, buying at the last responsible moment before a sale ends. Buyers sign their own purchases so the server never holds anyone's key, and uploaded games run on a separate origin so a stranger's build can never read your session."
+    },
+    {
+        "title": "Skrim",
+        "desc": "A browser agent that does the task without your personal data ever leaving your machine.",
+        "img": "/assets/projects/skrim.jpg",
+        "modalImg": "/assets/projects/skrim_ss.jpg",
+        "github": "https://github.com/letsbecool9792/skrim-hackspire",
+        "liveLink": "https://skrim-hackspire.vercel.app",
+        "techStack": ["TypeScript", "WXT", "Chrome MV3", "ONNX Runtime", "GLiNER", "Tesseract", "MediaPipe", "Zod", "Qwen", "Groq", "Ollama"],
+        "highlighted": true,
+        "longDesc": "Built for HackSpire. AI browser agents work by sending your screen to someone else's server, so your inbox, your bank balance and your face end up on a stranger's GPU. Skrim keeps all of that on your device. A local pipeline reads the page, runs OCR on canvases and images, and finds private data with regexes, form-field hints and an on-device GLiNER model, then swaps every value for a placeholder like <PII:EMAIL:1> before anything is sent. The planning model only ever sees the scrubbed page, and the extension puts the real value back only at the moment it types it. The guardrails run on the device, so no prompt can switch them off: a value only goes where you meant it to, ID and card numbers are always checked with you first, and unasked purchases or deletions are refused. Detection hits 99% recall across 37 test pages, and it runs in Chrome, in Firefox, and in Firefox on Android."
+    },
+    {
         "title": "NextWeeb",
         "desc": "Your personalized anime discovery and tracking web app.",
         "img": "/assets/projects/nextweeb.jpg",
@@ -44,7 +66,7 @@
             "Langchain",
             "Gemini API"
         ],
-        "highlighted": true,
+        "highlighted": false,
         "longDesc": "Supernote leverages AI to transform rough startup concepts into comprehensive business plans. Interactive mind maps and validation frameworks help entrepreneurs visualize and refine their ideas before investing time and resources."
     },
     {
@@ -59,7 +81,7 @@
             "React Native",
             "Gemini API"
         ],
-        "highlighted": true,
+        "highlighted": false,
         "longDesc": "Synapse is a comprehensive learning platform designed to help busy students master complex subjects through spaced repetition and active recall. The app features customizable flashcard decks, progress tracking, and adaptive learning algorithms."
     },
     {
