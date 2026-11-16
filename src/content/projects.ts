@@ -3,7 +3,8 @@ import data from "./projects.json";
 export type Project = {
     title: string;
     desc: string;
-    longDesc: string;
+    /** The modal's About section, one bullet each. Supports `InlineText` markup. */
+    about: string[];
     img: string;
     modalImg: string;
     github: string;

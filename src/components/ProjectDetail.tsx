@@ -1,3 +1,4 @@
+import InlineText from "./InlineText";
 import type { Project } from "../content/projects";
 
 /** Pixel button used for the outbound project links. */
@@ -47,9 +48,13 @@ const ProjectDetail = ({ project }: { project: Project }) => {
 
             <div className="mb-6">
                 <h3 className="text-lg md:text-2xl font-pixel mb-3 text-black">About</h3>
-                <p className="text-base font-serif text-gray-800 leading-relaxed">
-                    {project.longDesc}
-                </p>
+                <ul className="ml-5 list-disc space-y-2 text-base font-serif text-gray-800 leading-relaxed marker:text-blue-600">
+                    {project.about.map(point => (
+                        <li key={point}>
+                            <InlineText text={point} />
+                        </li>
+                    ))}
+                </ul>
             </div>
 
             {project.techStack.length > 0 && (

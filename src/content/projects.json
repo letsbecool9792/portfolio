@@ -8,18 +8,48 @@
         "liveLink": "https://breadcrumb.suparno.me",
         "techStack": ["Kotlin", "Jetpack Compose", "Room", "WorkManager", "EmbeddingGemma 2", "LiteRT-LM", "ML Kit", "React", "Vite", "Tailwind CSS"],
         "highlighted": true,
-        "longDesc": "1st place at Hackinverse 1.0. We save things everywhere and find them nowhere: screenshots, links, PDFs and recommendations scatter across a dozen apps, and later you remember what you saved but not where you put it. Breadcrumb is two flows and nothing else. Saving is frictionless, one tap from the share sheet, a Quick Settings tile or your voice, with no folders, tags or titles to fill in. Retrieval is the product: a single search bar where you type what you remember, like \"that internship screenshot from April\", and it finds the thing even when those words appear nowhere in it. EmbeddingGemma 2 runs on the phone and scores meaning alongside the phone's own keyword search, so nothing you save or type ever leaves the device. There is no server and no account, and search works in airplane mode."
+        "about": [
+            "1st place at Hackinverse 1.0.",
+            "We save things everywhere and find them nowhere: screenshots, links, PDFs and recommendations scatter across a dozen apps, and later you remember what you saved but not where you put it.",
+            "Saving takes one tap from the share sheet, a Quick Settings tile or your voice, with no folders, tags or titles to fill in.",
+            "Finding is a single search bar. Type what you remember, like \"that internship screenshot from April\", and it finds the thing even when those words appear nowhere in it.",
+            "EmbeddingGemma 2 runs on the phone and scores meaning alongside keyword search, so nothing you save or type ever leaves the device. No server, no account, and search works in airplane mode."
+        ]
+    },
+    {
+        "title": "NextWeeb",
+        "desc": "Your personalized anime discovery and tracking web app.",
+        "img": "/assets/projects/nextweeb.jpg",
+        "modalImg": "/assets/projects/nextweeb_ss.jpg",
+        "github": "https://github.com/letsbecool9792/next-weeb",
+        "liveLink": "https://next-weeb.vercel.app/",
+        "techStack": ["React", "Vite", "Tailwind CSS", "Django", "Django REST Framework", "MyAnimeList API", "TypeScript", "Gemini", "Postgres"],
+        "highlighted": true,
+        "about": [
+            "Log in with MyAnimeList and NextWeeb copies your list, then works out what you should watch next.",
+            "Every recommendation says why it was picked: recommended by fans of a show you loved, made by a studio you like, or matching your taste in genres.",
+            "An AI chat that knows your list. Ask for something short and wholesome and it only suggests real shows you haven't seen, as clickable cards.",
+            "Your Plan to Watch ranked by how well each show fits your taste, plus stats on your top genres, studios, ratings and total watch time.",
+            "MyAnimeList login over OAuth 2.0 with PKCE, then the backend's own rotating JWTs, with no cross-site cookies."
+        ]
     },
     {
         "title": "Cosmic Game Sanctuary",
-        "desc": "An indie game store where revenue splits pay a whole team at once, trials are billed by the minute, and an agent can buy for you.",
+        "desc": "An indie game store where every sale pays the whole team.",
         "img": "/assets/projects/cgs.jpg",
         "modalImg": "/assets/projects/cgs_ss.jpg",
         "github": "https://github.com/cosmic-game-sanctuary/CGS-client",
         "liveLink": "https://cgs.blackslate.me",
-        "techStack": ["React 19", "TypeScript", "Vite", "Tailwind CSS v4", "Express", "Postgres", "Hedera", "Privy", "x402", "IPFS", "ENS"],
+        "techStack": ["React 19", "TypeScript", "Vite", "Tailwind CSS v4", "Express", "Postgres", "Arc", "USDC", "Privy", "x402", "IPFS", "ENS"],
         "highlighted": true,
-        "longDesc": "Built for ETHOnline 2026, and nothing in it is a mock. Cosmic Game Sanctuary is a storefront for browser games settled on Hedera. Browse without logging in, sign in with just an email, buy, and the game boots in the same tab a few seconds later, its build pinned to IPFS and unpacked live in the browser. You can play by the minute first, metered from your own wallet over x402, and every cent spent trying comes off the price. Developers drop a zip, watch it run before publishing, and split revenue with a team by email: a teammate who has never touched a wallet still gets paid the moment they accept, and the split locks at publish. Give the agent a want and a ceiling and it watches a public Hedera topic, buying at the last responsible moment before a sale ends. Buyers sign their own purchases so the server never holds anyone's key, and uploaded games run on a separate origin so a stranger's build can never read your session."
+        "about": [
+            "Built for ETHOnline 2026, now live on Arc mainnet: Circle's chain, where USDC is the gas, so buying a game never needs a second token.",
+            "Browse without logging in, sign in with just an email, and a game you buy boots in the same tab seconds later, its build pinned to IPFS and unpacked live in the browser.",
+            "Try before you buy: play by the minute, metered from your own wallet over x402, and every cent spent trying comes off the price.",
+            "Developers drop a zip, watch it run before publishing, and split revenue with a team by email. A teammate who has never touched a wallet still gets paid the moment they accept, and the split locks at publish.",
+            "Give the agent a want and a price ceiling and it buys at the last responsible moment before a sale ends.",
+            "Buyers sign their own purchases, so the server never holds anyone's key, and uploaded games run on a separate origin so a stranger's build can never read your session."
+        ]
     },
     {
         "title": "Skrim",
@@ -30,25 +60,14 @@
         "liveLink": "https://skrim-hackspire.vercel.app",
         "techStack": ["TypeScript", "WXT", "Chrome MV3", "ONNX Runtime", "GLiNER", "Tesseract", "MediaPipe", "Zod", "Qwen", "Groq", "Ollama"],
         "highlighted": true,
-        "longDesc": "Built for HackSpire. AI browser agents work by sending your screen to someone else's server, so your inbox, your bank balance and your face end up on a stranger's GPU. Skrim keeps all of that on your device. A local pipeline reads the page, runs OCR on canvases and images, and finds private data with regexes, form-field hints and an on-device GLiNER model, then swaps every value for a placeholder like <PII:EMAIL:1> before anything is sent. The planning model only ever sees the scrubbed page, and the extension puts the real value back only at the moment it types it. The guardrails run on the device, so no prompt can switch them off: a value only goes where you meant it to, ID and card numbers are always checked with you first, and unasked purchases or deletions are refused. Detection hits 99% recall across 37 test pages, and it runs in Chrome, in Firefox, and in Firefox on Android."
-    },
-    {
-        "title": "NextWeeb",
-        "desc": "Your personalized anime discovery and tracking web app.",
-        "img": "/assets/projects/nextweeb.jpg",
-        "modalImg": "/assets/projects/nextweeb_ss.jpg",
-        "github": "https://github.com/letsbecool9792/next-weeb",
-        "liveLink": "https://next-weeb.vercel.app/",
-        "techStack": [
-            "React",
-            "Vite",
-            "Tailwind CSS",
-            "Django",
-            "Django REST Framework",
-            "MyAnimeList API"
-        ],
-        "highlighted": true,
-        "longDesc": "NextWeeb is your ultimate companion for discovering and tracking anime. With intelligent recommendations based on your watch history, season tracking, and a beautiful interface, you'll never miss your next favorite series."
+        "about": [
+            "Built for HackSpire.",
+            "AI browser agents send your screen to someone else's server, so your inbox, your bank balance and your face end up on a stranger's GPU. Skrim keeps all of that on your device.",
+            "A local pipeline reads the page, runs OCR on canvases and images, and finds private data with regexes, form-field hints and an on-device GLiNER model, swapping every value for a placeholder like <PII:EMAIL:1> before anything is sent.",
+            "The planning model only ever sees the scrubbed page, and the extension puts the real value back only at the moment it types it.",
+            "Guardrails run on the device, so no prompt can switch them off: ID and card numbers are always checked with you first, and unasked purchases or deletions are refused.",
+            "99% detection recall across 37 test pages, in Chrome, in Firefox, and in Firefox on Android."
+        ]
     },
     {
         "title": "Supernote",
@@ -57,17 +76,13 @@
         "modalImg": "/assets/projects/supernote_ss.png",
         "github": "https://github.com/letsbecool9792/supernote",
         "liveLink": "https://supernote-dusky.vercel.app",
-        "techStack": [
-            "React",
-            "Vite",
-            "Tailwind",
-            "Express",
-            "MongoDB Atlas",
-            "Langchain",
-            "Gemini API"
-        ],
+        "techStack": ["React", "Vite", "Tailwind", "Express", "MongoDB Atlas", "Langchain", "Gemini API"],
         "highlighted": false,
-        "longDesc": "Supernote leverages AI to transform rough startup concepts into comprehensive business plans. Interactive mind maps and validation frameworks help entrepreneurs visualize and refine their ideas before investing time and resources."
+        "about": [
+            "Turns a rough startup idea into a structured, multi-stage plan covering market research, monetisation, scalability and technical complexity.",
+            "The plan grows on an interactive graph, with AI-suggested nodes you can edit in real time.",
+            "LangChain orchestration with vector embeddings and structured prompt pipelines keeps each suggestion aware of the rest of the plan."
+        ]
     },
     {
         "title": "Synapse",
@@ -76,13 +91,13 @@
         "modalImg": "/assets/projects/synapse_ss.jpg",
         "github": "https://github.com/Asterisk-Bytes/synapse/",
         "liveLink": "",
-        "techStack": [
-            "Expo",
-            "React Native",
-            "Gemini API"
-        ],
+        "techStack": ["Expo", "React Native", "Gemini API"],
         "highlighted": false,
-        "longDesc": "Synapse is a comprehensive learning platform designed to help busy students master complex subjects through spaced repetition and active recall. The app features customizable flashcard decks, progress tracking, and adaptive learning algorithms."
+        "about": [
+            "1st place overall at the TechTrix software development hackathon 2025, iterating live on judge feedback during the finals.",
+            "A learning app for busy students, built around spaced repetition and active recall.",
+            "Customisable flashcard decks, progress tracking, and a review schedule that adapts to how well you know each card."
+        ]
     },
     {
         "title": "Calcutta Collective",
@@ -91,19 +106,15 @@
         "modalImg": "/assets/projects/calcuttacollective_ss.png",
         "github": "https://github.com/letsbecool9792/CalcuttaCollective",
         "liveLink": "https://calcutta-collective.vercel.app/",
-        "techStack": [
-            "React 18",
-            "TypeScript",
-            "Vite",
-            "Tailwind CSS v4",
-            "React Router",
-            "Leaflet",
-            "OpenStreetMap",
-            "Node.js",
-            "Express"
-        ],
+        "techStack": ["React 18", "TypeScript", "Vite", "Tailwind CSS v4", "React Router", "Leaflet", "OpenStreetMap", "Node.js", "Express"],
         "highlighted": false,
-        "longDesc": "Cities are full of people, and yet urban loneliness keeps rising — everyone saves cafés they never visit. The problem isn't a lack of information, it's a lack of activation, so Calcutta Collective is built around closing that gap. Discovery is map-driven rather than list-driven, hangouts cap at 5–8 people so they feel intimate rather than like an event, and hosts approve join requests so a group chat can break the ice before anyone shows up. Afterwards, reflections feed back into the discovery loop. Built solo as a competition product and pitched at BPlan @ Kshitij 2025 (IIT Kharagpur) and the Hult Prize 2025 campus round."
+        "about": [
+            "Cities are full of people, yet urban loneliness keeps rising: everyone saves cafés they never visit. The problem isn't information, it's activation.",
+            "Discovery is map-driven rather than list-driven.",
+            "Hangouts cap at 5 to 8 people so they feel intimate, and hosts approve join requests so a group chat can break the ice before anyone shows up.",
+            "Reflections after each hangout feed back into the discovery loop.",
+            "Built solo as a competition product, pitched at BPlan @ Kshitij 2025 (IIT Kharagpur) and the Hult Prize 2025 campus round."
+        ]
     },
     {
         "title": "ResQNet",
@@ -112,17 +123,13 @@
         "modalImg": "/assets/projects/resqnet_ss.svg",
         "github": "https://github.com/frank06n/sudobang_hackforge2025",
         "liveLink": "",
-        "techStack": [
-            "React Native",
-            "Expo",
-            "Node.js",
-            "Express",
-            "Socket.io",
-            "MongoDB Atlas",
-            "Google Maps"
-        ],
+        "techStack": ["React Native", "Expo", "Node.js", "Express", "Socket.io", "MongoDB Atlas", "Google Maps"],
         "highlighted": false,
-        "longDesc": "ResQNet revolutionizes emergency response coordination by providing a centralized platform for first responders, emergency services, and civilians. Real-time updates, location tracking, and instant communication help save lives when every second counts."
+        "about": [
+            "Best Beginner Team at HackForge, for a 12-hour build spanning two mobile apps and a web platform.",
+            "One platform connecting first responders, emergency services and civilians.",
+            "Real-time updates, live location tracking and instant communication, for when every second counts."
+        ]
     },
     {
         "title": "AURA",
@@ -131,16 +138,15 @@
         "modalImg": "/assets/projects/aura_ss.jpg",
         "github": "https://github.com/letsbecool9792/aura",
         "liveLink": "",
-        "techStack": [
-            "React Native",
-            "Expo",
-            "Django",
-            "Gemini API",
-            "Python ML",
-            "Google Maps API"
-        ],
+        "techStack": ["React Native", "Expo", "Django", "Gemini API", "Python ML", "Google Maps API"],
         "highlighted": false,
-        "longDesc": "AURA is a patient-centric healthcare assistant that combines AI diagnostics, a digital health record vault, and real-time hospital/doctor discovery. Users can upload medical data, analyze scans for fractures or brain tumors using ML models, identify medications through image input, and interact with an AI chatbot that explains medical information in simple language."
+        "about": [
+            "Built at StatusCode2.",
+            "A digital vault for your health records.",
+            "ML models analyse uploaded scans for fractures and brain tumours, and a photo is enough to identify a medication.",
+            "Finds nearby hospitals and doctors in real time.",
+            "An AI chatbot explains medical information in plain language."
+        ]
     },
     {
         "title": "EchoWall",
@@ -149,14 +155,11 @@
         "modalImg": "/assets/projects/echowall.png",
         "github": "https://github.com/sudo-bang/echo-wall",
         "liveLink": "",
-        "techStack": [
-            "React",
-            "Vite",
-            "Express",
-            "MongoDB",
-            "Social Media APIs"
-        ],
+        "techStack": ["React", "Vite", "Express", "MongoDB", "Social Media APIs"],
         "highlighted": false,
-        "longDesc": "EchoWall creates a unified social media experience by aggregating posts, photos, and updates from all your platforms into a single, customizable feed. Save time and stay connected without the constant app-switching."
+        "about": [
+            "Pulls posts, photos and updates from all your social platforms into one customisable feed.",
+            "Stay connected without the constant app-switching."
+        ]
     }
 ]

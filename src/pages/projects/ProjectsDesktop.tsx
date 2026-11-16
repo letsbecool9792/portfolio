@@ -60,12 +60,16 @@ const ProjectCard = ({ proj, index, onSelect }: ProjectCardProps) => (
             </div>
 
             {/* Content Section */}
-            <div className="w-8/13 py-2 pl-6 pr-10 flex flex-col justify-center relative">
+            <div className="w-8/13 py-2 pl-6 pr-10 flex flex-col justify-center">
                 <h2 className="text-4xl font-pixel2 mb-3 text-black">{proj.title}</h2>
                 <p className="text-base font-serif text-gray-800 leading-relaxed mb-4">{proj.desc}</p>
+                {/* In flow rather than absolutely placed: the column is vertically
+                    centred, so a title that wraps to two lines used to push the
+                    description down underneath a button pinned to a fixed spot.
+                    `self-end` + `mr-3` keeps it where it was, 52px off the right edge. */}
                 <button
                     onClick={() => onSelect(proj)}
-                    className="absolute bottom-13 right-13 w-30 h-10 transition-all duration-200 group"
+                    className="relative self-end shrink-0 mr-3 w-30 h-10 transition-all duration-200 group"
                 >
                     <img
                         src="/assets/other/button_rectangle_depth_flat.png"
